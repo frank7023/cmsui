@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="listview"  class="ubt bc-border sc-bg" style="margin-bottom: 3em;"></div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/appcan.listview.js"></script>
+        <script src="../js/cms.xf.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            
+            //讯飞旗帜广告
+            openBannerAd('01FC21D3D774EE538598B35285F0F512');
+            //当监听到广告初始化的回调函数
+            IFLYBannerAd.onAdInit = onBannerAdInit;
+            //当监听到获得广告成功时的回调函数
+            IFLYBannerAd.onAdReceive = onBannerAdReceive;
+            //当监听到获取广告失败时的回调函数
+            IFLYBannerAd.onAdFailed = onBannerAdFailed;
+            //当监听到广告被关闭时的回调函数
+            IFLYBannerAd.onAdClose = onBannerAdClose;
+            //当监听到广告被点击是的回调函数
+            IFLYBannerAd.onAdClick = onBannerAdClick;
+            
+            //讯飞插屏广告
+            openInterstitialAd('E590C919444F7367417CC9077F531616');
+            //当监听到广告初始化的回调函数
+            IFLYInterstitialAd.onAdInit = onInterstitialAdInit;
+            //当监听到获得广告成功时的回调函数
+            IFLYInterstitialAd.onAdReceive = onInterstitialAdReceive;
+            //当监听到获取广告失败时的回调函数
+            IFLYInterstitialAd.onAdFailed = onInterstitialAdFailed;
+            //当监听到广告被关闭是的回调函数
+            IFLYInterstitialAd.onAdClose = onInterstitialAdClose;
+            //当监听到广告被点击是的回调函数
+            IFLYInterstitialAd.onAdClick = onInterstitialAdClick;
+        });
+
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thinLine",
+            hasAngle : true
+        });
+
+        lv.set([{
+            title : "折叠面板与对话气泡",
+            name : "case1",
+            url : "case1.html"
+        }, {
+            title : "多级联动选项卡",
+            name : "case2",
+            url : "case2.html"
+        },{
+            title : "上滑加载下一页",
+            name : "case3",
+            url : "case3.html"
+        },{
+            title : "仿QQ消息列表左滑显示操作项",
+            name : "case4",
+            url : "case4.html"
+        },{
+            title : "讯飞广告插件的使用",
+            name : "case5",
+            url : "case5.html"
+        },{
+            title : "图片翻书效果",
+            name : "case6",
+            url : "case6.html"
+        }])
+
+        lv.on("click", function(ele, data, curEle) {
+            appcan.window.open(data.name, data.url, 10);
+        })
+
+    </script>
+</html>

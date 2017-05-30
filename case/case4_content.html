@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/swiper-3.3.1.min.css">
+        <style>
+            .icon-title {
+                width: 6em;
+                height: 5em;
+            }
+            .menu {
+                min-width: 4em;
+                width: 25%;
+                max-width: 6em;
+                height: auto;
+                background-color: #addd80;
+            }
+        </style>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="swiper-container ubb sc-border-tab">
+            <div class="swiper-wrapper">
+                <div onclick="" class="swiper-slide content">
+                    <div class="menu-button"></div>
+                    <div class="ub ub-f1 ub-ac cms-transition uinn-list sc-bg cms-act" >
+                        <div class="ub ub-img1 icon-title" style="background-image: url(../images/photo2.jpg);"></div>
+                        <div class="ub ub-f1 ub-ver uinn-a04">
+                            <div class="ub ub-f1 ub-ver">
+                                <div class="title ut-s">
+                                    爱情求证
+                                </div>
+                                <div class="intro ut-s2 ulev08 sc-text-tab umar-t04">
+                                    我愿天天做新娘，新郎只有一个他！出嫁前，女人考虑最多的是自己爱不爱他；出嫁后，考虑最多的却是自己是不是被爱。也可这样说，嫁前女人看重的是自己的感情；嫁后看重的则是对方的感情，是安全感。
+                                </div>
+                            </div>
+                            <div class="ub ub-f1 uf umar-t06 sc-text-hint ulev06">
+                                <div class="ub-f1 tx-l">
+                                    情感
+                                </div>
+                                <div class="ub-f1 tx-r">
+                                    <span>2月16日</span><span class="uinn-l08"><span class="fa fa-eye ulev12 umar-r04"></span>23</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide menu ub ub-ac ub-pc cms-act">
+                    <div class="ub ub-fh ub-fv ub-ac ub-pc ub-ver sc-text-active">
+                        <div class="fa fa-heart-o ulev15"></div>
+                        <div class="ulev08">
+                            已收藏
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-container ubb sc-border-tab">
+            <div class="swiper-wrapper">
+                <div onclick="" class="swiper-slide content">
+                    <div class="menu-button"></div>
+                    <div class="ub ub-f1 ub-ac cms-transition uinn-list sc-bg cms-act" >
+                        <div class="ub ub-img1 icon-title" style="background-image: url(../images/photo1.jpg);"></div>
+                        <div class="ub ub-f1 ub-ver uinn-a04">
+                            <div class="ub ub-f1 ub-ver">
+                                <div class="title ut-s">
+                                    志气与欲望
+                                </div>
+                                <div class="intro ut-s2 ulev08 sc-text-tab umar-t04">
+越聪明的人，越容易有欲望，越不知应在哪个地方放下那个心。心实在应该搁在当下的。
+                                </div>
+                            </div>
+                            <div class="ub ub-f1 uf umar-t06 sc-text-hint ulev06">
+                                <div class="ub-f1 tx-l">
+                                    感悟
+                                </div>
+                                <div class="ub-f1 tx-r">
+                                    <span>2月16日</span><span class="uinn-l08"><span class="fa fa-eye ulev12 umar-r04"></span>245</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide menu ub ub-ac ub-pc cms-act">
+                    <div class="ub ub-fh ub-fv ub-ac ub-pc ub-ver bc-text-white">
+                        <div class="fa fa-heart-o ulev15"></div>
+                        <div class="ulev08">
+                            收藏
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/swiper-3.3.1.min.js"></script>
+    <script>
+        appcan.ready(function() {
+            swiper = new Swiper('.swiper-container', {
+                slidesPerView : 'auto',
+                initialSlide : 0,
+                resistanceRatio : .00000000000001,
+                slideToClickedSlide : true,
+                onTap : function(swiper) {
+                    console.log(swiper.clickedIndex)
+                    if (swiper.clickedIndex == 0) {
+                        swiper.slidePrev();
+                    }
+                }
+            })
+        });
+
+    </script>
+</html>

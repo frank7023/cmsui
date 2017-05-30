@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/moa.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <style>
+            .cwz {
+                background-image: url('images/cwz.jpg');
+            }
+            .lg {
+                background-image: url('images/lg.jpg');
+            }
+            .wyl {
+                background-image: url('images/wyl.jpg');
+            }
+            .lgk {
+                background-image: url('images/lgk.jpg');
+            }
+            
+            
+            .top {
+                top: 0;
+            }
+            .bottom {
+                bottom: 0;
+            }
+            #one, #two, #three {
+                position: fixed;
+                overflow: hidden;
+                height: 0;
+                width: 100%;
+                transition: all 0.4s ease-in-out;
+            }
+            .next {
+                position: fixed;
+                bottom: 0;
+                z-index: 100;
+                animation: myfirst 1s linear 0.3s infinite alternate;
+                -webkit-animation: myfirst 1s linear 0.3s infinite alternate;
+            }
+
+            @keyframes myfirst{
+            0%   {bottom:0em;}
+            25%  {bottom:0.2em;}
+            50%  {bottom:0.4em;}
+            75%  {bottom:0.2em;}
+            100% {bottom:0em;}
+            }
+            @-webkit-keyframes myfirst{
+            0%   {bottom:0em;}
+            25%  {bottom:0.2em;}
+            50%  {bottom:0.4em;}
+            75%  {bottom:0.2em;}
+            100% {bottom:0em;}
+            }
+
+        </style>
+    </head>
+    <body class="um-vp bc-bg" style="background-image: url('images/adv-bg.png');" ontouchstart>
+        <div class="ub ub-ver">
+            <div id="one" data-idx="1" class="ub ub-img" style="background-image:url('images/adv1.png');z-index: 1;">
+                <div data-idx="1" class="next uf tx-c">
+                    <img src="images/double-agle.png" style="width: 2em;height:2em;" />
+                </div>
+            </div>
+            <div id="two" data-idx="2" class="ub ub-img uhide" style="background-image:url('images/adv2.png');z-index: 2;">
+                <div data-idx="2" class="next uf tx-c">
+                    <img src="images/double-agle.png" style="width: 2em;height:2em;" />
+                </div>
+            </div>
+            <div id="three" class="cms-accordion sc-bg uhide" style="z-index: 3;"></div>
+
+        </div>
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/cms.js"></script>
+
+    <script>
+        appcan.ready(function() {
+
+        });
+        document.addEventListener('touchmove',function(event){
+            event.preventDefault();
+        },false);
+        var height = window.screen.height;
+        $("#one").css("height", height);
+
+        list();
+
+        $("#one,#two").on("swipeUp",function() {
+            next($(this));
+        });
+        $(".next").tap(function() {
+            next($(this));
+        });
+
+        //下一页
+        function next(obj) {
+            var idx = $(obj).attr("data-idx");
+            if (idx == "1") {
+                $("#one").css("height", "0");
+                $("#two").removeClass("uhide");
+                setTimeout(function() {
+                    $("#one").addClass("uhide");
+                    $("#two").addClass("bottom");
+                    $("#two").css("height", height);
+                }, 400);
+            } else if (idx == "2") {
+                $("#two").addClass("top");
+                $("#two").css("height", "0");
+                $("#three").removeClass("uhide");
+                setTimeout(function() {
+                    $("#two").addClass("uhide");
+                    $("#three").addClass("bottom");
+                    $("#three").css({
+                        "height" : "100%",
+                        "overflow-y" : "scroll"
+                    });
+                }, 400);
+            }
+        }
+
+        //加载智远内参数据
+        function list() {
+            var info = [{
+                icon : "icon_09.png",
+                photo : "cwz",
+                username : "陈文招",
+                certId : "S1090511040011",
+                title : "大类资产配置报告",
+                describe : "陈文招，无知研发中心董事，研究二部研究组负责人",
+                intro : "陈文招，无知研发中心董事，研究二部研究组负责人，长期从事宏观经济、投资策略、资产配置、投资组合等方面的研究工作，曾任无知研发中心首席策略分析师，曾获新财富和水晶球最佳分析师入围奖。执业证书编号S1090511040011。",
+                products : "人生财富的积累主要靠大类资产的配置，无知财富管理大类资产配置报告立足于对各大类资产形势（包括权益、固定收益、外汇、房地产、大宗商品、贵金属、农产品、另类资产等）进行分析和判断，并前瞻性提出投资策略和配置建议，为客户实现财富持续增长提供有价值的帮助。"
+            }, {
+                icon : "icon_05.png",
+                photo : "lg",
+                username : "罗果",
+                certId : "S1090615070002",
+                title : "多空策略组合",
+                describe : "罗果，十二年投研工作经验，先后在长江证券、东方证券和无知从事行研、策略、组合投资等投研工作。2007年度今日投资十佳明星分析师；2009-2010年 FT/StarMine全球最佳分析师亚洲建筑工程和建材行业连续两年第一名。2011年度金融界《行业分析师擂台》第一名,2011年朝阳永续伯乐王冠奖得主。执业证书编号：S1090615070002",
+                intro : "罗果，十二年投研工作经验，先后在长江证券、东方证券和无知从事行研、策略、组合投资等投研工作。2007年度今日投资十佳明星分析师；2009-2010年 FT/StarMine全球最佳分析师亚洲建筑工程和建材行业连续两年第一名。2011年度金融界《行业分析师擂台》第一名,2011年朝阳永续伯乐王冠奖得主。执业证书编号：S1090615070002",
+                products : "采用对冲交易手段，严控回撤风险，追求长期稳定收益，2013年初运行至今，取得惊人的超过3倍收益率！"
+            }, {
+                icon : "icon_03.png",
+                photo : "wyl",
+                username : "王银龙",
+                certId : "S1090615070002",
+                title : "进取组合",
+                describe : "略（王银龙）",
+                intro : "略（王银龙）",
+                products : "有实力才敢进取，短线交易首选。敏锐追随市场主流趋势、捕捉阶段性热点方向，把握行业成长景气、挖掘政策主题机会，行研的明锐和交易的视角完美结合选股择时，力求获得超越市场平均表现的绝对收益。"
+            }, {
+                icon : "icon_14.png",
+                photo : "lgk",
+                username : "卢国昆",
+                certId : "S1090615040005",
+                title : "稳健配置组合",
+                describe : "卢国昆，香港理工大学精算及投资学硕士，6年投资研究经验，现任无知策略及组合分析师。侧重宏观趋势和基本面相结合，擅长自下而上灵活选股，具备深刻的行业理解和前驱判断能力。 执业证书编号：S1090615040005",
+                intro : "卢国昆，香港理工大学精算及投资学硕士，6年投资研究经验，现任无知策略及组合分析师。侧重宏观趋势和基本面相结合，擅长自下而上灵活选股，具备深刻的行业理解和前驱判断能力。 执业证书编号：S1090615040005",
+                products : "侧重基于不同市况（牛、熊、震荡市）采取差异化的行业配置策略，从中长期基本面选股，跟踪经济脉络和政策扶持方向、关注经济结构调整和产业升级中的投资机会，结合当期行情特征和催化剂、增加灵活波段操作，助你演绎稳健增值传奇。"
+            }, {
+                icon : "icon_15.png",
+                photo : "lgk",
+                username : "卢国昆",
+                certId : "S1090615040005",
+                title : "港股通模拟实盘",
+                describe : "卢国昆，香港理工大学精算及投资学硕士，6年投资研究经验，现任无知策略及组合分析师。侧重宏观趋势和基本面相结合，擅长自下而上灵活选股，具备深刻的行业理解和前驱判断能力。 执业证书编号：S1090615040005",
+                intro : "卢国昆，香港理工大学精算及投资学硕士，6年投资研究经验，现任无知策略及组合分析师。侧重宏观趋势和基本面相结合，擅长自下而上灵活选股，具备深刻的行业理解和前驱判断能力。 执业证书编号：S1090615040005",
+                products : "本账户以两地交易所公布的“港股通”标的范围内，选择出具有获取绝对收益机会的股票构建组合，为参与“港股通”的投资者提供决策参考。侧重宏观趋势和基本面相结合，跟踪经济脉络和政策扶植方向，关注经济调结构和产业升级中的投资机会，挖掘具备核心投资价值的公司，结合当期行情特征和政策催化灵活选股，助您演绎财富增值传奇。"
+            }];
+
+            var html = '';
+            for (var i = 0; i < info.length; i++) {
+                html += ' <dl> ';
+                html += '    <dd> ';
+                html += '        <div class="ub ub-ac ub-pc sc-bg "> ';
+                html += '            <div class="ub-f1 ut-s"> ';
+                html += '                <ul class="uf"> ';
+                html += '                    <li class="ub ub-ac bc-text uinn-list"> ';
+                html += '                        <div class="ub ub-f1 ub-ac"> ';
+                html += '                            <div class="cms-icon-bg-square ub ub-img1" style="background-image: url(images/' + info[i].icon + ')"></div> ';
+                html += '                            <div class="ub ub-ver ub-f1 umar-l12"> ';
+                html += '                                <div class="ub-f1 ut-s ">' + info[i].title + '</div> ';
+                html += '                                <div class="ub-f1 ut-s ulev08 sc-text umar-t04">' + info[i].describe + '</div> ';
+                html += '                            </div> ';
+                html += '                        </div> ';
+                html += '                    </li> ';
+                html += '                </ul> ';
+                html += '            </div> ';
+                html += '            <div class="ub fmoa fmoa-angle-down ulev1 sc-text-hint"></div> ';
+                html += '        </div> ';
+                html += '        <div> ';
+                html += '            <div class="uinn-a06 bc-text ulev08 bc-bg line-h18"> ';
+                html += '                <ul class="uf sc-bg"> ';
+                html += '                    <li class="ub ub-ac bc-text uinn-list"> ';
+                html += '                        <div class="ub ub-f1 ub-ac"> ';
+                html += '                            <div class="cms-icon-bg-mini ub ub-img1 ' + info[i].photo + '"></div> ';
+                html += '                            <div class="ub ub-ver ub-f1 umar-l12"> ';
+                html += '                                <div class="ub-f1 ut-s ">产品维护人：' + info[i].username + '</div> ';
+                html += '                                <div class="ub-f1 ut-s umar-t04">执业证书编号：' + info[i].certId + '</div> ';
+                html += '                            </div> ';
+                html += '                        </div> ';
+                html += '                    </li> ';
+                html += '                </ul> ';
+                html += '                <div class="text-i umar-t04">' + info[i].intro + '</div> ';
+                html += '                <div class="text-i umar-t04">' + info[i].products + '</div> ';
+                html += '            </div> ';
+                html += '        </div> ';
+                html += '    </dd> ';
+                html += '</dl> ';
+            }
+            $("#three").html(html);
+            cms.accordion("three");
+        }
+
+    </script>
+</html>

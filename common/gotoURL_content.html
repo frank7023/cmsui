@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+    </head>
+    <body class="um-vp bc-bg">
+        
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/cms.js"></script>
+    <script>
+        appcan.ready(function() {
+            //打开的地址
+            var url = appcan.trim(cms.getLocVal("url"));
+            cms.toast("加载中，请稍后...");
+            if(cms.isDefine(url)){
+                 window.location.href=url;
+            }
+        });
+    </script>
+</html>

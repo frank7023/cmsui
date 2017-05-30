@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="listview"  class="ubt bc-border sc-bg"></div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/appcan.listview.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        });
+
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thinLine",
+            hasAngle : true
+        });
+
+        lv.set([{
+            title : "按钮(button)",
+            itemName :'button',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "单选框(radio)",
+            itemName :'radio',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "复选框(checkbox)",
+            itemName :'checkbox',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "开关按钮(switch)",
+            itemName :'switch',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "下拉选择框(select)",
+            itemName :'select',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "文本输入(input,texarea)",
+            itemName :'input',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "搜索框(search)",
+            itemName :'search',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "列表(list)",
+            itemName :'list',
+            name : "control",
+            url : "uicontrol.html"
+        },{
+            title : "折叠面板(accordion)",
+            itemName :'accordion',
+            name : "control",
+            url : "uicontrol.html"
+        },{
+            title : "底部弹出窗(popup)",
+            itemName :'popup',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "选项卡(tabbar)",
+            itemName :'tabbar',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "导航栏(nav)",
+            itemName :'nav',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "轮播图片",
+            itemName :'scroll_img',
+            name : "control",
+            url : "uicontrol.html"
+        }, {
+            title : "对话气泡",
+            itemName :'bubble',
+            name : "control",
+            url : "uicontrol.html"
+        }])
+
+        lv.on("click", function(ele, data, curEle) {
+            appcan.locStorage.setVal("itemName", data.itemName);
+            appcan.window.open(data.name, data.url, 10);
+        })
+
+    </script>
+</html>

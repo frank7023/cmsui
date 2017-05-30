@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<widget appId="11562363" channelCode="0000" height="480" pid="" sreensize="4.5" version="01.00.0000" viewmode="application" widgetId="" width="320">
+	
+	<name>appcan开发指南</name>
+	<description/>
+	<author email=""> </author>
+	<icon src="icon.png"/>
+	<license href=""/>
+	<content encoding="utf-8" src="index.html"/>
+	<updateurl/>
+	<logserverip>192.168.1.110</logserverip> 
+	<showmyspace>false</showmyspace>
+	<obfuscation>true</obfuscation>
+	<bgcolor>#fefefe</bgcolor>
+	<orientation>15</orientation>
+<debug/>
+<partobfuscation/>
+<webapp/>
+    <config desc="uexWeiXin" type="URLSCHEME">
+        <urlScheme name="uexWeiXin" schemes="['wxd46f5ea2f6db81ea']"/>
+    </config>
+    
+    <config desc="uexQQ" type="URLSCHEME">
+        <urlScheme name="uexQQ" schemes="['QQ41E4B557','tencent1105507671']"/>
+    </config>
+    
+    <config desc="uexQQ" type="KEY">
+        <param name="$UEXQQ_APPID$" platform="Android" value="tencent1105507671"/>
+    </config>
+
+    <config desc="whiteList" type="AUTHORITY">
+        <permission info="urlSchemeWhiteList" platform="iOS">
+            <string>wechat</string>
+            <string>weixin</string>
+            <string>mqzoneopensdk</string> 
+            <string>mqzoneopensdkapi</string>
+            <string>mqzoneopensdkapi19</string>
+            <string>mqzoneopensdkapiV2</string>
+            <string>mqqOpensdkSSoLogin</string>
+            <string>mqqopensdkapiV2</string>
+            <string>mqqopensdkapiV3</string>
+            <string>wtloginmqq2</string>
+            <string>mqqapi</string>
+            <string>mqqwpa</string>
+            <string>mqzone</string>
+            <string>mqq</string>
+        </permission>
+    </config>
+
+</widget>

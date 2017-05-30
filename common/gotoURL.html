@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+    </head>
+    <body class="um-vp bc-bg">
+
+        <div class="up ub ub-ver" tabindex="0">
+            <!--header开始-->
+            <div class="ub ub-ver">
+                <div id="header" class="ub uh bc-text-head bc-head">
+                    <div class="ub ub-ac uinn-rl06 umw2 cms-act" id="nav-left">
+                        <span class="fa fa-angle-left fa-2x"> </span>
+                    </div>
+                    <h1 id="title" class="ut ub-f1 ulev-nav ut-s tx-c" tabindex="0">appcan、html5 ui</h1>
+                    <div data-flag="0" class="ub ub-ac ub-pe uinn-rl06 umw2 cms-act" id="nav-right"></div>
+                </div>
+
+            </div>
+            <!--header结束-->
+
+            <!--content开始-->
+            <div id="content" class="ub-f1 tx-l"></div>
+            <!--content结束-->
+        </div>
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/cms.js"></script>
+    <script>
+        appcan.ready(function() {
+            var title = cms.getLocVal("title");
+            if (cms.isDefine(title)) {
+                $("#title").html(title);
+            }
+            
+            var titHeight = $('#header').offset().height;
+            appcan.frame.open("content", "gotoURL_content.html", 0, titHeight);
+            window.onorientationchange = window.onresize = function() {
+                appcan.frame.resize("content", 0, titHeight);
+            }
+        });
+
+        appcan.button("#nav-left", "cms-act", function() {
+            cms.removeLocVal(['openType', 'commonTitle', 'commonURL', "shareIntro"]);
+            appcan.window.close(-1);
+        });
+
+    </script>
+</html>

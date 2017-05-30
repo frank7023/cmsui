@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+    </head>
+    <body class="um-vp bc-bg">
+        <div class="up ub ub-ver" tabindex="0">
+            <!--header开始-->
+            <div id="header" class="ub uh bc-text-head bc-head">
+                <div id="nav-left" class="ub ub-ac uinn-rl06 umw3">
+                    <span class="fa fa-angle-left fa-2x"></span>
+                </div>
+                <h1 class="ut ub-f1 ulev-nav ut-s tx-c" tabindex="0">UI基础样式</h1>
+                <div id="nav-right" class="ub ub-ac uinn-rl06 umw3"></div>
+            </div>
+            <!--header结束--><!--content开始-->
+            <div id="content" class="ub-f1 tx-l">
+
+            </div>
+            <!--content结束-->
+        </div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            var titHeight = $('#header').offset().height;
+            appcan.frame.open("content", "base_content.html", 0, titHeight);
+            window.onorientationchange = window.onresize = function() {
+                appcan.frame.resize("content", 0, titHeight);
+            }
+        });   
+        appcan.button("#nav-left", "btn-act", function() {
+            appcan.locStorage.remove('itemName');
+            appcan.window.close(-1);
+        })                
+    </script>
+</html>

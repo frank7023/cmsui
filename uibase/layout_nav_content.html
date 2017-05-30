@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="listview"  class="ubt bc-border sc-bg"></div>
+
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/appcan.listview.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            //设置滚动条不显示
+            uexWindow.setWindowScrollbarVisible(false);
+        });
+
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thinLine",
+            hasAngle : true
+        });
+        
+        lv.set([{
+                title : '弹性盒子布局概述',
+                itemName : 'intro',
+                name : "control",
+                url : "layout.html"
+            },{
+                title : '元素占比分配',
+                itemName : 'flex',
+                name : "control",
+                url : "layout.html"
+            }, {
+                title : '垂直方向的位置排列',
+                itemName : 'vertical',
+                name : "control",
+                url : "layout.html"
+            }, {
+                title : '水平方向的位置排列',
+                itemName : 'level',
+                name : "control",
+                url : "layout.html"
+            }, {
+                title : '子元素垂直排列',
+                itemName : 'ver',
+                name : "control",
+                url : "layout.html"
+            }, {
+                title : '子元素反向排列',
+                itemName : 'rev',
+                name : "control",
+                url : "layout.html"
+            }, {
+                title : '元素固定比例的分配',
+                itemName : 'con',
+                name : "control",
+                url : "layout.html"
+            }, {
+                title : '背景图片的使用',
+                itemName : 'img',
+                name : "control",
+                url : "layout.html"
+            }, {
+                title : '实例：头部标题栏布局',
+                itemName : 'layout_nav',
+                name : "control",
+                url : "layout.html"
+            }, {
+                title : '实例：底部导航栏布局',
+                itemName : 'layout_footer',
+                name : "control",
+                url : "layout.html"
+            }, {
+                title : '实例：九宫格布局',
+                itemName : 'gride',
+                name : "control",
+                url : "layout.html"
+            }])
+        
+        lv.on("click", function(ele, data, curEle) {
+              if (data.name && data.url) {
+                appcan.locStorage.setVal("itemName", data.itemName);
+                appcan.window.open(data.name, data.url, 10);
+            }
+        })
+
+    </script>
+</html>

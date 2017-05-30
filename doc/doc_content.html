@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <style>
+            a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="info" class="ub ub-ver sc-bg uinn-a04"></div>
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/cms.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            var isOpenUrl = appcan.locStorage.getVal("isOpenUrl");
+            var itemName = appcan.locStorage.getVal('itemName');
+            var href = JSON.parse(appcan.locStorage.getVal('href'));
+            gotoAnchor(isOpenUrl, itemName, href);
+        })
+        function gotoAnchor(isOpenUrl, itemName, href) {
+            if (isOpenUrl == "true") {
+                appcan.window.openToast("请稍后...", 3000, 5, 1);
+                for (key in href) {
+                    location.href = href[key];
+                    return false;
+                }
+            } else {
+                var html = '';
+                html += '<div class="ub-f1 text-i line-h18">';
+                if (itemName == 'zepto') {
+                    //zeptojs开发文档
+                    html += '<p>appcan使用的是zeptojs，主要用于对dom的操作。</p>';
+                    html += '<p>Zepto是一个轻量级的针对现代高级浏览器的JavaScript库， 它与jquery有着类似的api。 如果你会用jquery，那么你也会用zepto。</p>';
+                    html += '<p>Zepto的设计目的是提供 jQuery 的类似的API，但并不是100%覆盖 jQuery 。Zepto设计的目的是有一个5-10k的通用库、下载并快速执行、有一个熟悉通用的API，所以你能把你主要的精力放到应用开发上。</p>'
+                } else if (itemName == 'box') {
+                    //弹性盒子模型
+                    html += '<p>appcan使用的是弹性盒布局模型（Flexible Box Layout）布局。</p>';
+                    html += '<p>Web 应用的样式设计中，布局是非常重要的一部分。布局用来确定页面上不同组件和元素的尺寸和位置。随着响应式用户界面的流行，Web 应用一般都要求适配不同的设备尺寸和浏览器分辨率。响应式用户界面设计中最重要的一环就是布局。需要根据窗口尺寸来调整布局，从而改变组件的尺寸和位置，以达到最佳的显示效果。这也使得布局的逻辑变得更加复杂。</p>';
+                    html += '<p>本文介绍的是 CSS3 规范中引入的新布局模型：弹性盒模型（flex box）。弹性盒模型可以用简单的方式满足很多常见的复杂的布局需求。它的优势在于开发人员只是声明布局应该具有的行为，而不需要给出具体的实现方式。浏览器会负责完成实际的布局。该布局模型在主流浏览器中都得到了支持。</p>';
+                } else if (itemName == 'loc_storage') {
+                    //HTML5 Web 存储
+                    html += '<p>很多时候我们打开一个页面需要使用到之前页面的数据，而数据又不能直接传入下一个页面，这时我们就会用到WEB 存储</p>';
+                    html += '<p>早些时候,本地存储使用的是cookies。但是Web 存储需要更加的安全与快速。这些数据不会被保存在服务器上，但是这些数据只用于用户请求网站数据上。它也可以存储大量的数据，而不影响网站的性能。数据以 键/值 对存在, web网页的数据只允许该网页访问使用。<p>';
+                } else if (itemName == 'dom') {
+                    //理解DOM对象
+                    html += '<p>DOM实际上是以面向对象方式描述的对象模型，它将文档建模为一个个对象，以树状的结构组织（本文称之为“文档树”，树中的对象称为“节点”）。</p>';
+                    html += '<p>每个文档包含1个document节点，0个或1个doctype节点以及0个或多个元素节点等。document节点是文档树的根节点。</p>';
+                    html += '<p>如对于HTML文档，DOM 是这样规定的：</p>';
+                    html += '<p>整个文档是一个文档节点</p>';
+                    html += '<p>每个 HTML 标签是一个元素节点</p>';
+                    html += '<p>包含在 HTML 元素中的文本是文本节点</p>';
+                    html += '<p>每一个 HTML 属性是一个属性节点</p>';
+                    html += '<p>注释属于注释节点</p>';
+                    html += '<p>节点与文档内容是一一对应的关系，节点之间有层次关系。</p>';
+                } else if (itemName == 'mvvm') {
+                    //mvvm框架
+                    html += "vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，它不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和 Vue 生态系统支持的库结合使用时，Vue 也完全能够为复杂的单页应用程序提供驱动";
+                    
+                } else if (itemName == 'fast_click') {
+                    //解决移动端 click事件 300毫秒延迟
+                    html += '<h3>为什么存在延迟？</h3>';
+                    html += '<p>从点击屏幕上的元素到触发元素的 click 事件，移动浏览器会有大约 300 毫秒的等待时间。为什么这么设计呢？ 因为它想看看你是不是要进行双击（double tap）操作。</p>';
+                    html += '<h3>不应用 FastClick 的场景。</h3>';
+                    html += '<p>1、桌面浏览器；</p>';
+                    html += '<p>2、如果 viewport meta 标签 中设置了 width=device-width， Android 上的 Chrome 32+ 会禁用 300ms 延时；</p>';
+                    html += '<p>3、viewport meta 标签如果设置了 user-scalable=no，Android 上的 Chrome（所有版本）都会禁用 300ms 延迟。</p>';
+                    html += '<p>4、IE10 中，可以使用 css 属性 -ms-touch-action: none 禁止元素双击缩放（参考文章）。</p>';
+                    html += '<h3>注意：</h3>';
+                    html += '<p>2、3两条在IOS移动端不起作用，还是需要使用FastClick。</p>';
+                } else if (itemName == 'fontawesome') {
+                    //图标字体
+                    html += '<p>appcan使用的是Font Awesome图标库</p>';
+                    html += '<p>Font Awesome提供可缩放的矢量图标，可以使用CSS所提供的所有特性对它们进行更改，包括：大小、颜色、阴影或者其它任何支持的效果。</p>';
+                } else if (itemName == 'grunt') {
+                    html += '<h3>Grunt是什么?</h3>';
+                    html += '<p>Grunt是一个基于JavaScript上的一个很强大的任务管理器(task runner)，或许这么一说让很多人觉得费解，简单来说就是你可以在你的终端机上，用JavaScript去执行一些程序来完成一些任务。比如说验证HTML、CSS、JavaScript的语法，压缩CSS、JavaScript、图像，Sass、LESS和Stylus编译成CSS等等，这些东西很适合用Grunt来解决。</p>';
+                    html += '<p>Grunt其实就是一个基于NodeJS,可用于自动化构建、测试、生成文档的项目管理工具。他可以更好的帮助一个团队更好的提高效率、减少错误率。</p>';
+                    html += '<p>简单点来说，Grunt不仅仅是构建工具，实际上他只是任务运行器，管理每个子任务的自动化运行，我们还能使用他做更多东西。</p>';
+                    html += '<h3>为什么要用Grunt?</h3>';
+                    html += '<p>其实用一句话可以概括出来：为了自动化。对于前端项目，为了明确模块分工，我们可以会将JavaScript、CSS代码拆解成很多个模块，他们都有独立的一个个文件，但这样一来用来页面上，增加了文件个数，同时也产生过多的Http请求，可从性能的角度来考虑，不利于页面优化。所以我们需要合并这些JavaScript和CSS文件。这样一来，也期望有一种工具能代替我们手工操作，去完成这些任务。</p>';
+                } else if (itemName == 'key_point') {
+                    //手机/移动前端开发需要注意的20个要点
+                    html += '<h3>手机/移动前端开发需要注意的20个要点</h3>';
+                    html += '<p>1、webkit内核中的一些私有的meta标签，这些meta标签在开发webapp时起到非常重要的作用</p>';
+                    html += '<p>2、HTML5标签的使用</p>';
+                    html += '<p>3、放弃CSS float属性</p>';
+                    html += '<p>4、利用CSS3边框背景属性</p>';
+                    html += '<p>5、块级化a标签</p>';
+                    html += '<p>6、自适应布局模式</p>';
+                    html += '<p>7、学会使用webkit-box</p>';
+                    html += '<p>8、如何去除Android平台中对邮箱地址的识别</p>';
+                    html += '<p>9、如何去除iOS和Android中的输入URL的控件条</p>';
+                    html += '<p>10、如何禁止用户旋转设备</p>';
+                    html += '<p>11、如何检测用户是通过主屏启动你的webapp</p>';
+                    html += '<p>12、如何关闭iOS中键盘自动大写</p>';
+                    html += '<p>13、iOS中如何彻底禁止用户在新窗口打开页面</p>';
+                    html += '<p>14、iOS中如何禁止用户保存图片＼复制图片</p>';
+                    html += '<p>15、iOS中如何禁止用户选中文字</p>';
+                    html += '<p>16、iOS中如何获取滚动条的值</p>';
+                    html += '<p>17、如何解决盒子边框溢出</p>';
+                    html += '<p>18、如何解决Android 2.0以下平台中圆角的问题</p>';
+                    html += '<p>19、如何解决android平台中页面无法自适应</p>';
+                    html += '<p>20、如何解决iOS 4.3版本中safari对页面中5位数字的自动识别和自动添加样式</p>';
+                } else if (itemName == 'echarts') {
+                    //ECharts 图表统计库
+                    html += 'ECharts，一个纯 Javascript 的图表库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的 Canvas 类库 ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。';
+                }
+                html += '</div>';
+                html += '<div class="ub  text-i">查看详细内容请点击下面按钮，复制链接请长按按钮。</div>';
+                html += '<div class="ub ub-pe umar-t04">';
+                for (key in href) {
+                    html += '   <a class="cms-btn" href="' + href[key] + '">' + key + '</a>';
+                }
+                html += '</div>';
+
+                $("#info").append(html);
+                copyURL();
+            }
+        }
+
+        //复制连接地址到剪贴板
+        function copyURL() {
+            $(".cms-btn").longTap(function() {
+                var url = $(this).attr("href");
+                uexClipboard.copy(url);
+                cms.toast("复制成功", 1000);
+            });
+        }
+
+    </script>
+</html>

@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/fonts/moa.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="../css/solarized_light.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <!--文本大小开始-->
+        <div id="ulev" class="ub ub-ver uinn-a04">
+            <h3 >文本大小</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    ulev[类别]、ulev-nav(只用于窗口导航栏)
+                </p>
+                <p>
+                    类别为数字编号，如字体大小为1.2em、1.0em、0.8125em的为ulev12、ulev1、ulev08。在对应的场景使用对应的字体，达到统一的效果。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver '>
+                    <div class='ulev2'>
+                        【ulev2】九宫格导航字体图标大小，如 <span class="fmoa ulev2 sc-text">&#xE6D5;</span>
+                    </div>
+                    <div class='ulev18'>
+                        【ulev18】九宫格导航字体图标大小，如果ulev4过大则用ulev3，如 <span class="fmoa ulev18 sc-text">&#xE6D5;</span>
+                    </div>
+                    <div class='ulev15'>
+                        【ulev15】文中字体图标，列表图标大小，如 <span class="fmoa ulev15 sc-text">&#xE6E4;</span>
+                    </div>
+                    <div class='ulev12'>
+                        【ulev12】正文中文字标题，着重提示
+                    </div>
+                    <div class='ulev1'>
+                        【ulev1】正文文本、表单输入框、列表类正文
+                    </div>
+                    <div class='ulev08'>
+                        【ulev08】带图片的导航标题、头部文本按钮、底部标注
+                    </div>
+                    <div class='ulev06'>
+                        【ulev06】数字标记
+                    </div>
+                    <div class='ulev-nav'>
+                        【ulev-nav】主窗口头部导航标题，需配合h1标签使用,如：<h1 class="ulev-nav">APPCAN、HTML5 UI</h1>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class='ulev2'&gt;
+    【ulev2】九宫格导航字体图标大小，如 &lt;span class="fmoa ulev2 sc-text"&gt;&amp;#xE6D5;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class='ulev18'&gt;
+    【ulev18】九宫格导航字体图标大小，如果ulev4过大则用ulev3，如 &lt;span class="fmoa ulev18 sc-text"&gt;&amp;#xE6D5;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class='ulev15'&gt;
+    【ulev15】文中字体图标，列表图标大小，如 &lt;span class="fmoa ulev15 sc-text"&gt;&amp;#xE6E4;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class='ulev12'&gt;
+    【ulev12】正文中文字标题，着重提示
+&lt;/div&gt;
+&lt;div class='ulev1'&gt;
+    【ulev1】正文文本、表单输入框、列表类正文
+&lt;/div&gt;
+&lt;div class='ulev08'&gt;
+    【ulev08】带图片的导航标题、头部文本按钮、底部标注
+&lt;/div&gt;
+&lt;div class='ulev06'&gt;
+    【ulev06】数字标记
+&lt;/div&gt;
+&lt;div class='ulev-nav'&gt;
+    【ulev-nav】主窗口头部导航标题，需配合h1标签使用,如：&lt;h1 class="ulev-nav"&gt;APPCAN、HTML5 UI&lt;/h1&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--文本大小结束-->
+
+        <!--文本对齐方式开始-->
+        <div id="align" class="ub ub-ver uinn-a04">
+            <h3 >文本对齐方式</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    tx-[类型]。
+                </p>
+                <p>
+                    类型为l代表LETT(默认),r代表RIGHT,c代表CENTER用于定义文字的对齐方向。
+                </p>
+                <p>
+                    注意：使用用tx-[类型],需要给内容分配空间，如分配一个空间 ub-f1
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver'>
+                    <div class="ub ubt uba sc-border-tab uinn-a04">
+                        <div class="ub-f1 tx-l">
+                            左对齐
+                        </div>
+                    </div>
+                    <div class="ub uba sc-border-tab umar-t04 uinn-a04">
+                        <div class="ub-f1 tx-c">
+                            居中对齐
+                        </div>
+                    </div>
+                    <div class="ub uba sc-border-tab umar-t04 uinn-a04">
+                        <div class="ub-f1 tx-r">
+                            右对齐
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+ &lt;div class="ub-f1 tx-l"&gt;左对齐&lt;/div&gt;
+ &lt;div class="ub-f1 tx-c"&gt;居中对齐&lt;/div&gt;
+ &lt;div class="ub-f1 tx-r"&gt;右对齐&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--文本对齐方式开始-->
+
+        <!--文本超出部分隐藏开始-->
+        <div id="ut-s" class="ub ub-ver uinn-a04">
+            <h3>文本超出部分隐藏</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                在一些场景中不便于换行，文字会超出容器，如下拉列表和菜单列表，使用ut-s可使一行文字超过容器指定宽度时隐藏文字，去掉ub样式则会以'...'号表示。使用ut-s2可显示二行文字超过容器指定宽度时隐藏文字，并以“...”表示。
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub ubt uba sc-border-tab uinn-a04">
+                    <div class="ub ub-f1">
+                        没有控制隐藏显示。在一些场景中不便于换行，文字会超出容器。
+                    </div>
+                </div>
+                <div class="ub uba sc-border-tab umar-t04 uinn-a04">
+                    <div class="ub ub-f1 ut-s">
+                        控制超出div宽度截断文字。在一些场景中不便于换行，文字会超出容器。
+                    </div>
+                </div>
+                <div class="ub uba sc-border-tab umar-t04 uinn-a04">
+                    <div class="ub-f1 ut-s">
+                        控制超出div宽度截断文字，并用"..."号提示。在一些场景中不便于换行，文字会超出容器。
+                    </div>
+                </div>
+                <div class="ub uba sc-border-tab umar-t04 uinn-a04">
+                    <div class="ub-f1 ut-s2">
+                        某些场景需要显示两行，超出两行用“...”表示。某些场景需要显示两行，超出两行用“...”表示。某些场景需要显示两行，超出两行用“...”表示。
+                    </div>
+                </div>
+
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class="ub ub-f1"&gt;没有控制隐藏显示。在一些场景中不便于换行，文字会超出容器。&lt;/div&gt;
+&lt;div class="ub ub-f1 ut-s"&gt;控制超出div宽度截断文字。在一些场景中不便于换行，文字会超出容器。&lt;/div&gt;
+&lt;div class="ub-f1 ut-s"&gt;控制超出div宽度截断文字，并用“...”号提示。在一些场景中不便于换行，文字会超出容器。&lt;/div&gt;
+&lt;div class="ub-f1 ut-s2"&gt;某些场景需要显示两行，超出两行用“...”表示。某些场景需要显示两行，超出两行用“...”表示。某些场景需要显示两行，超出两行用“...”表示。&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--文本超出部分隐藏结束-->
+
+        <!--文本颜色类型开始-->
+        <div id="font_color" class="ub ub-ver uinn-a04">
+            <h3>文本颜色类型</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                为了达到更统一整齐的效果，不同的场景使用不同的颜色。主体颜色为bc-[类型]，类型为颜色类型，如黑色为bc-text。
+                辅助颜色为sc-[类型]，如色值为#848484的灰色sc-text。下面将列出各种颜色的样式及使用场景。
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver'>
+                    <div class="ub ub-f1">
+                        <span class="bc-text">主要文本字体颜色(黑色)</span>
+                    </div>
+                    <div class="ub ub-f1 umar-t04">
+                        <span class="sc-text">主要文本辅助字体颜色(灰色)</span>
+                    </div>
+                    <div class="ub ub-f1 umar-t04">
+                        <span class="sc-text-hint">注解提示类字体颜色(灰度更深)</span>
+                    </div>
+                    <div class="ub ub-f1 sc-head umar-t04 bc-btn">
+                        <span class="bc-text-head">带深色背景的字体颜色(白色字体)</span>
+                    </div>
+                    <div class="ub ub-f1 umar-t04">
+                        <span class="sc-text-warn">警告，着重标识字体颜色</span>
+                    </div>
+                    <div class="ub ub-f1 umar-t04">
+                        <span class="sc-text-active">选中文字或是着重标出字体颜色，与app主体红色一致，如底部菜单文字</span>
+                    </div>
+                    <div class="ub ub-f1 umar-t04">
+                        <span class="sc-text-golden">金色字体颜色，如拨打电话按钮字体颜色</span>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;span class="bc-text"&gt;普通字体颜色(黑色)&lt;/span&gt;
+&lt;span class="sc-text"&gt;辅助性字体颜色(灰色)&lt;/span&gt;
+&lt;span class="sc-text-hint"&gt;注解提示类字体颜色(灰度更深)&lt;/span&gt;
+&lt;span class="bc-text-head"&gt;带深色背景的字体颜色(白色字体)&lt;/span&gt;
+&lt;span class="sc-text-warn"&gt;警告，着重标识字体颜色&lt;/span&gt;
+&lt;span class="sc-text-active"&gt;选中文字或是着重标出字体颜色，与app主体红色一致，如底部菜单文字&lt;/span&gt;
+&lt;span class="sc-text-golden"&gt;金色字体颜色，如拨打电话按钮字体颜色&lt;/span&gt;  
+                            </code> 
+                       </pre>
+                </div>
+            </div>
+        </div>
+        <!--文本颜色类型结束-->
+
+        <!--内边距开始-->
+        <div id="uinn" class="ub ub-ver uinn-a04">
+            <h3>内边距</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>uinn-t[类别];</p>
+                <p>uinn-b[类别];</p>
+                <p>uinn-r[类别];</p>
+                <p>uinn-l[类别];</p>
+                <p>uinn-tb[类别];</p>
+                <p>uinn-rl[类别];</p>
+                <p>uinn-a[类别];</p>
+                <p>uinn-list(注：特殊，用于列表);</p>
+                <p>t、b、r、l、a分别表示top（上）、bottom（下、 right（右）、 left（左）、 all（所有边）。类别为数字编号。</p>
+                <p>所有内边距的值梯度为0.2em、0.4em（默认值）、0.6em、1.2em</p>
+                <p>
+                    如：uinn-a04表示上下左右四个边内边距为0.4em，uinn-tb02表示上下内边距为0.2em,uinn-rl04表示右左边距为0.4em。内边距用于定义不同内边距的大小，主要应用在表单控件、表格、列表等控件。
+                </p>
+                <p>
+                                            参考文件cms-ui-base.css。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub ub-ver" >
+                    <div class="ub uba sc-border-tab">
+                        <div class="">
+                            不使用内边距样式
+                        </div>
+                    </div>
+                    <div class="ub uba sc-border-tab umar-t04">
+                        <div class="uinn-a04">
+                            使用内边距样式（uinn-a04）
+                        </div>
+                    </div>
+                    <div class="ub uba sc-border-tab umar-t04">
+                        <div class="uinn-a02">
+                            使用内边距样式（uinn-a02）
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class=""&gt;不使用内边距样式&lt;/div&gt;
+&lt;div class="uinn-a04"&gt;使用内边距样式（uinn-a04）&lt;/div&gt;
+&lt;div class="uinn-a04"&gt;使用内边距样式（uinn-a02）&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--内边距结束-->
+
+        <!--外边距开始-->
+        <div id="umar" class="ub ub-ver uinn-a04">
+            <h3>外边距</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>umar-t[类别];</p>
+                <p>umar-b[类别];</p>
+                <p>umar-r[类别];</p>
+                <p>umar-l[类别];</p>
+                <p>umar-a[类别];</p>
+                <p>t、b、r、l、a分别表示top（上）、bottom（下、 right（右）、 left（左）、 all（所有边）。类别为数字编号。</p>
+                <p>所有外边距的值梯度为0.2em、0.4em（默认值）、0.6em、1.2em</p>
+                <p>
+                    如：umar-a04表示上下左右四个边内边距为0.4em，主要应用在模块DIV与DIV之间的间距。
+                </p>
+                <p>
+                                            参考文件cms-ui-base.css。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub ub-ac ub-pc ub-ver" >
+                    <div class="ub">
+                        <div class="uba sc-border-tab uinn-a04">
+                            不使用外边距
+                        </div>
+                        <div class="uba sc-border-tab uinn-a04">
+                            不使用外边距
+                        </div>
+                    </div>
+                    <div class="ub umar-t04">
+                        <div class="uba sc-border-tab umar-t04 uinn-a04">
+                            使用上外边距
+                        </div>
+                        <div class="uba sc-border-tab umar-l04 uinn-a04">
+                            使用左外边距
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class="uba sc-border-tab umar-t04"&gt;使用上外边距&lt;/div&gt;
+&lt;div class="uba sc-border-tab umar-l04"&gt;使用左外边距&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--外边距结束-->
+
+        <!--边框开始-->
+        <div id="uba" class="ub ub-ver uinn-a04">
+            <h3>边框</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    ub[类型]。
+                </p>
+                <p>
+                    类型为t、b、l、r、a分别代表上、下、左、右、全边框。默认的边框大小为1px，使用中一般与边框颜色搭配使用。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 sc-bg uba bc-border uc-a03">
+                <div class="ub ub-ac ub-pc ub-ver" >
+                    <div class="ubt bc-border uinn-a04">
+                        上边框
+                    </div>
+                    <div class="ubb bc-border uinn-a04 umar-t04">
+                        下边框
+                    </div>
+                    <div class="ubl bc-border uinn-a04 umar-t04">
+                        左边框
+                    </div>
+                    <div class="ubr bc-border uinn-a04 umar-t04">
+                        右边框
+                    </div>
+                    <div class="uba bc-border uinn-a04 umar-t04">
+                        全边框
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class="ubt bc-border"&gt;上边框&lt;/div&gt;
+&lt;div class="ubb bc-border"&gt;下边框&lt;/div&gt;
+&lt;div class="ubl bc-border"&gt;左边框&lt;/div&gt;
+&lt;div class="ubr bc-border"&gt;右边框&lt;/div&gt;
+&lt;div class="uba bc-border"&gt;全边框&lt;/div&gt; 
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--边框结束-->
+
+        <!--边框颜色开始-->
+        <div id="border_color" class="ub ub-ver uinn-a04">
+            <h3>边框颜色</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    bc-border，默认灰色边框颜色。
+                </p>
+                <p>
+                    sc-border，白色边框颜色。
+                </p>
+                <p>
+                    sc-border-tab，灰色辅助边框颜色。
+                </p>
+                <p>
+                    sc-border-red，主色调边框颜色。
+                </p>
+                <p>
+                    sc-border-golden，金黄色边框颜色。
+                </p>
+                <p>
+                    其余边框颜色需要根据实际情况自行定义。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 sc-bg uba bc-border uc-a03">
+                <div class="ub ub-ac ub-pc ub-ver" >
+                    <div class="uba bc-border uinn-a04">
+                        默认灰色边框颜色。 (#BABABA)
+                    </div>
+                    <div class="uba sc-border uinn-a04 umar-t04">
+                        白色边框颜色(#FFFFFF)
+                    </div>
+                    <div class="uba sc-border-tab uinn-a04 umar-t04">
+                        灰色辅助边框颜色(#DBDBDB)
+                    </div>
+                    <div class="uba sc-border-red uinn-a04 umar-t04">
+                        主色调边框颜色(#E03D3E)
+                    </div>
+                    <div class="uba sc-border-golden uinn-a04 umar-t04">
+                        金黄色边框颜色(#fcc954)
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class="uba bc-border"&gt;默认灰色边框颜色。 (#BABABA)&lt;/div&gt;
+&lt;div class="uba sc-border"&gt;白色边框颜色(#FFFFFF)&lt;/div&gt;
+&lt;div class="uba sc-border-tab"&gt;灰色辅助边框颜色(#DBDBDB) &lt;/div&gt;
+&lt;div class="uba sc-border-red"&gt;主色调边框颜色(#E03D3E)&lt;/div&gt;
+&lt;div class="uba sc-border-golden"&gt;金黄色边框颜色(#fcc954)&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--边框颜色结束-->
+
+        <!--背景颜色开始-->
+        <div id="bg_color" class="ub ub-ver uinn-a04">
+            <h3>背景颜色</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    bc-bg，默认灰色背景，色值#EEEEEE。使用用于body背景色，灰色模块与组件。
+                </p>
+                <p>
+                    sc-bg-active，灰色控件背景颜色，色值为#DFDFDF。辅助默认灰色背景色，一般用于灰白相间的表格灰背景。
+                </p>
+                <p>
+                    bc-head，主题红背景色，色值为#E03D3E。用于主窗口导航背景色。
+                </p>
+                <p>
+                    sc-bg，白色背景，色值#FFFFFF。使用于模块背景色。
+                </p>
+                <p>
+                    bc-btn，主题红按钮颜色，色值为#E03D3E。用于定义确定按钮等背景色。
+                </p>
+                <p>
+                    sc-btn，灰色按钮颜色，色值为#DFDFDF。用于定义灰色按钮背景色。
+                </p>
+                <p>
+                    sc-bg-alert，警告背景色，色值为#F16412。用于定义着重强调模块背景。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 sc-bg uba bc-border uc-a03">
+                <div class="ub ub-ac ub-pc ub-ver" >
+                    <div class="bc-bg uinn-a04">
+                        默认灰色背景
+                    </div>
+                    <div class="sc-bg-active uinn-a04 umar-t04">
+                        灰色控件背景颜色
+                    </div>
+                    <div class="bc-head uinn-a04 umar-t04">
+                        主题红背景色
+                    </div>
+                    <div class="sc-bg uinn-a04 umar-t04">
+                        白色背景
+                    </div>
+                    <div class="bc-btn uinn-a04 umar-t04">
+                        主题色按钮背景色（与bc-head色值相同，语义不同）
+                    </div>
+                    <div class="sc-btn uinn-a04 umar-t04">
+                        灰色按钮颜色
+                    </div>
+                    <div class="sc-bg-alert uinn-a04 umar-t04">
+                        警告背景色
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class="bc-bg uinn-a04"&gt;
+    默认灰色背景
+&lt;/div&gt;
+&lt;div class="sc-bg-active uinn-a04"&gt;
+    灰色控件背景颜色
+&lt;/div&gt;
+&lt;div class="bc-head uinn-a04"&gt;
+    主题红背景色
+&lt;/div&gt;
+&lt;div class="sc-bg uinn-a04"&gt;
+    白色背景
+&lt;/div&gt;
+&lt;div class="bc-btn uinn-a04"&gt;
+    主题色按钮背景色（与bc-head色值相同，语义不同）
+&lt;/div&gt;
+   &lt;div class="sc-btn uinn-a04"&gt;
+    灰色按钮颜色
+&lt;/div&gt;
+&lt;div class="sc-bg-alert uinn-a04"&gt;
+    警告背景色
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--背景颜色结束-->
+
+        <!--边框圆角开始-->
+        <div id="uc" class="ub ub-ver uinn-a04">
+            <h3>边框圆角</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    uc-[类型]
+                </p>
+                <p>
+                    圆角样式以uc开头，类型表示圆角的位置。uc-a、uc-t、uc-b、uc-r、uc-l、uc-tr、uc-tl、uc-br、uc-bl分别表示四个角、上角、下角、右角、左角、上右、上左、下右、下左。
+                </p>
+                <p>
+                    uc-a03，值为0.3em。用于定义模块圆角。
+                </p>
+                <p>
+                    uc-a04，值为0.4em。用于定义确定，取消等按钮。
+                </p>
+                <p>
+                    uc-a06，值为0.6em。视情况而使用。
+                </p>
+                <p>
+                    uc-a12，值为1.2em。用于定义拨打电话，发送短信等无背景按钮。
+                </p>
+                <p>
+                    cms-ui-base.css文件里定义了扩展圆角大小，具体圆角大小视实际情况而定。
+                <p>
+                <p>其余不常见的圆角根据实际情况使用</p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 sc-bg uba bc-border uc-a03">
+                <div class="ub ub-ac ub-pc" >
+                    <div class="uba bc-border uinn-a04 uc-a03 umar-r04">
+                        0.3em
+                    </div>
+                    <div class="uba bc-border uinn-a04 uc-a04 umar-r04">
+                        0.4em
+                    </div>
+                    <div class="uba bc-border uinn-a04 uc-a06 umar-r04">
+                        0.6em
+                    </div>
+                    <div class="uba bc-border uinn-a04 uc-a12 umar-r04">
+                        1.2em
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc umar-t04" >
+                    <div class="uba bc-border uinn-a04 uc-t umar-r04">
+                        上圆角
+                    </div>
+                    <div class="uba bc-border uinn-a04 uc-b umar-r04">
+                        下圆角
+                    </div>
+                    <div class="uba bc-border uinn-a04 uc-l umar-r04">
+                        左圆角
+                    </div>
+                    <div class="uba bc-border uinn-a04 uc-r umar-r04">
+                        右圆角
+                    </div>
+                </div>
+                <div class="ub ub-ac ub-pc umar-t04" >
+                    <div class="uba bc-border uinn-a04 uc-tr umar-r04">
+                        上右
+                    </div>
+                    <div class="uba bc-border uinn-a04 uc-tl umar-r04">
+                        上左
+                    </div>
+                    <div class="uba bc-border uinn-a04 uc-br umar-r04">
+                        下右
+                    </div>
+                    <div class="uba bc-border uinn-a04 uc-bl umar-r04">
+                        下左
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="uba bc-border uc-a03"&gt;0.3em&lt;/div&gt;
+&lt;div class="uba bc-border uc-a04"&gt;0.4em&lt;/div&gt;
+&lt;div class="uba bc-border uc-a06"&gt;0.6em&lt;/div&gt;
+&lt;div class="uba bc-border uc-a12"&gt;1.2em&lt;/div&gt;
+&lt;div class="uba bc-border uc-t"&gt;上圆角&lt;/div&gt;
+&lt;div class="uba bc-border uc-b"&gt;下圆角&lt;/div&gt;
+&lt;div class="uba bc-border uc-l"&gt;左圆角&lt;/div&gt;
+&lt;div class="uba bc-border uc-r"&gt;右圆角&lt;/div&gt;
+&lt;div class="uba bc-border uc-tr"&gt;上右&lt;/div&gt;
+&lt;div class="uba bc-border uc-tl"&gt;上左&lt;/div&gt;
+&lt;div class="uba bc-border uc-br"&gt;下右&lt;/div&gt;
+&lt;div class="uba bc-border uc-bl"&gt;下左&lt;/div&gt;
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--边框圆角结束-->
+
+        <!--元素左右浮动开始-->
+        <div id="uf" class="ub ub-ver uinn-a04">
+            <h3>元素左右浮动</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    uf[类型]。
+                </p>
+                <p>
+                    前缀为uf，代表UI FLOAT。类型为l代表LEFT，r代表RIGHT。用于定义元素的浮动方向。
+                </p>
+                <p>
+                    注意：如果元素父级元素使用了ub弹性盒子则浮动失效。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 sc-bg uba bc-border uc-a03">
+                <div class="ub-f1">
+                    <div class="ufl uba bc-border uinn-a04">
+                        DIV左浮动
+                    </div>
+                    <div class="ufr uba bc-border uinn-a04">
+                        DIV右浮动
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class="ub-f1"&gt;
+    &lt;div class="ufl uba bc-border uinn-a04"&gt;DIV左浮动&lt;/div&gt;
+    &lt;div class="ufr uba bc-border uinn-a04"&gt;DIV右浮动&lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--元素左右浮动结束-->
+
+        <!--定义行内元素开始-->
+        <div id="uinl" class="ub ub-ver uinn-a04">
+            <h3>定义行内元素</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    uinl。
+                </p>
+                <p>
+                    将块级元素定义成行内元素，使元素自适应于内容。
+                </p>
+                <p>
+                    注意：定义行内元素时元素不能定义为ub弹性盒子。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 sc-bg uba bc-border uc-a03">
+                <div class="ub ub-ver ub-f1">
+                    <div class="uba bc-border uinn-a04">
+                        不使用uinl
+                    </div>
+                    <div class="uinl uba bc-border uinn-a04 umar-t04">
+                        使用uinl
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="uba bc-border uinn-a04"&gt;不使用uinl&lt;/div&gt;
+&lt;div class="uinl uba bc-border uinn-a04"&gt;使用uinl&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--定义行内元素结束-->
+
+        <!--定义最小高度开始-->
+        <div id="umh" class="ub ub-ver uinn-a04">
+            <h3>最小高度</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    umh[类别]。
+                </p>
+                <p>
+                    前缀为umh，类别为数字编号，用于定义不同大小的最小高度。
+                </p>
+                <p>
+                    例如：umh1，定义最小高度为1em。umh12，定义最小高度为1.2em。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 sc-bg uba bc-border uc-a03">
+                <div class="ub ub-ver">
+                    <div class="umh1 uba bc-border">
+                        最小高度为1em
+                    </div>
+                    <div class="umh2 uba bc-border umar-t04">
+                        最小高度为2em
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class="umh1 uba bc-border"&gt;最小高度为1em&lt;/div&gt;
+&lt;div class="umh2 uba bc-border umar-t04"&gt;最小高度为2em&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--定义最小高度结束-->
+
+        <!--定义最小宽度开始-->
+        <div id="umw" class="ub ub-ver uinn-a04">
+            <h3>最小宽度</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    umw[类别]。
+                </p>
+                <p>
+                    缀为umw，类别为数字编号，用于定义不同大小的最小高度。
+                </p>
+                <p>
+                    例如：umw1，定义最小高度为1em。umw12，定义最小高度为1.2em。
+                </p>
+                <p>
+                    注意：此样式需配合uinl（定义行内元素）或是其父元素为样子为ub（弹性盒子）使用。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 sc-bg uba bc-border uc-a03">
+                <div class="ub ub-ac ub-pc">
+                    <div class="umw1 uinl uba bc-border">
+                        >1em
+                    </div>
+                    <div class="umw4 uinl uba bc-border">
+                        >4em
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class="ub ub-ac ub-pc"&gt;
+    &lt;div class="umw1 uinl uba bc-border"&gt;>1em&lt;/div&gt;
+    &lt;div class="umw4 uinl uba bc-border umar-t04"&gt;>4em&lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--定义最小宽度结束-->
+
+        <!--隐藏元素开始-->
+        <div id="uhide" class="ub ub-ver uinn-a04">
+            <h3>隐藏元素</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    uhide。
+                </p>
+                <p>
+                    代表元素隐藏display属性为none。应用于某些元素需要触发才显示，因此在此之前加上uhide将其隐藏，触发显示是将uhide移除。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 sc-bg uba bc-border uc-a03">
+                <div class="ub-f1">
+                    <div class="uhide">
+                        这是一个隐藏的元素
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div class="uhide"&gt;
+   这是一个隐藏的元素
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <!--隐藏元素结束-->
+
+        <!--图标开始-->
+        <div id="fa" class="ub ub-ver uinn-a04">
+            <h3>图标字体</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    本例所讲的图标为字体图标，顾名思义字体图标你可以将图标看作一个文字，可以对图标进行字体大小、字体颜色等控件。
+                </p>
+                <p>
+                    本框架定义了两套图标，一套是appcan自带的图标，一套是自定义的图标。两套图标使用的方式不一样，下面针对这两套图标讲解。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        1、appcan自带的图标  <span class="cms-btn-mini" onclick="openWin('fontawesome')">查看</span>
+                    </p>
+                    <p>
+                        appcan使用的图标是Font Awesome提供的，使用时需要引入font-awesome.min.css。
+                    </p>
+                    <p>
+                        使用方式：
+                    </p>
+                    <p>
+                        class="fa fa-[类型]"。类型为图标名字。
+                    </p>
+                    <div class="ub ub-f1 ub-pj uinn-a04">
+                        <div class="ub fa fa-angle-left ulev18 sc-text-active"></div>
+                        <div class="ub fa fa-qq ulev18 sc-text-warn"></div>
+                        <div class="ub fa fa-weixin ulev18 sc-text-assist"></div>
+                        <div class="ub fa fa-phone ulev18 sc-text"></div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="fa fa-angle-left ulev18 sc-text-active"&gt;&lt;/div&gt;
+&lt;div class="fa fa-qq ulev18 sc-text-warn"&gt;&lt;/div&gt;
+&lt;div class="fa fa-weixin ulev18 sc-text-assist"&gt;&lt;/div&gt;
+&lt;div class="fa fa-phone ulev18 sc-text"&gt;&lt;/div&gt;                            
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub-f1'>
+                    <p>
+                        2、自定义的字体图标
+                    </p>
+                    <p>
+                        使用时需引入moa.css。
+                    </p>
+                    <p>
+                        使用方式：
+                    </p>
+                    <p>
+                        class里引用fmoa样式，内容里写图标名字。
+                    </p>
+                    <p>
+                        注意：自定义图标的名字全为代码，使用时需用 <b>High-Logic FontCreator</b>软件打开moa.ttf字体文件查看。然后将名字编号的”uin“替换成”&#x“写在标签内。
+                    </p>
+                    <div class="ub ub-f1 ub-pj uinn-a04">
+                        <div class="ub fmoa ulev18 sc-text-active">
+                            &#xE609;
+                        </div>
+                        <div class="ub fmoa ulev18 sc-text-warn">
+                            &#xE6D5;
+                        </div>
+                        <div class="ub fmoa ulev18 sc-text-assist">
+                            &#xE6DD;
+                        </div>
+                        <div class="ub fmoa ulev18 sc-text">
+                            &#xE6E4;
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="fmoa ulev18 sc-text-active"&gt;&amp;#xE609;&lt;/div&gt;
+&lt;div class="fmoa ulev18 sc-text-warn"&gt;&amp;#xE6D5;&lt;/div&gt;
+&lt;div class="fmoa ulev18 sc-text-assist"&gt;&amp;#xE6DD;&lt;/div&gt;
+&lt;div class="fmoa ulev18 sc-text"&gt;&amp;#xE6E4;&lt;/div&gt;                           
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--图标开始-->
+
+        <!--首行缩进开始-->
+        <div id="text-i" class="ub ub-ver uinn-a04">
+            <h3>首行缩进</h3>
+            <div class="ub-f1 uinn-a04 ulev1">
+                <p>
+                    text-i
+                </p>
+                <p>
+                    缩进2em。根据实际需要使用。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 sc-bg uba bc-border uc-a03">
+                <div class="ub-f1 text-i">
+                    <p>
+                        这是一段文本，  这是一段文本，  这是一段文本，  这是一段文本，  这是一段文本。
+                    </p>
+                    <p>
+                        这是另一段文本，这是另一段文本，这是另一段文本，这是另一段文本，这是另一段文本。
+                    </p>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub-f1 text-i"&gt;
+    &lt;p&gt;
+        这是一段文本，  这是一段文本，  这是一段文本，  这是一段文本，  这是一段文本。
+    &lt;/p&gt;
+    &lt;p&gt;
+        这是另一段文本，这是另一段文本，这是另一段文本，这是另一段文本，这是另一段文本。
+    &lt;/p&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--首行缩进结束-->
+
+        <!--圆形纯色背景开始-->
+        <div id="icon_bg" class="ub ub-ver uinn-a04">
+            <h3>圆形、方形纯色背景</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    cms-icon-bg-big、cms-icon-bg-mini
+                </p>
+                <p>
+                背景颜色自行定义，默认为灰色。
+                </p>
+            </div>
+            
+            <div class="ub ub-ver uinn-a04 sc-bg uba bc-border uc-a03">
+                <p>cms-icon-bg-big。样式用于九宫格字体图标的圆形背景</p>
+                <div class="ub ub-ac ub-pc">
+                    <div class="cms-icon-bg-big" style="background-color: #00A1EA"></div>
+                </div>
+                
+                <p>cms-icon-bg-mini。用于列表控件等图标的圆形背景。</p>
+                <div class="ub ub-ac ub-pc">
+                    <div class="cms-icon-bg-mini" style="background-color: #6C71C4"></div>
+                </div>
+              
+                <p>cms-icon-bg-square。用于添加应用时的方形图标的方形背景</p>
+                <div class="ub ub-ac ub-pc">
+                    <div class="cms-icon-bg-square" style="background-color:#FCC954"></div>
+                </div>  
+                
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-icon-bg-big" style="background-color: #00A1EA"&gt;&lt;/div&gt;
+&lt;div class="cms-icon-bg-mini" style="background-color: #6C71C4"&gt;&lt;/div&gt;
+&lt;div class="cms-icon-bg-square" style="background-color: #FCC954"&gt;&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--圆形纯色背景结束-->
+
+        <!--带文字的圆形背景开始-->
+        <div id="cms-circle" class="ub ub-ver uinn-a04">
+            <h3>带文字的圆形背景</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    cms-circle
+                </p>
+                <p>
+                    圆型内最多显示两个汉字，多余的隐藏。 应用于邮件列表头部的姓名标签。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 sc-bg uba bc-border uc-a03">
+                <div class="ub ub-ac ub-pc">
+                    <div class="cms-circle">
+                        你好
+                    </div>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-circle"&gt;你好&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--带文字的圆形背景结束-->
+
+        <!--消息数量角标提示开始-->
+        <div id="badge" class="ub ub-ver uinn-a04">
+            <h3>消息数量角标提示</h3>
+            <div class="ub ub-ver uinn-a04 sc-bg uba bc-border uc-a03">
+                <p>
+                    1、普通消息数量角标提示
+                </p>
+                <p>
+                    大角标：cms-badge-big
+                </p>
+                <div class="ub ub-f1 ub-ac ub-pc umar-t04">
+                    <div class="cms-badge-big"></div>
+                    <div class="cms-badge-big">
+                        6
+                    </div>
+                    <div class="cms-badge-big">
+                        67
+                    </div>
+                    <div class="cms-badge-big">
+                        167
+                    </div>
+                </div>
+
+                <p>
+                    小角标:cms-badge-mini
+                </p>
+                <div class="ub ub-f1 ub-ac ub-pc umar-t04">
+                    <div class="cms-badge-mini"></div>
+                    <div class="cms-badge-mini">
+                        6
+                    </div>
+                    <div class="cms-badge-mini">
+                        67
+                    </div>
+                    <div class="cms-badge-mini">
+                        167
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-badge-big"&gt;&lt;/div&gt;
+&lt;div class="cms-badge-big"&gt;6&lt;/div&gt;
+&lt;div class="cms-badge-big"&gt;67&lt;/div&gt;
+&lt;div class="cms-badge-big"&gt;167&lt;/div&gt;
+&lt;div class="cms-badge-mini"&gt;&lt;/div&gt;
+&lt;div class="cms-badge-mini"&gt;6&lt;/div&gt;
+&lt;div class="cms-badge-mini"&gt;67&lt;/div&gt;
+&lt;div class="cms-badge-mini"&gt;167&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <p>
+                    2、右上角绝对定位消息数量角标提示
+                </p>
+                <p>
+                    cms-badge-big，cms-badge-big-abs
+                </p>
+                <p>
+                    cms-badge-big-abs为绝对定位。
+                </p>
+                <div class="ub ub-ac ub-pc">
+                    <div class="cms-icon-bg-big umar-t04" style="background-color: #007DB8">
+                        <div class="cms-badge-big cms-badge-abs ulev08">
+                            6
+                        </div>
+                    </div>
+                    <div class="cms-icon-bg-mini umar-t04" style="background-color: #2AA198">
+                        <div class="cms-badge-mini cms-badge-abs">
+                            6
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-icon-bg-big" style="background-color: #007DB8"&gt;
+    &lt;div class="cms-badge-big cms-badge-abs ulev08"&gt;
+        6
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cms-icon-bg-mini" style="background-color: #2AA198"&gt;
+    &lt;div class="cms-badge-mini cms-badge-abs ulev08"&gt;
+        6
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--消息数量角标提示结束-->
+
+        <!--元素点击反馈开始-->
+        <div id="act" class="ub ub-ver uinn-a04">
+            <h3>元素点击反馈</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i"></div>
+            <div class="ub ub-ver uinn-a04 sc-bg uba bc-border uc-a03">
+                <p>
+                    1、点击背景变灰色
+                </p>
+                <p>
+                    cms-change-bg。
+                </p>
+                <p>
+                    适用于模块整体背景变化，如列表元素。
+                </p>
+                <div class="cms-change-bg bc-btn tx-c bc-text-head uinn-a04">
+                    点我试试
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-change-bg bc-btn tx-c bc-text-head uinn-a04"&gt;点我试试&lt;/div&gt;                      
+                        </code>
+                    </pre>
+                </div>
+
+                <p>
+                    2、点击背景半透
+                </p>
+                <p>
+                    cms-act。
+                </p>
+                <p>
+                    适用于有颜色的背景模块，如按钮。
+                </p>
+                <div class="cms-act bc-btn tx-c bc-text-head uinn-a04">
+                    点我试试
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-act bc-btn tx-c bc-text-head uinn-a04"&gt;点我试试&lt;/div&gt;                      
+                        </code>
+                    </pre>
+                </div>
+
+                <p>
+                    3、点击凹陷效果，
+                </p>
+                <p>
+                    cms-ain
+                </p>
+                <p>
+                    根据实际情况使用。
+                </p>
+                <div class="cms-ain bc-btn tx-c bc-text-head uinn-a04">
+                    点我试试
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-ain bc-btn tx-c bc-text-head uinn-a04"&gt;点我试试&lt;/div&gt;                      
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--元素点击反馈结束-->
+
+        <!--元素固定底部开始-->
+        <div id="bottom_bar" class="ub ub-ver uinn-a04">
+            <h3>元素固定在底部</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    cms-bottom-bar。
+                </p>
+                <p>
+                    某些元素需要一直固定在底部，不随滚动条滚动，如在本页面的底部导航等。
+                </p>
+                <p>
+                    注意：元素固定于底部，但它还占用着空间，所以会遮挡住页面内容。使用时应计算此固定元素的高度，设置被遮挡元素的margin-bottomo大于或等于此高度。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 sc-bg uba bc-border uc-a03">
+                <div class="cms-bottom-bar uinn-a04 sc-bg-active tx-c bc-text-head ulev12 uhide">
+                    元素固定在底部
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-bottom-bar uinn-a04 sc-bg-active tx-c bc-text-head ulev12 uhide"&gt;元素固定在底部&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--元素固定底部结束-->
+
+        <!--元素固定顶部开始-->
+        <div id="top_bar" class="ub ub-ver uinn-a04">
+            <h3>元素固顶在顶部</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    cms-top-bar。
+                </p>
+                <p>
+                    某些元素需要一直固定在顶部，不随滚动条滚动，如在本页面的顶部导航等。
+                </p>
+                <p>
+                    注意：元素固定于顶部，但它还占用着空间，所以会遮挡住页面内容。使用时应计算此固定元素的高度，设置被遮挡元素的margin-top大于或等于此高度。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 sc-bg uba bc-border uc-a03">
+                <div class="cms-top-bar uinn-a04 sc-bg-active tx-c bc-text-head ulev12 uhide">
+                    元素固定在顶部
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-top-bar uinn-a04 sc-bg-active tx-c bc-text-head ulev12 uhide"&gt;元素固定在顶部&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--元素固定顶部结束-->
+
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            hljs.initHighlighting();
+            var itemName = appcan.locStorage.getVal('itemName');
+            if(itemName == 'bottom_bar'){
+                $(".cms-bottom-bar").removeClass("uhide");
+            }else if(itemName == 'top_bar'){
+                $(".cms-top-bar").removeClass("uhide");
+            }
+            location.href = "#" + itemName;
+        })
+
+        function openWin(param){
+             appcan.window.open("index", "../fontawesome/index.html", 10);
+        }
+
+    </script>
+</html>

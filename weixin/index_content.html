@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <style>
+
+        </style>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver uinn-a04 sc-bg line-h18">
+            <h3 class="ulev12">简要说明</h3>
+            <div class="ub-f1 ulev1 text-i">
+                <p>除了APPCAN自身的JS外，其余的内容可以完全平衡至微信端。</p>
+                <p>在微信端用此套UI编写页面不用担心兼容性问题，因为本UI使用的是HTML5编写，微信端使用的是QQ浏览器内核，而QQ浏览器内核是完全兼容HTML5的。</p>
+            </div>
+            <br />
+            <h3 class="ulev12">平移说明</h3>
+            <div class="ub-f1 ulev1 text-i">
+                <p>平移过程中只需引入cms-ui-base.css文件，该文件定义了页面的布局、基本颜色的定义、基础样式的定义与常用控件样式的定义。</p>
+                <p>如果在微信端要使用到图标字体，需将fonts文件夹下的两个文件fontawesome.min.css、fontawesome-webfont.ttf引入。</p>
+            </div>
+            <br />
+            <h3 class="ulev12">注意事项</h3>
+            <div class="ub-f1 ulev1 text-i">
+                <p>此UI可以直接使用的是页面布局、基础样式、图标字体库。如果要使用常用组件需注意的是关按钮、轮播图片使用的是appcan的组件，需要配合js实现。</p>
+            </div>
+        </div>
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        });
+    </script>
+</html>

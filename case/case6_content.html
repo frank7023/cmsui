@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./case6/css/basic.css" />
+        <script type="text/javascript">
+            var loadingHtml = '<div id="loading" class="ub ub-ac ub-pc uabs" style="background-color: #eee;"><img src="./case6/image/ball-triangle.svg" width="100" /></div>';
+            document.write(loadingHtml);
+        </script>
+    </head>
+    <body>
+        <audio id="music" preload="auto" hidden>
+            <source src="./case6/image/1.mp3" type="audio/mpeg" />
+        </audio>
+        <div id="idx" style="display: none;">
+            <div class="ub uabs" style="z-index: 3;">
+                <img src="./case6/image/idx1.jpg" width="100%" height="100%" />
+                <div id="idx1" class="ub ub-img hj-act" style="background-image: url(./case6/image/btn1.png); width: 60%; height: 2em;position: absolute; left: 20%; bottom: 0.5em"></div>
+            </div>
+            <div class="ub uabs" style="z-index: 2;">
+                <img src="./case6/image/idx2.jpg" width="100%" height="100%" />
+                <div id="idx2" class="ub ub-img hj-act" style="background-image: url(./case6/image/btn2.png); width: 40%; height: 2em;position: absolute; left: 6%; bottom: 0.5em"></div>
+                <div id="idx3" class="ub ub-img hj-act" style="background-image: url(./case6/image/btn3.png);  width: 40%; height: 2em;position: absolute; right: 6%; bottom: 0.5em"></div>
+            </div>
+            <div class="ub uabs" style="z-index: 1;">
+                <img src="./case6/image/idx3.jpg" width="100%" height="100%" />
+                <div id="idx4" class="ub ub-img hj-act" style="background-image: url(./case6/image/btn4.png); width: 60%; height: 2em;position: absolute; left: 20%; bottom: 0.5em"></div>
+            </div>
+        </div>
+        <div class="flipbook-viewport" style="display:none;">
+            <div class="container">
+                <div class="flipbook"></div>
+            </div>
+        </div>
+        <div id="mask" style="display: none;">
+            <div onclick="hideShare()" class="hj-mask"></div>
+            <img width="100%" style="z-index:2000;position:fixed;top:0;" src="./case6/image/share.png">
+        </div>
+    </body>
+
+    <script src="../js/jquery.js"></script>
+    <script src="./case6/js/modernizr.2.5.3.min.js"></script>
+    <script>
+        //判断手机类型
+        window.onload = function() {
+            var u = navigator.userAgent;
+            if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+            } else if (u.indexOf('iPhone') > -1) {//苹果手机
+                //屏蔽ios下上下弹性
+                $(window).on('scroll.elasticity', function(e) {
+                    e.preventDefault();
+                }).on('touchmove.elasticity', function(e) {
+                    e.preventDefault();
+                });
+            }
+            //预加载
+            loading();
+
+            $("#idx1").click(function() {
+                var obj = $(this).parent();
+                obj.css("opacity", "0");
+                setTimeout(function() {
+                    obj.hide()
+                }, 1000);
+            });
+            $("#idx2").click(function() {
+                var obj = $(this).parent();
+                obj.css("opacity", "0");
+                setTimeout(function() {
+                    obj.hide()
+                }, 1000);
+            });
+            $("#idx3").click(function() {
+                var obj = $(this).parent();
+                obj.css("opacity", "0");
+                setTimeout(function() {
+                    obj.hide()
+                }, 1000);
+                $("#idx4").parent().hide();
+                setTimeout(function() {
+                    $(".flipbook-viewport").fadeIn();
+                }, 1000);
+            });
+            $("#idx4").click(function() {
+                var obj = $(this).parent();
+                obj.css("opacity", "0");
+                setTimeout(function() {
+                    obj.hide()
+                }, 1000);
+
+                setTimeout(function() {
+                    $(".flipbook-viewport").fadeIn();
+                }, 1000);
+            });
+        }
+        function loading() {
+            //加载图片
+            var loading_img_url = ["./case6/image/0001.jpg", "./case6/image/0002.jpg", "./case6/image/0003.jpg", "./case6/image/0004.jpg", "./case6/image/0005.jpg", "./case6/image/0006.jpg"];
+            var numbers = 0;
+            var length = loading_img_url.length;
+
+            for (var i = 0; i < length; i++) {
+                var img = new Image();
+                img.src = loading_img_url[i];
+                img.onerror = function() {
+                    numbers += (1 / length) * 100;
+                }
+                img.onload = function() {
+                    numbers += (1 / length) * 100;
+                    if (Math.round(numbers) == 100) {
+
+                        //预加载图片
+                        $(function progressbar() {
+                            //拼接图片
+                            var tagHtml = "";
+                            for (var i = 1; i <= 6; i++) {
+                                if (i == 1) {
+                                    tagHtml += ' <div id="first" class="ub ub-img" style="background-image:url(./case6/image/00' + (i < 10 ? '0' + i : i) + '.jpg)"></div>';
+                                } else if (i == 6) {
+                                    tagHtml += ' <div id="end" class="ub ub-img" style="background-image:url(./case6/image/00' + (i < 10 ? '0' + i : i) + '.jpg)">';
+                                    tagHtml += '    <div id="btn5" onclick="share()" class="ub ub-img hj-act" style="background-image: url(./case6/image/btn5.png); width: 70%; height: 2em;position: fixed; left: 15%; bottom: 0.5em;z-index:9999;"></div>';
+                                    tagHtml += '</div>';
+                                } else {
+                                    tagHtml += ' <div class="ub ub-img" style="background-image:url(./case6/image/00' + (i < 10 ? '0' + i : i) + '.jpg)"></div>';
+                                }
+                            }
+                            $(".flipbook").append(tagHtml);
+
+                        });
+
+                        //配置turn.js
+                        function loadApp() {
+                            var w = $(window).width();
+                            var h = $(window).height();
+                            $('.flipboox').width(w).height(h);
+                            $(window).resize(function() {
+                                w = $(window).width();
+                                h = $(window).height();
+                                $('.flipboox').width(w).height(h);
+                            });
+                            $('.flipbook').turn({
+                                // Width
+                                width : w,
+                                // Height
+                                height : h,
+                                // Elevation
+                                elevation : 50,
+                                display : 'single',
+                                // Enable gradients
+                                gradients : true,
+                                // Auto center this flipbook
+                                autoCenter : true,
+                                when : {
+                                    turning : function(e, page, view) {
+                                        play();
+                                    },
+                                    turned : function(e, page, view) {
+                                        if (page == 6) {
+                                            $(".tips").fadeOut();
+                                            $('.flipbook').turn('disable', true);
+                                        }
+                                    }
+                                }
+                            })
+                        }
+
+                        yepnope({
+                            test : Modernizr.csstransforms,
+                            yep : ['case6/js/turn.js'],
+                            complete : loadApp
+                        });
+                    };
+                }
+            }
+        }
+
+        function share(event) {
+            $("#mask").fadeIn();
+        }
+
+        function hideShare() {
+            $("#mask").fadeOut();
+        }
+
+        function play() {
+            var music = document.getElementById("music");
+            music.src = "./case6/image/1.mp3";
+            music.load();
+
+            music.play();
+        }
+
+
+        document.onreadystatechange = function() {
+
+            if (document.readyState == "complete") {
+                setTimeout(function() {
+                    $('#loading').remove();
+                    $("#idx").fadeIn();
+                }, 1000)
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <style>
+            .icon {
+                background-image: url('../images/icon.png');
+                width: 4.2em;
+                height: 4.2em;
+            }
+        </style>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver ub-fv ub-fh">
+            <div class="ub ub-ver ub-ac ub-pc" style="height: 35%">
+                <div class="ub ub-img icon uc-a06" ></div>
+                <div class="ub umar-t08 sc-text-active" >
+                    V 2.0
+                </div>
+            </div>
+            <div class="ub ub-f1 ub-ver ub-con">
+                <div class="ub sc-bg ubb sc-border-tab uinn-a08 info">
+                    <div class="ub-f1 bc-text">
+                        QQ
+                    </div>
+                    <div class="sc-text-active">
+                        1833243322
+                    </div>
+                </div>
+                <div class="ub sc-bg ubb sc-border-tab uinn-a08 info">
+                    <div class="ub-f1 bc-text">
+                        Email
+                    </div>
+                    <div class="sc-text-active">
+                        wu7zhi@qq.com
+                    </div>
+                </div>
+                <div class="ub sc-bg uinn-a08 info">
+                    <div class="ub-f1 bc-text">
+                        微信公众号
+                    </div>
+                    <div class="sc-text-active">
+                        wu7zhi
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ub ub-ac ub-pc ulev08 sc-text-hint uinn-a06">无知 | 做学霸还是学渣你自己选择</div>
+
+        </div>
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/cms.js"></script>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            uexWindow.setWindowScrollbarVisible(false);
+        });
+        
+        //复制
+        $(".info").longTap(function(){
+            var info = cms.trimAll($(this).children().last().text());
+            cms.copy(info)
+        });
+        
+        $("#declare").tap(function(){
+            cms.openWindow("declare","declare.html");
+        });
+        
+
+    </script>
+</html>

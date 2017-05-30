@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/cms-ui-base.css">
+        <style>
+            .photo {
+                border-color: #e5f2ff;
+                background-color: #FFFFFF;
+                width: 1.7em;
+                height: 1.7em;
+                border-radius: 1.7em;
+                padding: 0.1em;
+                background-color: rgba(255,255,255,0.8);
+            }
+            .photo > div {
+                width: 1.7em;
+                height: 1.7em;
+                border-radius: 1.7em;
+                background-color: #EEEEEE;
+                opacity: 0.8;
+                background-image: url('images/icon.png');
+            }
+            .filter {
+                background-color: rgba(255,255,255,0.9);
+            }
+        </style>
+    </head>
+    <body class="um-vp bc-bg">
+        <div class="up ub ub-ver" tabindex="0">
+            <!--header开始-->
+            <div id="header" class="ub uh bc-text-head bc-head">
+                <div class="ub ub-ac uinn-a04 umw2 umar-l02 cms-act" id="nav-left">
+                    <div class="ub ub-pc ub-pc">
+                        <div class="ub ub-ac ub-pc photo">
+                            <div class="ub ub-img1"></div>
+                        </div>
+                    </div>
+                </div>
+                <h1 id="title" class="ut ub-f1 ulev-nav ut-s tx-c" tabindex="0">APPCAN\HTML5移动UI</h1>
+                <div class="ub ub-ac ub-pc uinn-rl06 umw2" id="nav-right">
+                    <span id="download" class="fa fa-download ulev12 umar-r06 cms-act"></span>
+                    <span id="share" class="fa fa-share ulev12 cms-act"></span>
+                </div>
+            </div>
+            <!--header结束-->
+
+            <!--content开始-->
+            <div id="content" class="ub-f1 tx-l"></div>
+            <!--content结束-->
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="js/cms.js"></script>
+        <script src="js/cms.xf.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            var titHeight = $('#header').offset().height;
+            appcan.frame.open("content", "index_content.html", 0, titHeight);
+            window.onorientationchange = window.onresize = function() {
+                appcan.frame.resize("content", 0, titHeight);
+            }
+            //接收其它窗口的通知，改变导内容
+            appcan.window.subscribe('changeIdxTitle', function(msg) {
+                $("#title").html(msg);
+            });
+
+            //android消息推送
+            uexXGPush.setAccessidAndKey(2100217980, "AD5FD82V5J9E");
+            uexXGPush.registerPush();
+
+            uexXGPush.onRegisterCb = function(opCode, dataType, data) {
+            }
+            uexXGPush.onNotificationCilckedCb = function(opCode, dataType, data) {
+            }
+            
+            //讯飞插屏广告
+            openInterstitialAd('7E48E55D0F737D0A83FD1348060DC662');
+            //当监听到广告初始化的回调函数
+            IFLYInterstitialAd.onAdInit = onInterstitialAdInit;
+            //当监听到获得广告成功时的回调函数
+            IFLYInterstitialAd.onAdReceive = onInterstitialAdReceive;
+            //当监听到获取广告失败时的回调函数
+            IFLYInterstitialAd.onAdFailed = onInterstitialAdFailed;
+            //当监听到广告被关闭是的回调函数
+            IFLYInterstitialAd.onAdClose = onInterstitialAdClose;
+            //当监听到广告被点击是的回调函数
+            IFLYInterstitialAd.onAdClick = onInterstitialAdClick;
+        });
+
+        $("#nav-left").tap(function() {
+            cms.openWindow("aboutus", "common/aboutus.html", 1);
+        });
+        
+        $("#share").click(function() {
+            appcan.window.publish("share", "");
+        });
+        $("#download").tap(function() {
+            cms.setLocVal("title", "源码下载");
+            cms.setLocVal("url", "http://www.jianshu.com/p/f57b3fd839fe");
+            cms.openWindow("gotoURL", "common/gotoURL.html");
+        });
+
+    </script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <style>
+        
+        </style>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver uinn-a12">
+            <div onclick="getInterstitialAd()" class="umar-a04 cms-btn-radius">获取插屏广告</div>
+            <div onclick="getBannerAd()" class="umar-a04 cms-btn-radius">获取横幅广告</div>
+            <div onclick="destroyBannerAd()" class="umar-a04 cms-btn-radius">关闭横幅广告</div>
+        </div>
+      
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/cms.xf.js"></script>
+    <script>
+        appcan.ready(function() {
+            //讯飞旗帜广告
+            //当监听到广告初始化的回调函数
+            IFLYBannerAd.onAdInit = onBannerAdInit;
+            //当监听到获得广告成功时的回调函数
+            IFLYBannerAd.onAdReceive = onBannerAdReceive;
+            //当监听到获取广告失败时的回调函数
+            IFLYBannerAd.onAdFailed = onBannerAdFailed;
+            //当监听到广告被关闭时的回调函数
+            IFLYBannerAd.onAdClose = onBannerAdClose;
+            //当监听到广告被点击是的回调函数
+            IFLYBannerAd.onAdClick = onBannerAdClick;
+            
+            //当监听到广告初始化的回调函数
+            IFLYInterstitialAd.onAdInit = onInterstitialAdInit;
+            //当监听到获得广告成功时的回调函数
+            IFLYInterstitialAd.onAdReceive = onInterstitialAdReceive;
+            //当监听到获取广告失败时的回调函数
+            IFLYInterstitialAd.onAdFailed = onInterstitialAdFailed;
+            //当监听到广告被关闭是的回调函数
+            IFLYInterstitialAd.onAdClose = onInterstitialAdClose;
+            //当监听到广告被点击是的回调函数
+            IFLYInterstitialAd.onAdClick = onInterstitialAdClick;
+        });
+        
+        function getBannerAd(){
+            openBannerAd('58AEF84E5AAF2EFCCBF199F7134B2A99');
+        }
+        function destroyBannerAd(){
+            closeBannerAd();
+        }
+        function getInterstitialAd(){
+            openInterstitialAd('2FDF645D5D90421EF2D52ACC1B3F6DF0');
+        }
+
+    </script>
+</html>

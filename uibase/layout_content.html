@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/fonts/moa.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="../css/solarized_light.css">
+
+        <style>
+            .qrcode {
+                background-image: url("../images/QRCode.png");
+            }
+        </style>
+
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <!--弹性盒子布局概述开始-->
+        <div id="intro" class="ub ub-ver uinn-a04">
+            <h3>弹性盒子布局概述</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    页面的布局采用css的盒子模型display: box。与流式布局有所不同，弹性盒子布局可理解为在指定大小的父容器里来为子元素分配空间。cms-ui-base.css对这些样式进行了封装，开发者只需引用以下名称即可实现页面的布局。
+                </p>
+                <p>
+                    ub 元素采用弹性BOX布局。
+                </p>
+                <p>
+                    ub-rev 子元素反序排列。
+                </p>
+                <p>
+                    ub-con 在子元素中加入一个容器，用于避免内容引起子元素大小变化。
+                </p>
+                <p>
+                    ub-ac、ub-ae 子元素垂直居中对齐和尾对齐。
+                </p>
+                <p>
+                    ub-pc、ub-pe、ub-pj 子元素水平居中对齐、尾对齐和两端对齐。
+                </p>
+                <p>
+                    ub-ver 子元素纵向排列。
+                </p>
+                <p>
+                    ub-f1 ub-f2 ub-f3 ub-f4 子元素占用区域份数。
+                </p>
+                <p>
+                    通过上述类，我们可以完成各种各样的排版布局，极大地降低学习难度和元素排版复杂度，使代码更加简练。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub ub-ver sc-bg">
+                    <div class="ub">
+                        不管页面有多复杂，所有的布局都为水平垂直布局的组合。以下是两种布局的示例。
+                    </div>
+                    <div class="uba bc-border uinn-a04 umar-t04">
+                        <div>
+                            div1，div2,div3水平布局（默认）。div1占一个空间，div2占二个空间，div3占三个空间。
+                        </div>
+                        <div class="ub">
+                            <div class="ub ub-f1 uba sc-border-tab uinn-a04 umh2 umar-t04">
+                                div1
+                            </div>
+                            <div class="ub ub-f2 uba sc-border-tab uinn-a04 umh2 umar-t04">
+                                div2
+                            </div>
+                            <div class="ub ub-f3 uba sc-border-tab uinn-a04 umh2 umar-t04">
+                                div3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uba bc-border uinn-a04 umar-t04">
+                        <div>
+                            div1，div2,div3垂直布局。div1水平垂直居中，div2水平居中，div3垂直居中，
+                        </div>
+                        <div class="ub ub-ac ub-pc uba sc-border-tab uinn-a04 umh2 umar-t04">
+                            div1
+                        </div>
+                        <div  class="ub ub-pc uba sc-border-tab uinn-a04 umh2 umar-t04">
+                            div2
+                        </div>
+                        <div class="ub ub-ac uba sc-border-tab uinn-a04 umh2 umar-t04">
+                            div3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-ver sc-bg"&gt;
+    &lt;div class="ub"&gt;不管页面有多复杂，所有的布局都为水平垂直布局的组合。以下是两种布局的示例。&lt;/div&gt;
+    &lt;div class="uba sc-border-tab uinn-a04 umar-t04"&gt;
+        &lt;div&gt;
+            div1，div2,div3水平布局（默认）。div1占一个空间，div2占二个空间，div3占三个空间。
+        &lt;/div&gt;
+        &lt;div class="ub"&gt;
+            &lt;div class="ub ub-f1 uba sc-border-tab uinn-a04 umh2 umar-t04"&gt;
+                div1
+            &lt;/div&gt;
+            &lt;div class="ub ub-f2 uba sc-border-tab uinn-a04 umh2 umar-t04"&gt;
+                div2
+            &lt;/div&gt;
+            &lt;div class="ub ub-f3 uba sc-border-tab uinn-a04 umh2 umar-t04"&gt;
+                div3
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="uba sc-border-tab uinn-a04 umar-t04"&gt;
+        &lt;div&gt;
+            div1，div2,div3垂直布局。div1水平垂直居中，div2水平居中，div3垂直居中，
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc uba sc-border-tab uinn-a04 umh2 umar-t04"&gt;
+            div1
+        &lt;/div&gt;
+        &lt;div  class="ub ub-pc uba sc-border-tab uinn-a04 umh2 umar-t04"&gt;
+            div2
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac uba sc-border-tab uinn-a04 umh2 umar-t04"&gt;
+            div3
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--弹性盒子布局概述结束-->
+
+        <!--元素占比分配开始-->
+        <div id="flex" class="ub ub-ver uinn-a04">
+            <h3>元素占比分配</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    ub-f[类型]。定义不同的box-flex属性值；类别使用数字编号，定义不同的元素空间大小分配比例。
+                </p>
+                <p>
+                    如：ub-f1数字编号为1；定义box-flex：1
+                </p>
+                <p>
+                    ub-f1数字编号为2；定义box-flex：2
+                </p>
+                <p>
+                    ub-f1数字编号为3；定义box-flex：3
+                </p>
+                <p>
+                    ub-f1数字编号为4；定义box-flex：4
+                </p>
+                <p>
+                    ub-f[1-4]和ub搭配着使用
+                </p>
+            </div>
+
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub ub-ver" >
+                    <div class="umar-b04">
+                        例1：若子元素都使用ub-f1，那么子元素等比例的分配父元素的空间大小。
+                    </div>
+                    <div class='ub umh3'>
+                        <div class='ub-f1 sc-bg-alert'></div>
+                        <div class='ub-f1 bc-head'></div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class='ub umh3'&gt;
+    &lt;div class='ub-f1 sc-bg-alert'&gt;&lt;/div&gt;
+    &lt;div class='ub-f1 bc-head'&gt;&lt;/div&gt;
+&lt;/div&gt;                            
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="ub ub-ver" >
+                    <div class="umar-b04">
+                        例2：若子元素一个用ub-f1，另外一个用ub-f2.，那么子元素按照1：2的比例分配父元素的空间大小。
+                    </div>
+                    <div class='ub umh3'>
+                        <div class='ub-f1 sc-bg-alert'></div>
+                        <div class='ub-f2 bc-head'></div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class='ub umh3'&gt;
+    &lt;div class='ub-f1 sc-bg-alert'&gt;&lt;/div&gt;
+    &lt;div class='ub-f2 bc-head'&gt;&lt;/div&gt;
+&lt;/div&gt;                            
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="ub ub-ver" >
+                    <div class="umar-b04">
+                        例3：若子元素分别使用ub-f1，ub-f2，ub-f3，那么子元素会按照1：2：3的比例分配父元素的空间大小。
+                    </div>
+                    <div class='ub umh3'>
+                        <div class='ub-f1 sc-bg-alert'></div>
+                        <div class='ub-f2 bc-head'></div>
+                        <div class='ub-f3 sc-bg-active'></div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class='ub umh3'&gt;
+    &lt;div class='ub-f1 sc-bg-alert'&gt;&lt;/div&gt;
+    &lt;div class='ub-f2 bc-head'&gt;&lt;/div&gt;
+    &lt;div class='ub-f3 sc-bg-active'&gt;&lt;/div&gt;
+&lt;/div&gt;                            
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="ub ub-ver" >
+                    <div class="umar-b04">
+                        例4：若子元素中只有一个使用ub-f1，另外一个元素根据内容的多少定义大小，那么使用ub-f1的元素会自动适配元素的剩余空间大小。
+                    </div>
+                    <div class='ub umh3'>
+                        <div class='sc-bg-alert'>
+                            分配的大小自适应内容
+                        </div>
+                        <div class='ub-f1 bc-head'></div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class='ub umh3'&gt;
+    &lt;div class='sc-bg-alert'&gt;分配大小自适应内容&lt;/div&gt;
+    &lt;div class='ub-f1 bc-head'&gt;&lt;/div&gt;
+&lt;/div&gt;                            
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        </div>
+        <!--元素占比分配结束-->
+
+        <!--垂直方向的位置排列开始-->
+        <div id="vertical" class="ub ub-ver uinn-a04">
+            <h3>垂直方向的位置排列</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    ub-ac，ub-ae。
+                </p>
+
+                <p>
+                    ub-ac：垂直居中
+                </p>
+                <p>
+                    ub-ae：位于底边
+                </p>
+                <p>
+                    只有跟ub搭配着使用ub-ac，ub-ae的作用才生效。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver '>
+                    <div class='ub umh2 uba sc-border-tab'>
+                        未使用ub-ac,ub-ae
+                    </div>
+                    <div class='ub ub-ac umh2 uba sc-border-tab umar-t04'>
+                        使用ub-ac
+                    </div>
+                    <div class='ub ub-ae umh2 uba sc-border-tab umar-t04'>
+                        使用ub-ae
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class='ub umh2 uba sc-border-tab'&gt;未使用ub-ac,ub-ae&lt;/div&gt;
+&lt;div class='ub ub-ac umh2 uba sc-border-tab'&gt;使用ub-ac&lt;/div&gt;
+&lt;div class='ub ub-ae umh2 uba sc-border-tab'&gt;使用ub-ae&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--垂直方向的位置排列结束-->
+
+        <!--水平方向的位置排列开始-->
+        <div id="level" class="ub ub-ver uinn-a04">
+            <h3>水平方向的位置排列</h3>
+            <div class="ub-f1 uinn-a04 ulev1  text-i">
+                <p>
+                    ub-pc，ub-pe，ub-pj。
+                </p>
+
+                <p>
+                    ub-pc：水平居中
+                </p>
+                <p>
+                    ub-pe：位于末尾
+                </p>
+                <p>
+                    ub-pj：两端对齐
+                </p>
+                <p>
+                    只有跟ub搭配着使用ub-pc，ub-pe，ub-pj的作用才生效。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver'>
+                    <div class="umar-b04">
+                        未使用ub-pc，ub-pe，ub-pj。
+                    </div>
+                    <div class='ub uba sc-border-tab uinn-a04'>
+                        <div class='sc-bg-alert'>
+                            内容1
+                        </div>
+                        <div class='bc-head'>
+                            内容2
+                        </div>
+                        <div class='sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class='ub uba sc-border-tab uinn-a04'&gt;
+    &lt;div class='sc-bg-alert'&gt;内容1&lt;/div&gt;
+    &lt;div class='bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt; 
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver'>
+                    <div class="umar-b04">
+                        使用ub-pc。
+                    </div>
+                    <div class='ub ub-pc uba sc-border-tab uinn-a04'>
+                        <div class='sc-bg-alert'>
+                            内容1
+                        </div>
+                        <div class='bc-head'>
+                            内容2
+                        </div>
+                        <div class='sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class='ub ub-pc uba sc-border-tab uinn-a04'&gt;
+    &lt;div class='sc-bg-alert'&gt;内容1&lt;/div&gt;
+    &lt;div class='bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt; 
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver'>
+                    <div class="umar-b04">
+                        使用ub-pe。
+                    </div>
+                    <div class='ub ub-pe uba sc-border-tab uinn-a04'>
+                        <div class='sc-bg-alert'>
+                            内容1
+                        </div>
+                        <div class='bc-head'>
+                            内容2
+                        </div>
+                        <div class='sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class='ub ub-pe uba sc-border-tab uinn-a04'&gt;
+    &lt;div class='sc-bg-alert'&gt;内容1&lt;/div&gt;
+    &lt;div class='bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt; 
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver'>
+                    <div class="umar-b04">
+                        使用ub-pj。
+                    </div>
+                    <div class='ub ub-pj uba sc-border-tab uinn-a04'>
+                        <div class='sc-bg-alert'>
+                            内容1
+                        </div>
+                        <div class='bc-head'>
+                            内容2
+                        </div>
+                        <div class='sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class='ub ub-pj uba sc-border-tab uinn-a04'&gt;
+    &lt;div class='sc-bg-alert'&gt;内容1&lt;/div&gt;
+    &lt;div class='bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt; 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--水平方向的位置排列结束-->
+
+        <!--子元素垂直排列开始-->
+        <div id="ver" class="ub ub-ver uinn-a04">
+            <h3 >子元素垂直排列</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    ub-ver。
+                </p>
+                <p>
+                    定义元素垂直排列 ，只有跟ub搭配着使用ub-ver的作用才生效
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver '>
+                    <div class="umar-b04">
+                        未使用ub-ver
+                    </div>
+                    <div class="ub">
+                        <div class='sc-bg-alert'>
+                            内容1
+                        </div>
+                        <div class='bc-head'>
+                            内容2
+                        </div>
+                        <div class='sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub"&gt;
+    &lt;div class='sc-bg-alert'&gt;内容1&lt;/div&gt;
+    &lt;div class='bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver '>
+                    <div class="umar-b04">
+                        使用ub-ver
+                    </div>
+                    <div class="ub ub-ver">
+                        <div class='sc-bg-alert'>
+                            内容1
+                        </div>
+                        <div class='bc-head'>
+                            内容2
+                        </div>
+                        <div class='sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-ver"&gt;
+    &lt;div class='sc-bg-alert'&gt;内容1&lt;/div&gt;
+    &lt;div class='bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--子元素垂直排列结束-->
+
+        <!--子元素反向排列开始-->
+        <div id="rev" class="ub ub-ver uinn-a04">
+            <h3 >子元素反向排列</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    ub-rev。
+                </p>
+                <p>
+                    定义子元素反向排列，只有跟ub搭配着使用ub-rev的作用才生效。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver '>
+                    <div class="umar-b04">
+                        未使用ub-rev
+                    </div>
+                    <div class="ub">
+                        <div class='sc-bg-alert'>
+                            内容1
+                        </div>
+                        <div class='bc-head'>
+                            内容2
+                        </div>
+                        <div class='sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub"&gt;
+    &lt;div class='sc-bg-alert'&gt;内容1&lt;/div&gt;
+    &lt;div class='bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver '>
+                    <div class="umar-b04">
+                        使用ub-rev
+                    </div>
+                    <div class="ub ub-rev">
+                        <div class='sc-bg-alert'>
+                            内容1
+                        </div>
+                        <div class='bc-head'>
+                            内容2
+                        </div>
+                        <div class='sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-rev"&gt;
+    &lt;div class='sc-bg-alert'&gt;内容1&lt;/div&gt;
+    &lt;div class='bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--子元素反向排列结束-->
+
+        <!--固定比例的分配开始-->
+        <div id="con" class="ub ub-ver uinn-a04">
+            <h3 >元素固定比例的分配</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    ub-con。
+                </p>
+                <p>
+                    固定子元素所占的比例，避免元素自适应内容。需配合ub-f[类型]使用。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver '>
+                    <div class="umar-b04">
+                        未使用ub-con
+                    </div>
+                    <div class="ub">
+                        <div class='ub-f1 sc-bg-alert'>
+                            内容1内容1内容1内容1内容1
+                        </div>
+                        <div class='ub-f1 bc-head'>
+                            内容2
+                        </div>
+                        <div class='ub-f1 sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub"&gt;
+    &lt;div class='ub-f1 sc-bg-alert'&gt;内容1内容1内容1内容1内容1&lt;/div&gt;
+    &lt;div class='ub-f1 bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='ub-f1 sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver '>
+                    <div class="umar-b04">
+                        使用ub-con
+                    </div>
+                    <div class="ub">
+                        <div class='ub-f1 ub-con sc-bg-alert'>
+                            内容1内容1内容1内容1内容1
+                        </div>
+                        <div class='ub-f1 ub-con bc-head'>
+                            内容2
+                        </div>
+                        <div class='ub-f1 ub-con sc-bg-active'>
+                            内容3
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub"&gt;
+    &lt;div class='ub-f1 ub-con sc-bg-alert'&gt;内容1内容1内容1内容1内容1&lt;/div&gt;
+    &lt;div class='ub-f1 ub-con bc-head'&gt;内容2&lt;/div&gt;
+    &lt;div class='ub-f1 ub-con sc-bg-active'&gt;内容3&lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--固定比例的分配结束-->
+
+        <!--元素背景图片的使用开始-->
+        <div id="img" class="ub ub-ver uinn-a04">
+            <h3>背景图片的使用</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    ub-img[类型]。
+                </p>
+                <p>
+                    类别为数字编号，用于定义不同的背景排列方式。
+                </p>
+                <p>
+                    ub-img类别为空，定义将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终包含在容器内。
+                </p>
+                <p>
+                    ub-img1类别为1，定义将背景图片等比例缩放到完全覆盖容器，背景图像有可能超过容器。
+                </p>
+                <p>
+                    ub-img2类别为2，定义背景图像横向平铺。
+                </p>
+                <p>
+                    ub-img3类别为3，定义背景图像纵向平铺。
+                </p>
+                <p>
+                    ub-img4类别为4，定义背景图像横向100%，纵向自适应。
+                </p>
+                <p>
+                    ub-img5类别为5，定义背景图像横向自适应，纵向为100%。
+                </p>
+                <p>
+                    ub-img6类别为6，定义背景图像居中显示。
+                </p>
+                 <p>
+                    注意：引用图片时的样式必须用background-image:url(),不能用background:url()。
+                </p>
+            </div>
+
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver'>
+                    <div class="ub">
+                        使用ub-img
+                    </div>
+                    <div class="ub-img qrcode">
+                        ub-img类别为空，定义将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终包含在容器内。
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08">
+                    <pre>
+                        <code>
+&lt;div class="ub-img qrcode"&gt;ub-img类别为空，定义将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终包含在容器内。&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver'>
+                    <div class="ub">
+                        使用ub-img1
+                    </div>
+                    <div class="ub-img1 qrcode">
+                        ub-img1类别为1，定义将背景图片等比例缩放到完全覆盖容器，背景图像有可能超过容器。
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub-img1 qrcode"&gt; ub-img1类别为1，定义将背景图片等比例缩放到完全覆盖容器，背景图像有可能超过容器。&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver'>
+                    <div class="ub">
+                        使用ub-img2
+                    </div>
+                    <div class="ub-img2 qrcode">
+                        ub-img2类别为2，定义背景图像横向平铺。
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub-img2 qrcode"&gt; ub-img2类别为2，定义背景图像横向平铺。&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--元素背景图片的使用结束-->
+
+        <!--实例：头部标题栏布局开始-->
+        <div id="layout_nav" class="ub ub-ver uinn-a04">
+            <h3>实例：头部标题栏布局</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                头部标题栏由左按钮、标题、右按钮组成，排列为横向布局(ub)。左按钮与右按钮有固定宽度(umw3)，其余空间分配给标题。
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver '>
+                    <div id="header" class="ub uh bc-text-head bc-head">
+                        <div id="nav-left" class="ub ub-ac uinn-rl06 umw3">
+                            <span class="fa fa-angle-left fa-2x"></span>
+                        </div>
+                        <h1 class="ub-f1 ulev-nav ut ut-s tx-c" tabindex="0">右侧带图标或文字的导航栏</h1>
+                        <div id="nav-right" class="ub ub-ac ub-pe uinn-rl06 umw3">
+                            <span class="fa fa-qq ulev12"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div id="header" class="ub uh bc-text-head bc-head"&gt;
+    &lt;div id="nav-left" class="ub ub-ac uinn-rl06 umw3"&gt;
+        &lt;span class="fa fa-angle-left fa-2x"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;h1 class="ub-f1 ulev-nav ut ut-s tx-c" tabindex="0"&gt;右侧带图标或文字的导航栏&lt;/h1&gt;
+    &lt;div id="nav-right" class="ub ub-ac ub-pe uinn-rl06 umw3"&gt;
+        &lt;span class="fa fa-qq ulev12"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--实例：头部标题栏布局结束-->
+
+        <!--实例：底部导航栏布局开始-->
+        <div id="layout_footer" class="ub ub-ver uinn-a04">
+            <h3>实例：底部导航栏布局</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                整体排列为横向布局(ub)，但图标与其对应的文字描述为垂直布局(ub-ver)。每个导航所占的比例等分(ub-f1 ub-con)，字体垂直居中（ub-ac,ub-pc）。
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub ulev08 sc-bg1">
+                    <div class="ub ub-ver ub-f1 ub-con ub-pc ub-ac uinn-a04">
+                        <span class="fmoa ulev2 sc-text-active">&#xE6D5;</span>
+                        <div class="sc-text-active umar-t02">
+                            首页
+                        </div>
+                    </div>
+
+                    <div class="ub ub-ver ub-f1 ub-con ub-pc ub-ac uinn-a04">
+                        <span class="fmoa ulev2 sc-text">&#xE657;</span>
+                        <div class="sc-text umar-t02">
+                            邮件
+                        </div>
+                    </div>
+                    <div class="ub ub-ver ub-f1 ub-con ub-pc ub-ac uinn-a04">
+                        <span class="fmoa ulev2 sc-text">&#xE627;</span>
+                        <div class="sc-text umar-t02">
+                            统计
+                        </div>
+                    </div>
+                    <div class="ub ub-ver ub-f1 ub-con ub-pc ub-ac uinn-a04">
+                        <span class="fmoa ulev2 sc-text">&#xE6D3;</span>
+                        <div class="sc-text umar-t02">
+                            我
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+
+&lt;div class="ub ulev08 sc-bg1"&gt;
+    &lt;div class="ub ub-ver ub-f1 ub-con ub-pc ub-ac uinn-a04"&gt;
+        &lt;span class="fmoa ulev2 sc-text-active"&gt;&#xE6D5;&lt;/span&gt;
+        &lt;div class="sc-text-active umar-t02"&gt;
+            首页
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="ub ub-ver ub-f1 ub-con ub-pc ub-ac uinn-a04"&gt;
+        &lt;span class="fmoa ulev2 sc-text"&gt;&#xE657;&lt;/span&gt;
+        &lt;div class="sc-text umar-t02"&gt;
+            邮件
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="ub ub-ver ub-f1 ub-con ub-pc ub-ac uinn-a04"&gt;
+        &lt;span class="fmoa ulev2 sc-text"&gt;&#xE627;&lt;/span&gt;
+        &lt;div class="sc-text umar-t02"&gt;
+            统计
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="ub ub-ver ub-f1 ub-con ub-pc ub-ac uinn-a04"&gt;
+        &lt;span class="fmoa ulev2 sc-text"&gt;&#xE6D3;&lt;/span&gt;
+        &lt;div class="sc-text umar-t02"&gt;
+            我
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--实例：底部导航栏布局结束-->
+
+        <!--实例：九宫格布局开始-->
+        <div id="gride" class="ub ub-ver uinn-a04">
+            <h3>实例：九宫格布局</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                上下两行为垂直排列，一行内的三个导航为水平排列。
+                每个导航的文字与图标之间的空隙是加了外边距umar-t04，整个宫格里面与外边有留白，是因为加了内边距uinn5。
+                图标为字体图标，所以定义有字体大小，字体颜色等。每个宫格有边框，边框颜色。字体图标背景是纯色圆盘，是因为加了圆角背景颜色等样式。
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub ub-ver sc-bg">
+                    <div class="ub ub-f1 ubb sc-border-tab">
+                        <div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06 ubr sc-border-tab">
+                            <div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #ab9ef7;">
+                                <span class="fa fa-th-large ulev2  bc-text-head"></span>
+                            </div>
+                            <div class="ub ub-ac ub-pc sc-text ulev08 umar-t04">
+                                项目结构
+                            </div>
+                        </div>
+                        <div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06 ubr sc-border-tab">
+                            <div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #8acef5;">
+                                <span class="fa fa-table ulev2  bc-text-head"></span>
+                            </div>
+                            <div class="ub ub-ac ub-pc sc-text ulev08 umar-t04">
+                                页面布局
+                            </div>
+                        </div>
+                        <div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06">
+                            <div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #ffdb8d;">
+                                <span class="fa fa-css3 ulev2  bc-text-head"></span>
+                            </div>
+                            <div class="ub ub-ac ub-pc sc-text ulev08 umar-t04">
+                                UI基础样式
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ub ub-f1">
+                        <div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06 ubr sc-border-tab">
+                            <div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #ff8d4e;">
+                                <span class="fa fa-cog ulev2  bc-text-head"></span>
+                            </div>
+                            <div class="ub ub-ac ub-pc sc-text ulev08 umar-t04">
+                                UI控件
+                            </div>
+                        </div>
+                        <div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06 ubr sc-border-tab">
+                            <div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #fc7a7a;">
+                                <span class="fa fa-cogs ulev2  bc-text-head"></span>
+                            </div>
+                            <div class="ub ub-ac ub-pc sc-text ulev08 umar-t04">
+                                控件组合
+                            </div>
+                        </div>
+                        <div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06">
+                            <div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #b7eda9;">
+                                <span class="fa fa-code ulev2 bc-text-head"></span>
+                            </div>
+                            <div class="ub ub-ac ub-pc sc-text ulev08 umar-t04">
+                                JS基础库
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-ver sc-bg"&gt;
+    &lt;div class="ub ub-f1 ubb sc-border-tab"&gt;
+        &lt;div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06 ubr sc-border-tab"&gt;
+            &lt;div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #ab9ef7;"&gt;
+                &lt;span class="fa fa-th-large ulev2  bc-text-head"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="ub ub-ac ub-pc sc-text ulev08 umar-t04"&gt;
+                项目结构
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06 ubr sc-border-tab"&gt;
+            &lt;div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #8acef5;"&gt;
+                &lt;span class="fa fa-table ulev2  bc-text-head"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="ub ub-ac ub-pc sc-text ulev08 umar-t04"&gt;
+                页面布局
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06"&gt;
+            &lt;div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #ffdb8d;"&gt;
+                &lt;span class="fa fa-css3 ulev2  bc-text-head"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="ub ub-ac ub-pc sc-text ulev08 umar-t04"&gt;
+                UI基础样式
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="ub ub-f1"&gt;
+        &lt;div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06 ubr sc-border-tab"&gt;
+            &lt;div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #ff8d4e;"&gt;
+                &lt;span class="fa fa-cog ulev2  bc-text-head"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="ub ub-ac ub-pc sc-text ulev08 umar-t04"&gt;
+                UI控件
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06 ubr sc-border-tab"&gt;
+            &lt;div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #fc7a7a;"&gt;
+                &lt;span class="fa fa-cogs ulev2  bc-text-head"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="ub ub-ac ub-pc sc-text ulev08 umar-t04"&gt;
+                控件组合
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc ub-f1 ub-con ub-ver uinn-a06"&gt;
+            &lt;div class="ub ub-ac ub-pc cms-icon-bg-big" style="background-color: #b7eda9;"&gt;
+                &lt;span class="fa fa-code ulev2 bc-text-head"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="ub ub-ac ub-pc sc-text ulev08 umar-t04"&gt;
+                JS基础库
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--实例：九宫格布局结束-->
+
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/appcan.listview.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            hljs.initHighlighting();
+            location.href = "#" + appcan.locStorage.getVal('itemName');
+        })
+
+    </script>
+</html>

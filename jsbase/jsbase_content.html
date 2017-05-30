@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="../css/solarized_light.css">
+    </head>
+    <body class="um-vp bc-bg ">
+        <!--打开窗口开始-->
+        <div id="open_win" class="ub ub-ver uinn-a04">
+            <h3>打开窗口</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    cms.openWindow(name, url, aniId, type, anim)
+                </p>
+                <h4>参数说明：</h4>
+                <p>
+                    name打开窗口名称;url窗口路径;aniId打开动画;type窗口类型;anim动画执行时间
+                </p>
+                <h4>注意：</h4>
+                <p>
+                    参数name、url为必传参数，其余参数可为空。如：cms.openWindow("index","index.html")
+                </p>
+                <p>
+                    详情请参考appcan官方文档。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.open(name,data,aniId,type,dataType,width,height,animDuration,extraInfo)')">查看</span>
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        1、默认是从右向左切入，时间为300ms。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.open(name,data,aniId,type,dataType,width,height,animDuration,extraInfo)')">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        2、由下向上切入，时间为1s。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.open(name,data,aniId,type,dataType,width,height,animDuration,extraInfo)',12,1000)">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        3、从右向左推入，时间为500ms,并且强制刷新页面。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.open(name,data,aniId,type,dataType,width,height,animDuration,extraInfo)',2,500,4)">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+//默认是从右向左切入，时间为300ms。
+cms.openWindow("doc","../doc/doc.html");
+//2、由下向上切入，时间为1s。
+cms.openWindow("doc","../doc/doc.html",12,1000);
+//从右向左推入，时间为500ms,并且强制刷新页面。
+cms.openWindow("doc","../doc/doc.html",2,500,4);
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--打开窗口结束-->
+        <!--关闭窗口开始-->
+        <div id="close_win" class="ub ub-ver uinn-a04">
+            <h3>关闭窗口</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    appcan.window.close(aniId, animDuration)
+                </p>
+                <h4>参数说明：</h4>
+                <p>
+                    aniId:动画类型Id；animDuration:动画持续时间。
+                </p>
+                <h4>注意：</h4>
+                <p>
+                    aniId参数一般为-1，为-1时的效果是：如果打开是由右向左切入，时间为300ms。那么关闭时则由左向右切入，时间为300ms。如：appcan.window.close(-1)
+                </p>
+                <p>
+                    详情请参考appcan官方文档。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.close(aniId,animDuration)')">查看</span>
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        打开一个窗口后点击左上角返回键关闭窗口。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.close(aniId,animDuration)')">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+//关闭窗口                            
+appcan.window.close(-1);
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--关闭窗口结束-->
+
+        <!--ajax请求数据开始-->
+        <div id="ajax" class="ub ub-ver uinn-a04">
+            <h3>ajax请求数据</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    cms.ajax(type, url, params, message, callback);
+                </p>
+                <h4>参数说明：</h4>
+                <p>type : 请求方式 POST或 GET（必填）</p>
+                <p>url : 请求地址（必填）</p>
+                <p>params ： 请求参数，参数是一个对象，如：{params:newBook,ac1:bookinfo}</p>
+                <p> message ： 请求数据时的提示消息,可以是字符串，空字符串''，null。如果为null，则请求没有toast弹窗</p>
+                <p> callback ： 回调函数，返回请求到的数据及所传的参数params</p>
+                
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+             使用方法如下：
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+cms.ajax(
+    'GET', 
+    'http://***', 
+    {param1:param1,param2:param2}, 
+    '这里可以为空字符串',//如果为空字符串''，toast提示窗显示默认的“加载中，请稍后...” 
+    function(data,params){
+    //data为请求到的数据
+    //params为回传的请求参数
+});
+
+//或则将回调与在外面。
+cms.ajax(
+    'GET', 
+    'http://***', 
+    {param1:param1,param2:param2}, 
+    null, //没有toast弹窗 
+    fun
+   );
+   
+   function fun(data,params){
+       //处理自己的逻辑
+   }
+      
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--ajax请求数据结束-->
+
+
+        <!--窗口之间的通讯开始-->
+        <div id="notice" class="ub ub-ver uinn-a04">
+            <h3>窗口之间的通讯</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    1、通知要执行js的窗口：appcan.window.publish('functionName', "params");
+                </p>
+                <p>
+                    2、接收执行通知的窗口：appcan.window.subscribe('functionName', function(msg){});
+                </p>
+                <h4>参数说明：</h4>
+                <p>
+                    functionName执行通知窗口要执行的js方法名，params为要传入的参数，msg为接传来的参数（就是params）。
+                </p>
+                <h4>注意：</h4>
+                <p>
+                    appcan.window.subscribe要写在appcan.ready(function(){})中，且functionName要一致。
+                </p>
+                <p>
+                    详情请参考appcan官方文档。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.publish(channelId,msg)')">查看</span>
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        1、点击头部导航’JS基础’试试？
+                    </p>
+                    <br>
+                    <p>
+                        2、从此浮动窗口通知主窗口，改变头部。<span class="cms-btn-mini" onclick="changeTitle()">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        3、甚至可以从这里改变入口页index.html的头部。先<span class="cms-btn-mini" onclick="changeIdxTitle()">点击我</span>再反回首页看看？
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+//通知要执行js的窗口
+function notice(){
+     appcan.window.publish("notice", "这段文字是从主窗口传过来的哦！");
+}
+
+//接收执行通知的窗口
+appcan.ready(function() {
+    //接收主窗口的通知
+    appcan.window.subscribe('notice', function(msg){
+        appcan.window.alert('提示',msg,"确定");
+    });
+})
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--窗口之间的通讯结束-->
+
+        <!--toast弹出窗口开始-->
+        <div id="toast" class="ub ub-ver uinn-a04">
+            <h3>toast弹出提示窗口</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    详情请参考appcan官方文档。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.openToast(msg,duration,position,type)')">查看</span>
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        1、打开toast窗口
+                    </p>
+                    <h4>调用方式：</h4>
+                    <p>
+                        cms.toast(message, time, position)
+                    </p>
+                    <h4>参数说明：</h4>
+                    <p>
+                        message: 要显示的内容
+                    </p>
+                     <p>
+                        time: 执行的时间，toast执行的时间(毫秒), 如果该参数不为空则没有进度条。
+                    </p>
+                    <p>
+                        position: 显示在屏幕中的位置，如果为空居中显示
+                    <p>
+                        1: left_top 左上，
+                    </p>
+                    <p>
+                        2: top 上中，
+                    </p>
+                    <p>
+                        3: right_top 右上，
+                    </p>
+                    <p>
+                        4: left 左中，
+                    </p>
+                    <p>
+                        5: middle 中间，
+                    </p>
+                    <p>
+                        6: right 右中，
+                    </p>
+                    <p>
+                        7: bottom_left 下左，
+                    </p>
+                    <p>
+                        8: bottom 下中，
+                    </p>
+                    <p>
+                        9: right_bottom 右下
+                    </p>
+                    <br>
+                    <p>
+                        示例1、什么参数也不传。<span class="cms-btn-mini" onclick="cms.toast()">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        示例2、改变默认提示内容。<span class="cms-btn-mini" onclick="cms.toast('这里是自定义的内容1')">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        示例3、改变默认提示内容，执行2000ms。<span class="cms-btn-mini" onclick="cms.toast('这里是自定义的内容2',2000)">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        示例4、改变默认提示内容，执行5000ms，并且显示位置在右中。<span class="cms-btn-mini" onclick="cms.toast('这里是自定义的内容3',5000,6)">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                       <code>
+//什么参数也不传                          
+cms.toast();
+//改变默认提示内容
+cms.toast('这里是自定义的内容1');
+//改变默认提示内容，执行2000ms
+cms.toast('这里是自定义的内容2',2000);
+//改变默认提示内容，执行5000ms，并且显示位置在右中
+cms.toast('这里是自定义的内容3',5000,6);
+                        </code>
+                    </pre>
+                </div>
+                <div class='ub-f1'>
+                    <h4>关闭toast窗口</h4>
+                    <p>
+                        有些场景需要手动去关闭toast窗。如，示例1示例2。
+                    </p>
+                    <p>点击示例1或示例2后再点此<span class="cms-btn-mini" onclick="cms.closeToast()">试试</span></p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+//关闭toast                           
+cms.closeToast();
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--toast弹出窗口结束-->
+
+        <!--alert提示框开始-->
+        <div id="alert" class="ub ub-ver uinn-a04">
+            <h3>alert提示框</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    appcan.window.alert(title,  content,buttons,callback)
+                </p>
+                <h4>参数说明：</h4>
+                <p>
+                    title:弹出框的标题
+                </p>
+                <p>
+                    content:弹出框的内容
+                </p>
+                <p>
+                    buttons:弹出框的按钮列表最多是三个
+                </p>
+                <p>
+                    callback(err,data,dataType,optId):当点击了其中一个按钮后的回调，如果只有一个确定按钮则不执行回调函数 第一个参数是Error对象如果为空则表示没有错误，否则表示操作出错了，data表示返回的操作结果,dataType操作结果的数据类型，optId该操作id
+                </p>
+                <p>
+                    详情请参考appcan官方文档。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.alert(title,content,buttons,callback)')">查看</span>
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        1、简单的alert提示框。<span class="cms-btn-mini" onclick="alert1()">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        2、多按钮的alert提示框。<span class="cms-btn-mini" onclick="alert2()">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+//简单的alert提示框
+appcan.window.alert('提示',"提示内容","确定");
+
+//多按钮的alert提示框
+appcan.window.alert({
+    title:"提示",
+    content:"多按钮的提示框",
+    buttons:['按钮0','按钮1','按钮2'],
+    callback:function(err,data,dataType,optId){
+        appcan.window.alert('提示',"点了第"+data+"个按钮","确定");
+    }
+});
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--alert提示框结束-->
+
+        <!--confirm提示框开始-->
+        <div id="confirm" class="ub ub-ver uinn-a04">
+            <h3>confirm提示框</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    用法与alert多按钮提示框相同
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        点击<span class="cms-btn-mini" onclick="confirmWin()">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+//确认提示框                            
+appcan.window.confirm({
+    title:'提示',
+    content:'小提示',
+    buttons:['确定','取消'],
+    callback:function(err,data,dataType,optId){
+         appcan.window.alert('提示',data,"确定");
+    }
+});
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--confirm提示框结束-->
+
+        <!--可输入提示框开始-->
+        <div id="prompt" class="ub ub-ver uinn-a04">
+            <h3>可输入提示框</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    appcan.window.prompt(title,content,   defaultValue,buttons,callback)
+                </p>
+                <h4>参数说明：</h4>
+                <p>
+                    title:提示框的标题
+                </p>
+                <p>
+                    content:提示框中显示的内容
+                </p>
+                <p>
+                    defaultValue:(String类型) 必选 输入框默认文字
+                </p>
+                <p>
+                    buttons:提示框显示的按钮，多个按钮可以为数组形式
+                </p>
+                <p>
+                    callback(err,data,dataType,optId):当点击了其中一个按钮后的回调， 第一个参数是Error对象如果为空则表示没有错误，否则表示操作出错了，data表示返回的操作结果{num:'按钮的索引值',value:'输入框的值'},dataType操作结果的数据类型，optId该操作id
+                </p>
+                <p>
+                    详情请参考appcan官方文档。<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.alert(title,content,buttons,callback)')">查看</span>
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        点击<span class="cms-btn-mini" onclick="promptWin()">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+//可输入的提示窗口
+function promptWin(){
+   appcan.window.prompt({
+        title:'提示',
+        content:'请输入',
+        defaultValue:' ',
+        buttons:['确定','取消'],
+        callback:function(err,data,dataType,optId){
+             appcan.window.alert('提示','你点击了'+ data.num +'个按钮，输入的值为：'+data.value,"确定");
+        }
+    })
+}
+                </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--可输入提示框结束-->
+
+        <!--本地存储LocStorage开始-->
+        <div id="loc_storage" class="ub ub-ver uinn-a04">
+            <h3>本地存储LocStorage</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                   HTML5 Web 存储包括保存数据，取出数据及清空数据。
+                </p>
+                <p>
+                    详情请参考HTML5 Web 存储文档。<span class="cms-btn-mini" onclick="openDoc('doc','http://www.runoob.com/html/html5-webstorage.html')">查看</span>
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        1、保存数据。
+                    </p>
+                    <h4>调用方式：</h4>
+                    <p>
+                        cms.setLocVal(key, Val)
+                    </p>
+                    <h4>参数说明：</h4>
+                    <p>
+                        key:要保存的键。
+                    </p>
+                    <p>
+                        val:要保存对应的值。
+                    </p>
+                    <p>
+                        保存键为“locStorageTest1”，值为”如果不清空，该条数据将永远存在“的数据。<span class="cms-btn-mini" onclick="cms.setLocVal('locStorageTest1', '如果不清空，该条数据将永远存在')">保存</span>
+                    </p>
+                    <br>
+                    <p>
+                        保存键为“locStorageTest2”，值为”您好！“的数据。<span class="cms-btn-mini" onclick="cms.setLocVal('locStorageTest2', '您好！')">保存</span>
+                    </p>
+                    <p>
+                        可以在下面获取保存的数据取值。
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+cms.setLocVal('locStorageTest1', '如果不清空，该条数据将永远存在');
+cms.setLocVal('locStorageTest2', '您好！');
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub-f1'>
+                    <p>
+                        2、获取保存的数据。
+                    </p>
+                    <p>
+                        只要不清空数据，可以在任何页面取得已保存的数据。
+                    </p>
+                    <h4>调用方式：</h4>
+                    <p>
+                        cms.getLocVal(key)
+                    </p>
+                    <h4>参数说明：</h4>
+                    <p>
+                        key:要获取值的键。
+                    </p>
+                    <p>
+                        获取键为locStorageTest1的值，<span class="cms-btn-mini" onclick="alert(cms.getLocVal('locStorageTest1'))">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        获取键为locStorageTest2的值，<span class="cms-btn-mini" onclick="alert(cms.getLocVal('locStorageTest2'))">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+cms.getLocVal('locStorageTest1');
+cms.getLocVal('locStorageTest2');
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub-f1'>
+                    <p>
+                        3、清除保存的数据。
+                    </p>
+                    <h4>调用方式：</h4>
+                    <p>
+                        cms.removeLocVal(key)
+                    </p>
+                    <h4>参数说明：</h4>
+                    <p>
+                        key:要清除的键。key可以为一个字符串，可以为一个数组，可以为空。
+                    </p>
+                    <h4> 注意：</h4>
+                    <p>
+                       为空时清除所有的本地存储，要慎重始用。由于安卓有返回键，所以需在退出的时候调用cms.listenBack(key)。
+                    </p>
+                    <p>
+                        清除键为locStorageTest1的值，点击<span class="cms-btn-mini" onclick="cms.removeLocVal('locStorageTest1')">消除</span>后就不能再获取到locStorageTest1的值了。
+                    </p>
+                    <br>
+                    <p>
+                       key为数组时清除多个值，点击<span class="cms-btn-mini" onclick="cms.removeLocVal(['locStorageTest1','locStorageTest2'])">消除</span>所有的本地存储都被清除了。
+                    </p>
+                    <br>
+                    <p>
+                        清除所有值，点击<span class="cms-btn-mini" onclick="cms.removeLocVal()">消除</span>所有的本地存储都被清除了。
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+//清除键为locStorageTest1的值
+cms.removeLocVal('locStorageTest');
+//key为数组时清除多个值
+cms.removeLocVal(['locStorageTest1','locStorageTest2']);
+//清除所有值
+cms.removeLocVal();
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--本地存储LocStorage结束-->
+        
+      <!--清除字符串首尾空格开始-->
+        <div id="trim" class="ub ub-ver uinn-a04">
+            <h3>清除字符串首尾空格</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>cms.trim(str)</p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        没有清除首尾空格<span class="cms-btn-mini" onclick="alert('          没有清除首尾空格           ')">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        清除了首尾空格<span class="cms-btn-mini" onclick="alert(cms.trim('          清除了首尾空格           '))">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+alert('          没有清除首尾空格           ');
+alert(cms.trim('          清除了首尾空格           '));
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--清除字符串首发空格结束-->  
+        
+        <!--清除字符串所有空格开始-->
+        <div id="trimAll" class="ub ub-ver uinn-a04">
+            <h3>清除字符串所有空格</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>cms.trim(str)</p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        没有清除空格<span class="cms-btn-mini" onclick="alert('          没   有清除    所          有 空   格           ')">试试</span>
+                    </p>
+                    <br>
+                    <p>
+                        清除了所有空格<span class="cms-btn-mini" onclick="alert(cms.trimAll('          清除了    所          有 空   格           '))">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+alert('          没有清除空格           ');
+alert(cms.trimAll('          清除了所有空格           '));
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--清除字符串首发空格结束-->  
+        
+          <!--下拉刷新或加载开始-->
+        <div id="set_bounce" class="ub ub-ver uinn-a04">
+            <h3>下拉或上拉加载数据</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>在appcan.ready()中加入下面的代码。</p>
+                <h4>注意：</h4>
+                <p>如果页面设置上拉或下拉加载数据，那么页面初始化时不能设置为弹动，也就是不能加appcan.initBounce();</p>
+                <p>详情请参考appcan官方文档<span class="cms-btn-mini" onclick="openDoc('doc','http://newdocx.appcan.cn/newdocx/docx?type=1259_1254#appcan.window.setBounce(bounceType,startPullCall,downEndCall,upEndCall,color,imgSettings)')">查看</span></p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        返回顶部下拉试试？<span class="cms-btn-mini" onclick="cms.scrollToTop()">返回顶部</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+//下拉刷新
+appcan.window.setBounce({
+    bounceType : '0',
+    color : '#ececec',
+    imgSettings : {
+        "textColor" : "#ddd",
+        "pullToReloadText" : "下拉刷新",
+        "releaseToReloadText" : "释放刷新",
+        "loadingText" : "加载中，请稍后..."
+    },
+    upEndCall : function(type) {
+        //将要恢复弹动时的回调，在此写自己的逻辑
+        appcan.window.alert('提示','页面恢复弹动时触发','确定');
+    }
+});
+
+//上拉加载更多与下拉刷新一样，只是bounceType为1
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--下拉刷新或加载结束-->  
+            
+              <!--分享开始-->
+        <div id="share" class="ub ub-ver uinn-a04">
+            <h3>分享</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>在页面中引入cms.js与cms.share.js即可调出分享弹窗。至于分享的具体逻辑需要参考appcan文档与各分享提供方文档，这部分后期完善。</p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        点击<span class="cms-btn-mini" onclick="cms.popup()">分享</span>试试？
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+点击&lt;span class="cms-btn-mini" onclick="cms.popup()"&gt;分享&lt;/span&gt;试试？
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--分享结束-->          
+
+        <!--拨打电话底部弹出窗开始-->
+        <div id="call_phone" class="ub ub-ver uinn-a04">
+            <h3>拨打电话底部弹出窗</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    cms.showcall(officePhone,mobileNo)
+                </p>
+                <h4>参数说明：</h4>
+                <p>
+                    officePhone:办公电话；mobileNo:移动电话。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        点击<span class="cms-btn-mini" onclick="cms.showcall('0188324','18734567890')">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+cms.showcall('0188324','18734567890');
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--拨打电话底部弹出窗结束-->
+
+        <!--返回到顶部开始-->
+        <div id="top_bar" class="ub ub-ver uinn-a04">
+            <h3>返回到顶部</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    cms.scrollToTop()
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        点击<span class="cms-btn-mini" onclick="cms.scrollToTop()">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+cms.scrollToTop();
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--返回到顶部结束-->
+
+        <!--将时间转成友好的显示方式开始-->
+        <div id="parse_time" class="ub ub-ver uinn-a04">
+            <h3>将时间转成友好的显示方式</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    cms.parserTime(time)
+                </p>
+                <h4>参数说明：</h4>
+                <p>
+                    time:传入的时间。格式为：”2015-11-05 09:34:25“、“2015-11-05T09:34:25”、“2015/11/5 19:41:44“
+                </p>
+                <h4>返回值：</h4>
+                <p>
+                    当天日期只显示时间、 昨天和前天日期显示昨天 ，前天，加时间、 今年显示月，日、更早显示年月日。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        转换昨天此时的日期。<span class="cms-btn-mini" onclick="alert(cms.parserTime(getTime()))">试试</span>
+                    </p>
+                    <br />
+                    <p>
+                        转换”2016-08-05 09:34:25“。<span class="cms-btn-mini" onclick="alert(cms.parserTime('2016-08-05 09:34:25'));">试试</span>
+                    </p>
+                    <br />
+                    <p>
+                        转换”2015/08/05 09:34:25“。<span class="cms-btn-mini" onclick="alert(cms.parserTime('2015/08/05 09:34:25'));">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+cms.parserTime('2015/08/05 09:34:25');
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--将时间转成友好的显示方式结束-->
+                
+        <!--日期格式转换，输出指定格式开始-->
+        <div id="str_to_date" class="ub ub-ver uinn-a04">
+            <h3>日期格式转换，输出指定格式</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    cms.strToDate(dateStr,type, separate)
+                </p>
+                <h4>参数说明：</h4>
+                <p>
+                    dateStr:传入的时间。格式类型如下：
+                    “2015-11-05 09:34:25”、
+                    “2015/11/05 09:34:25”、
+                    “2015年11月5日 19:41:44”、
+                    1472639579（时间戳）
+                </p>
+                <p>type:返回的时间。
+                    y:返回年、
+                    md:返回月日、
+                    ymd：返回年月日、
+                    hi:返回时分、
+                    his：返回时分秒、
+                                                            默认全部返回。
+                </p>
+                <p>
+                    separate:返回的时间格式分隔符。
+                                                            特殊：分隔符为 ch时返回时间类型如：2016年08月09日
+                </p>
+               
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                    <p>
+                        将时间“2016/9/8 12:34:54”输出为“2016年09月08日”。<span class="cms-btn-mini" onclick="alert(cms.strToDate('2016/9/8 12:34:54','ymd','ch'))">试试</span>
+                    </p>
+                    <br />
+                    <p>
+                        将时间“2016-9-8 12:34:54”输出为“2016/09/08”。<span class="cms-btn-mini" onclick="alert(cms.strToDate('2016-9-8 12:34:54','ymd','/'));">试试</span>
+                    </p>
+                    <br />
+                    <p>
+                        将时间“2016-9-8 12:34:54”输出为“12:34”。<span class="cms-btn-mini" onclick="alert(cms.strToDate('2016-9-8 12:34:54','hi'));">试试</span>
+                    </p>
+                                      <br />
+                    <p>
+                        将时间“2016-9-8 12:34:54”输出为“20160908”。<span class="cms-btn-mini" onclick="alert(cms.strToDate('2016-9-8 12:34:54' ,'ymd'));">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+cms.strToDate('2016/9/8 12:34:54','ymd','ch');
+cms.strToDate('2016-9-8 12:34:54','ymd','/');
+cms.strToDate('2016-9-8 12:34:54','hi');
+cms.strToDate('2016-9-8' 'ymd');
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--日期格式转换，输出指定格式结束-->
+        
+        <!--隐藏数字中的一部分-->
+        <div id="hidden_part" class="ub ub-ver uinn-a04">
+            <h3>隐藏数字中的一部分</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <h4>调用方式：</h4>
+                <p>
+                    cms.hiddenPart(number,n);
+                </p>
+                <h4>参数说明：</h4>
+                <p>
+                    number:数字
+                </p>
+                <p>
+                    n:要隐藏几位
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                    
+                    <p>
+                        将数字15287678767隐藏四位。<span class="cms-btn-mini" onclick="alert(cms.hiddenPart(15287678767,4));">试试</span>
+                    </p>
+                    <br />
+                    <p>
+                        将数字1234隐藏一位。<span class="cms-btn-mini" onclick="alert(cms.hiddenPart(1234,1));">试试</span>
+                    </p>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+cms.hiddenPart(15287678767,4);
+cms.hiddenPart(1234,1);
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--隐藏数字中的一部分结束-->
+
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/cms.js"></script>
+        <script src="../js/cms.share.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+
+    </body>
+    <script>
+        appcan.ready(function() {
+            hljs.initHighlighting();
+            location.href = "#" + appcan.locStorage.getVal('itemName');
+
+            //接收主窗口的通知
+            appcan.window.subscribe('notice', function(msg) {
+                appcan.window.alert('提示', msg, "确定");
+            });
+            
+            //下拉加载更多
+            appcan.window.setBounce({
+                bounceType : '0',
+                color : '#ececec',
+                imgSettings : {
+                    "textColor" : "#ddd",
+                    "pullToReloadText" : "下拉刷新",
+                    "releaseToReloadText" : "释放刷新",
+                    "loadingText" : "加载中，请稍后..."
+                },
+                upEndCall : function(type) {
+                    //将要恢复弹动时的回调，在此写自己的逻辑
+                    appcan.window.alert('提示','页面恢复弹动时触发','确定');
+                }
+            });
+
+        })
+
+        function changeTitle() {
+            //通知主窗口改变头部标题
+            appcan.window.publish('changeTitle', "改变了内容");
+        }
+
+        function changeIdxTitle() {
+            //通知入口页index.html,改变头部内容
+            appcan.window.publish('changeIdxTitle', "内容被改变了");
+        }
+
+        //打开窗口后并打开链接
+        function openDoc(pageName, href, aniId, anim, type) {
+            appcan.locStorage.setVal('isOpenUrl', 'true');
+            appcan.locStorage.setVal('href', {'查看':href});
+            if (aniId != null) {
+                cms.openWindow("doc", "../doc/doc.html", aniId, anim, type);
+            } else {
+                cms.openWindow("doc", "../doc/doc.html");
+            }
+        }
+
+        //简单的alert提示框
+        function alert1() {
+            appcan.window.alert('提示', "提示内容", "确定");
+        }
+
+        //多按钮alert提示框
+        function alert2() {
+            appcan.window.alert({
+                title : "提示",
+                content : "多按钮的提示框",
+                buttons : ['按钮1', '按钮2', '按钮3'],
+                callback : function(err, data, dataType, optId) {
+                    appcan.window.alert('提示', "点了第" + data + "个按钮", "确定");
+                }
+            });
+        }
+
+        //打开一个确认框
+        function confirmWin() {
+            appcan.window.confirm({
+                title : '提示',
+                content : '小提示',
+                buttons : ['确定', '取消'],
+                callback : function(err, data, dataType, optId) {
+                    appcan.window.alert('提示', data, "确定");
+                }
+            });
+        }
+
+        //可输入的提示窗口
+        function promptWin() {
+            appcan.window.prompt({
+                title : '提示',
+                content : '请输入',
+                defaultValue : ' ',
+                buttons : ['确定', '取消'],
+                callback : function(err, data, dataType, optId) {
+                    appcan.window.alert('提示', '你点击了' + data.num + '个按钮，输入的值为：' + data.value, "确定");
+                }
+            });
+        }
+
+        function getTime() {
+            var d = new Date();
+            d.setTime(d.getTime() - 1000 * 60 * 60 * 24);
+            return d.toLocaleString();
+        }
+    </script>
+</html>

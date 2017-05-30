@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="../css/solarized_light.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <!--列表开始-->
+        <div class="ub uinn-a04">
+            <h2>文档概要和设置</h2>
+        </div>
+        <div id="" class="ub ub-ver uinn-a04">
+            <h3>文档类型</h3>
+            <div class="ub uinn-a04 ulev1 text-i">
+                AppCan开发平台是基于HTML5+CSS3+JavaScript技术的跨平台移动应用。项目中的页面采用标准的HTML5头部声明。&lt;title&gt;标签可有可无，留空也可。接下来是声明页面编码，建议使用UTF8编码，因为JS中ajax与json编码只能是UTF8，避免出现乱码和程序异常。
+            </div>
+            <div class="ub-f1 sc-bg uinn-a04 uba bc-border uc-a03 ulev08" >
+                <pre>
+                        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px"&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+&lt;/head&gt;
+&lt;/html&gt;       
+                        </code>
+                    </pre>
+            </div>
+        </div>
+
+        <div id="" class="ub ub-ver uinn-a04">
+            <h3>页面设置</h3>
+            <div class="ub-f1 uinn-a04  text-i">
+                <p>
+                   viewport元属性的设置，这里分别解释一下content里的内容。
+                </p>
+                <p>
+                    target-densitydpi=device-dpi，指定屏幕像素密度DPI，device-dpi 为设备原本的DPI值，不会有任何缩放。
+                </p>
+                <p>
+                    width=device-width，指定屏幕宽度，device-width设备屏幕的宽度。
+                </p>
+                <p>
+                    initial-scale=1，初始缩放比例，设置为1，表示不进行任何缩放，显示原始大小。
+                </p>
+                <p>
+                    user-scalable=no，用户是否可以手动缩放页面，设为no不允许。
+                </p>
+                <p>
+                    minimum-scale=1.0，最小缩放比例，设为1，最小只能缩放到1倍。
+                </p>
+                <p>
+                    maximum-scale=1.0，最大缩放比例，设为1，最大只能缩放到1倍，与上一项配合，保证，页面不会进行缩放。
+                </p>
+            </div>
+            <div class="ub-f1 sc-bg uinn-a04 uba bc-border uc-a03 ulev08" >
+                <pre>
+                    <code>
+&lt;meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt; 
+                    </code>
+                </pre>
+            </div>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                这样设置完成后，就能够保证，在任何设备中，网页的宽度就是屏幕显示区域的宽度，不会发生变化，这样我们进行排版里就不会出现问题，这也是与普通web开发比较大的不同之处了。
+            </div>
+        </div>
+
+        <div class="ub uinn-a04">
+            <h2>页面结构和模板</h2>
+        </div>
+        <div id="" class="ub ub-ver uinn-a04">
+            <h3>页面头(命名格式：xxx.html)模板</h3>
+            <div class="ub-f2 uinn-a04 ulev1 text-i">
+                app页面有两部分组成，头文件和内容文件。头文件是app界面的标题栏部分，可定义返回键、标题、自定义功能按钮。
+            </div>
+            <div class="ub-f1 sc-bg uinn-a04 uba bc-border uc-a03  ulev08" >
+                <pre>
+                        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px"&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;
+        &lt;link rel="stylesheet" href="css/ui-base.css"&gt;
+    &lt;/head&gt;
+    &lt;body class="um-vp bc-bg"&gt;
+        &lt;div class="up ub ub-ver" tabindex="0"&gt;
+            &lt;!--header开始--&gt;
+            &lt;div id="header" class="uh bc-text-head ub bc-head"&gt;
+                &lt;div class="ub ub-ac uinn-rl04 umw3" id="nav-left"&gt;
+                    &lt;!--回退键--&gt;
+                &lt;/div&gt;
+                &lt;h1 class="ut ub-f1 ulev-nav ut-s tx-c" tabindex="0"&gt;标题&lt;/h1&gt;
+                &lt;div class="ub ub-ac umw3" id="nav-right"&gt;
+                    &lt;!--自定义功能按钮区--&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!--header结束--&gt;&lt;!--content开始--&gt;
+            &lt;div id="content" class="ub-f1 tx-l"&gt;
+                    &lt;!--主功能区--&gt;
+            &lt;/div&gt;
+            &lt;!--content结束--&gt;
+        &lt;/div&gt;
+        &lt;script src="js/appcan.js"&gt;&lt;/script&gt;
+        &lt;script src="js/appcan.control.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+    &lt;script&gt;
+        appcan.ready(function() {
+            //加载xxx_content.html
+        });        
+    &lt;/script&gt;
+&lt;/html&gt;
+                        </code>
+                    </pre>
+            </div>
+        </div>
+
+        <div id="" class="ub ub-ver uinn-a04">
+            <h3>页面内容(命名格式：xxx_content.html)模板</h3>
+            <div class="ub-f2 uinn-a04 ulev1">
+                内容文件是app界面的主功能区，在头文件中加载。
+            </div>
+            <div class="ub-f1 sc-bg uinn-a04 uba bc-border uc-a03 ulev08" >
+                <pre>
+                        <code>
+&lt;!DOCTYPE html&gt;
+&lt;html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px"&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;
+        &lt;link rel="stylesheet" href="css/ui-base.css"&gt;
+    &lt;/head&gt;
+    &lt;body class="um-vp bc-bg"&gt;
+        &lt;!--编写页面区域--&gt;
+        &lt;script src="js/appcan.js"&gt;&lt;/script&gt;
+        &lt;script src="js/appcan.control.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+    &lt;script&gt;
+        //js函数
+    &lt;/script&gt;
+&lt;/html&gt;                            
+                        </code>
+                    </pre>
+            </div>
+        </div>
+
+        <div id="" class="ub ub-ver uinn-a04">
+            <h3>项目目录结构</h2> <div class="ub-f2 uinn-a04 ulev1"></div>
+            <div class="ub-f1 sc-bg uinn-a04 uba bc-border uc-a03 ulev08" >
+                <pre>
+                        <code>
+root
+├─css
+│  ├─css
+│  └─fonts
+├─js
+│ 
+├─images
+│
+├─html1
+│
+└─html2
+  
+
+- css/
+   + ui-base.css 
+   + appcan.control.css
+- font/
+   + 存放 字体文件
+- images/
+   + 存放 图片文件
+- js/
+   + appcan.js
+   + appcan.control.js
+   + appcan开发库以及其他第三方类库
+- html1/
+- html2/
+   + 存放项目页面                        
+                        </code>
+                    </pre>
+            </div>
+        </div>
+        <!--列表结束-->
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            hljs.initHighlighting();
+        })
+    </script>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="listview"  class="ubt bc-border sc-bg"></div>
+
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/appcan.listview.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            //设置滚动条不显示
+            uexWindow.setWindowScrollbarVisible(false);
+        })
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thinLine",
+            hasAngle : true
+        });
+        lv.set([{
+            title : '字体大小',
+            itemName : 'ulev',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '文本对齐方式',
+            itemName : 'align',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '文本超出部分隐藏',
+            itemName : 'ut-s',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '文本颜色',
+            itemName : 'font_color',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '内边距',
+            itemName : 'uinn',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '外边距',
+            itemName : 'umar',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '边框',
+            itemName : 'uba',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '边框颜色',
+            itemName : 'border_color',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '边框圆角',
+            itemName : 'uc',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '背景颜色',
+            itemName : 'bg_color',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '元素左右浮动',
+            itemName : 'uf',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '定义行内元素',
+            itemName : 'uinl',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '定义最小高度',
+            itemName : 'umh',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '定义最小宽度',
+            itemName : 'umw',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '隐藏元素',
+            itemName : 'uhide',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '图标字体',
+            itemName : 'fa',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '首行缩进',
+            itemName : 'text-i',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '圆型、方形纯色背景',
+            itemName : 'icon_bg',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '带文字的圆型背景',
+            itemName : 'cms-circle',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '消息数量角标提示',
+            itemName : 'badge',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '元素点击反馈',
+            itemName : 'act',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '将元素固定在底部',
+            itemName : 'bottom_bar',
+            name : "base",
+            url : "base.html"
+        }, {
+            title : '将元素固定在顶部',
+            itemName : 'top_bar',
+            name : "base",
+            url : "base.html"
+        }])
+        lv.on("click", function(ele, data, curEle) {
+            appcan.locStorage.setVal("itemName", data.itemName);
+            appcan.window.open(data.name, data.url, 10);
+        })
+    </script>
+</html>

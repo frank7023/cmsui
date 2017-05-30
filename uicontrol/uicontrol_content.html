@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/fonts/moa.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+        <link rel="stylesheet" href="../css/solarized_light.css">
+    </head>
+    <body class="um-vp bc-bg ">
+        <!--文本对齐方式开始-->
+        <div id="button" class="ub ub-ver uinn-a04">
+            <h3>按钮</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                为使项目UI达到统一，使用的按钮各类有如下几种：
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub-f1'>
+                    <p>
+                        1、普通按钮，cms-btn、cms-btn-mini
+                    </p>
+                    <p>
+                        背景颜色自处定义，默认为灰色。cms-btn-disabled为按钮禁用样式。
+                    </p>
+                    <div class="ub ub-pc umar-t04">
+                        <div class="cms-btn">确定</div>
+                        <div class="cms-btn sc-btn">取消</div>
+                        <div class="cms-btn cms-btn-disabled">禁用</div>
+                        <br>
+                        <br>
+                        <div class="cms-btn-mini">确定</div>
+                        <div class="cms-btn-mini sc-btn">取消</div>
+                        <div class="cms-btn-mini cms-btn-disabled">禁用</div>
+                    </div>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-btn"&gt;确定&lt;/div&gt;
+&lt;div class="cms-btn sc-btn"&gt;取消&lt;/div&gt;
+&lt;div class="cms-btn cms-btn-disabled"&gt;禁用&lt;/div&gt;
+&lt;div class="cms-btn-mini&gt;确定&lt;/div&gt;
+&lt;div class="cms-btn-mini sc-btn"&gt;取消&lt;/div&gt;
+&lt;div class="cms-btn-mini cms-btn-disabled"&gt;禁用&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub-f1'>
+                    <p>
+                        2、无背景按钮
+                    </p>
+                    <p>
+                        按钮大小自适应内容。
+                    </p>
+                    <div class="ub ub-pc umar-t04">
+                        <div class="cms-btn-radius">电话</div>
+                    </div>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-btn-radius"&gt;电话&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub-f1'>
+                    <p>
+                        3、块状按钮
+                    </p>
+                    <p>
+                        按钮大小自适应父元素大小。
+                    </p>
+                    <br>
+                    <div class="cms-btn-block">块状按钮</div>
+                    <br />
+                    <div class="cms-btn-block-bulk">块状按钮</div>
+                    <br />
+                    <div class="cms-btn-block-bulk cms-btn-disabled">块状按钮</div>
+                </div>
+                <div class="ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-btn-block"&gt;块状按钮&lt;/div&gt;
+&lt;div class="cms-btn-block-bulk"&gt;块状按钮&lt;/div&gt;
+&lt;div class="cms-btn-block-bulk cms-btn-disabled"&gt;块状按钮&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--文本对齐方式开始-->
+
+        <!--单选框开始-->
+        <div id="radio" class="ub ub-ver uinn-a04">
+            <h3>单选按钮</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    cms-radio-btn
+                </p>
+                <p>
+                    单选按钮使用了自定义的按钮样式，位于cms-ui-base.css文件中。
+                </p>
+                <p>
+                    注意1：使用此单选按钮时按钮组时input的name属性要一样，id应与对应的label标签的for属性一样。
+                </p>
+                <p>
+                    注意2：点击时会有300ms的延时，需引入fastclick.min.js文件，并在页面初始化时调用。调用方法：FastClick.attach(document.body);
+                    详细说明请参与相关资料下的解决移动端 click事件 300毫秒延迟
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <p>
+                    按钮型单选框，cms-radio-btn
+                </p>
+                <br>
+                <div class='ub ub-f1 ub-ac ub-pc'>
+                    <input type="radio" id="radio1" name="radio1" class="cms-radio-btn" checked="checked" value="1" />
+                    <label for="radio1">同意</label>
+
+                    <input type="radio" id="radio2" name="radio1" class="cms-radio-btn" value="2" />
+                    <label for="radio2">不同意</label>
+
+                    <input type="radio" id="radio3" name="radio1" class="cms-radio-btn" value="3" />
+                    <label for="radio3">中立</label>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;input type="radio" id="radio1" name="radio1" class="cms-radio-btn" checked="checked" value="1" /&gt;
+&lt;label for="radio1"&gt;同意&lt;/label&gt;
+
+&lt;input type="radio" id="radio2" name="radio1" class="cms-radio-btn" value="2" /&gt;
+&lt;label for="radio2"&gt;不同意&lt;/label&gt;
+
+&lt;input type="radio" id="radio3" name="radio1" class="cms-radio-btn" value="3" /&gt;
+&lt;label for="radio3"&gt;中立&lt;/label&gt; 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--单选框开始-->
+
+        <!--复选框开始-->
+        <div id="checkbox" class="ub ub-ver uinn-a04">
+            <h3>复选按钮</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    cms-checkbox-btn，cms-checkbox-round
+                </p>
+                <p>
+                    与单选按钮一样，复选按钮也使用了自定义的按钮样式，位于cms-ui-base.css文件中。
+                </p>
+                <p>
+                    注意1：使用此复选按钮时按钮组时input的id应与对应的label标签的for属性一样。
+                </p>
+                <p>
+                    注意2：点击时会有300ms的延时，需引入fastclick.min.js文件，并在页面初始化时调用。调用方法：FastClick.attach(document.body);
+                    详细说明请参与相关资料下的解决移动端 click事件 300毫秒延迟
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <p>
+                    1、按钮型复选框cms-checkbox-btn
+                </p>
+                <br>
+                <div class="ub ub-f1 ub-ac ub-pc">
+                    <input type="checkbox" id="checkbox1" class="cms-checkbox-btn" value="1" />
+                    <label for="checkbox1">选择1</label>
+
+                    <input type="checkbox" id="checkbox2" class="cms-checkbox-btn" value="2" />
+                    <label for="checkbox2">选择2</label>
+
+                    <input type="checkbox" id="checkbox3" class="cms-checkbox-btn" value="3" />
+                    <label for="checkbox3">选择3</label>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;input type="checkbox" id="checkbox1" class="cms-checkbox-btn" value="1" /&gt;
+&lt;label for="checkbox1"&gt;选择1&lt;/label&gt;
+
+&lt;input type="checkbox" id="checkbox2" class="cms-checkbox-btn" value="2" /&gt;
+&lt;label for="checkbox2"&gt;选择2&lt;/label&gt;
+
+&lt;input type="checkbox" id="checkbox3" class="cms-checkbox-btn" value="3" /&gt;
+&lt;label for="checkbox3"&gt;选择3&lt;/label&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <p>
+                    2、圆型勾选复选框cms-checkbox-round
+                </p>
+                <p>
+                    选框大小由图标字体大小而定。
+                </p>
+                <p>
+                    注意：自定义初始化背景颜色时字体图标颜色要与背景颜色一致，默认都为白色。
+                </p>
+                <br>
+                <div class="ub ub-f1 ub-ac ub-pc"> 
+                    <input type="checkbox" id="checkbox4" class="cms-checkbox-round" value="1" />
+                    <label for="checkbox4" class="fa fa-check ulev15"></label>
+
+                    <input type="checkbox" id="checkbox5" class="cms-checkbox-round" value="2" />
+                    <label for="checkbox5" class="fa fa-check ulev12"></label>
+
+                    <input type="checkbox" id="checkbox6" class="cms-checkbox-round" value="3" />
+                    <label for="checkbox6" class="fa fa-check ulev06"></label>
+
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;input type="checkbox" id="checkbox4" class="cms-checkbox-round" value="1" /&gt;
+&lt;label for="checkbox4" class="fa fa-check ulev15"&gt;&lt;/label&gt;
+
+&lt;input type="checkbox" id="checkbox5" class="cms-checkbox-round" value="2" /&gt;
+&lt;label for="checkbox5" class="fa fa-check ulev12"&gt;&lt;/label&gt;
+
+&lt;input type="checkbox" id="checkbox6" class="cms-checkbox-round" value="3" /&gt;
+&lt;label for="checkbox6" class="fa fa-check ulev06"&gt;&lt;/label&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--复选框结束-->
+
+        <!--开关按钮开始-->
+        <div id="switch" class="ub ub-ver uinn-a04">
+            <h3>开关按钮</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    开关按钮使用的是appcan的组件，相应的css样式switch在appcan.control.css文件中。一般使用在设置等是与否选项中。
+                </p>
+                <p>
+                    注意：使用此组件时需配合JS才能生效。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub ub-ac ub-pc ub-f1 umar-t04">
+                    <div id="switch1" class="switch uba bc-border switch-mini" data-checked="false">
+                        <div class="switch-btn sc-bg-active "></div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div id="switch1" class="switch uba bc-border switch-mini" data-checked="false"&gt;
+    &lt;div class="switch-btn sc-bg-active "&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+//相应的js
+appcan.switchBtn("#switch1", function(obj, value) {});
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--开关按钮结束-->
+
+        <!--下拉选择框开始-->
+        <div id="select" class="ub ub-ver uinn-a04">
+            <h3>下拉选择框</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    长度随自适应父级标签。
+                </p>
+                <p>
+                    注意：使用此组件时需配合JS才能生效。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub-f1 umar-t04">
+                    <div class="cms-select uba bc-border sc-text">
+                        <div id="show_text" class="ub-f1 ut-s text">
+                            请选择
+                        </div>
+                        <div class="icon"></div>
+                        <select onchange="selectValue(this)"  selectedindex="1">
+                            <option selected="true" disabled="true">请选择</option>
+                            <option id="WorkStatus1" value=1>正常上班正常上班 正常上班 正常上班  </option>
+                            <option id="WorkStatus2" value=2>休假</option>
+                            <option id="WorkStatus3" value=3>出差</option>
+                            <option id="WorkStatus4" value=4>其他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="cms-select uba bc-border sc-text"&gt;
+    &lt;div id="show_text" class="ub-f1 ut-s text"&gt;
+        请选择
+    &lt;/div&gt;
+    &lt;div class="icon"&gt;&lt;/div&gt;
+    &lt;select onchange="selectValue(this)"  selectedindex="1"&gt;
+        &lt;option selected="true" disabled="true"&gt;请选择&lt;/option&gt;
+        &lt;option id="WorkStatus1" value=1&gt;正常上班 正常上班 正常上班 正常上班 正常上班 &lt;/option&gt;
+        &lt;option id="WorkStatus2" value=2&gt;休假&lt;/option&gt;
+        &lt;option id="WorkStatus3" value=3&gt;出差&lt;/option&gt;
+        &lt;option id="WorkStatus4" value=4&gt;其他&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+&lt;script&gt;
+//相应的js
+//下拉选择框
+function selectValue(obj) {
+    //当前选中项
+    var options = $(obj)[0].options;
+    //当前选中项索引
+    var selectedIndex = options.selectedIndex;
+    //当前选中项内容
+    var selected = $(options[selectedIndex]).html();
+    $('#show_text').html(selected);
+}
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--下拉选择框结束-->
+
+        <!--文本输入框开始-->
+        <div id="input" class="ub ub-ver uinn-a04">
+            <h3>文本输入框</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    cms-input
+                </p>
+                <p>
+                    文本输入框包括input输入框与textarea文本输入域。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <h4>input输入框</h4>
+                <p>
+                    输入框的内边距（uinn-a04）与边框（uba bc-border）可自行定义。
+                </p>
+                <div class="ub-f1 umar-t04">
+                    <p>
+                        1、普通input输入框。
+                    </p>
+                    <br>
+                    <div class="ub ub-f1 ub-ac cms-input uinn-a04 uba bc-border">
+                        <input placeholder="普通input输入框" type="text" class="ub-f1">
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-f1 ub-ac cms-input uinn-a04 uba bc-border"&gt;
+    &lt;input placeholder="普通input输入框" type="text" class="ub-f1"&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="ub-f1 umar-t04">
+                    <p>
+                        2、文字居中的input输入框。应用于某些搜索框。
+                    </p>
+                    <br>
+                    <div class="ub ub-f1 ub-ac cms-input uinn-a04 uba bc-border">
+                        <input placeholder="搜索" type="text" class="ub-f1 tx-c">
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-f1 ub-ac cms-input uinn-a04 uba bc-border"&gt;
+    &lt;input placeholder="搜索" type="text" class="ub-f1 tx-c"&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="ub-f1 umar-t04">
+                    <p>
+                        3、前面带说明文字的输入框。
+                    </p>
+                    <br>
+                    <div class="ub ub-f1 ub-ac cms-input uinn-a04 uba bc-border">
+                        <div class="umw3 umar-l04">
+                            姓名
+                        </div>
+                        <div class="ub-f1 umar-l04">
+                            <input placeholder="请输入姓名" type="text" class="ub-f1">
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-f1 ub-ac cms-input uinn-a04 uba bc-border"&gt;
+    &lt;div class="umw3 umar-l04"&gt;
+        姓名
+    &lt;/div&gt;
+    &lt;div class="ub-f1 umar-l04"&gt;
+        &lt;input placeholder="请输入姓名" type="text" class="ub-f1"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <h4>textarea输入域</h4>
+                <p>
+
+                </p>
+
+                <div class="ub-f1 umar-t04">
+                    <p>
+                        1、 普通textarea文本输入框
+                    </p>
+                    <p>
+                        textarea的最小高度（umh[类型]）可自行定义。
+                    </p>
+                    <br>
+                    <div class="ub ub-f1 uba bc-border cms-input uinn-a04">
+                        <textarea placeholder="普通文本输入框" type="text" class="ub-f1 umh4"></textarea>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-f1 uba bc-border cms-input uinn-a04"&gt;
+    &lt;textarea placeholder="普通文本输入框" type="text" class="ub-f1 umh4"&gt;&lt;/textarea&gt;
+&lt;/div
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="ub-f1 umar-t04">
+                    <p>
+                        2、 带文字输入统计的textarea文本输入框
+                    </p>
+                    <p>
+                        textarea的最小高度（umh[类型]）可自行定义。
+                    </p>
+                    <p>
+                        注意，此组件需要配合js使用。js为cms.js文件中的cms.countChar()方法。
+                    </p>
+                    <br>
+                    <div class="ub ub-ver">
+                        <div class="ub-f1 uba bc-border cms-input uinn-a04">
+                            <textarea placeholder="带文字输入统计的textarea文本输入框" type="text" class="ub-f1 umh4" onkeyup="cms.countChar(this,'#currentNum','#totalNum',10);" onkeydown="cms.countChar(this,'#currentNum','#totalNum',10);"></textarea>
+                        </div>
+                        <div class="ub ub-f1 ub-pe sc-text uinn-a04 ulev08">
+                            <span id="currentNum">0</span>/<span id="totalNum">10</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-ver"&gt;
+    &lt;div class="ub-f1 uba bc-border cms-input uinn-a04"&gt;
+        &lt;textarea placeholder="带文字输入统计的textarea文本输入框" type="text" class="ub-f1 umh4" onkeyup="cms.countChar(this,'#currentNum','#totalNum',10);" onkeydown="cms.countChar(this,'#currentNum','#totalNum',10);"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div class="ub ub-f1 ub-pe sc-text uinn-a04 ulev08"&gt;
+        &lt;span id="currentNum"&gt;0&lt;/span&gt;/&lt;span id="totalNum"&gt;10&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+//相对应的js
+/**
+ * 统计当前输入字数在指定的输入区域显示
+ * obj 当前输入框对象
+ * @param currentNum 统计字数区域ID
+ * @param spanId 显示总共可输入字数区域ID
+ * @param wordNumber 限制的输入字数， 字数超过限制变红
+ */
+cms.countChar = function(obj, currentNum, totalNum, wordNumber) {
+    var length = $(obj).val().length;
+    $(currentNum).html(length);
+    if (length > wordNumber) {
+        $(currentNum).addClass("sc-text-active");
+    } else {
+        $(currentNum).removeClass("sc-text-active");
+    }
+}
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--文本输入框框结束-->
+
+        <!--搜索框开始-->
+        <div id="search" class="ub ub-ver uinn-a04">
+            <h3>搜索输入框</h3>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <p>
+                    1、普通搜索输入框
+                </p>
+                <br>
+                <div class="ub ub-f1 ub-ac ub-pc">
+                    <div class="ub ub-f1 uba sc-border-tab uc-a03 uinn-a04 bc-bg cms-input">
+                        <form action="javascript:return true;" onsubmit="search()" class="uf">
+                            <input class="ub-f1 tx-c" type="search" placeholder="搜索"/>
+                        </form>
+                    </div>
+                    <div class="ub ub-ac ub-pc uinn-tb04" onclick="search();">
+                        <span class="fmoa sc-text ulev15"> &#xE665; </span>
+                    </div>
+                </div>
+
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-f1 ub-ac ub-pc"&gt;
+    &lt;div class="ub ub-f1 uba sc-border-tab uc-a03 uinn-a04 bc-bg cms-input"&gt;
+        &lt;form action="javascript:return true;" onsubmit="search()" class="uf"&gt;
+            &lt;input class="ub-f1 tx-c" type="search" placeholder="搜索"/&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;div class="ub ub-ac ub-pc uinn-tb04" onclick="search();"&gt;
+        &lt;span class="fmoa sc-text ulev15"&gt; &#xE665; &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div
+                        </code>
+                    </pre>
+                </div>
+
+                <p>
+                    2、圆角搜索输入框
+                </p>
+                <p>
+                    样式为cms-search，在cms-ui-base.css文件中。
+                </p>
+                <br>
+                <div class="ub ub-f1 ub-ac ub-pc">
+                    <div class="ub cms-search uba bc-border">
+                        <div class="ub ub-f1 umar-r04">
+                            <form action="javascript:return true;" onsubmit="search()" >
+                                <input id="keyword" class="up" type="search" placeholder="客户姓名/牛卡号/联系电话"/>
+                            </form>
+                        </div>
+                        <div class="ub ub-ac ub-pc uinn-tb04" onclick="search();">
+                            <span class="fmoa sc-text ulev15"> &#xE665; </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub cms-search uba bc-border"&gt;
+    &lt;div class="ub ub-f1 umar-r04"&gt;
+        &lt;form action="javascript:return true;" onsubmit="search()" &gt;
+            &lt;input id="keyword" class="up" type="search" placeholder="客户姓名/牛卡号/联系电话"/&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;div class="ub ub-ac ub-pc uinn-tb04" onclick="search();"&gt;
+        &lt;span class="fmoa sc-text ulev15"&gt; &#xE665; &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--输入框结束-->
+
+        <!--列表开始-->
+        <div id="list" class="ub ub-ver uinn-a04">
+            <h3>列表</h3>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver'>
+                    <p>
+                        1、普通列表
+                    </p>
+                    <ul class="uf">
+                        <li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list">
+                            <div class="ub-f1 ut-s">
+                                公司通讯录
+                            </div>
+                            <div class="fa fa-angle-right ulev12 sc-text-hint"></div>
+                        </li>
+                        <li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list">
+                            <div class="ub-f1 ut-s">
+                                个人通讯录
+                            </div>
+                            <div class="fa fa-angle-right ulev12 sc-text-hint"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;ul class="uf"&gt;
+    &lt;li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list"&gt;
+        &lt;div class="ub-f1 ut-s"&gt;
+            公司通讯录
+        &lt;/div&gt;
+        &lt;div class="fa fa-angle-right ulev12 sc-text-hint"&gt;&lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list"&gt;
+        &lt;div class="ub-f1 ut-s"&gt;
+            个人通讯录
+        &lt;/div&gt;
+        &lt;div class="fa fa-angle-right ulev12 sc-text-hint"&gt;&lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;                         
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver'>
+                    <p>
+                        2、带图标与通知提示的列表
+                    </p>
+                    <ul class="uf">
+                        <li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list">
+                            <div class="ub ub-f1 ub-ac ut-s">
+                                <div class="cms-icon-bg-mini" style="background-color: #2AA198">
+                                    <div class="fa fa-envelope ulev15 bc-text-head"></div>
+                                </div>
+                                <div class="ub-f1 ut-s umar-l12">
+                                    收件箱
+                                </div>
+                            </div>
+                            <div class="ub">
+                                <div class="cms-badge-big">
+                                    167
+                                </div>
+                                <div class="fa fa-angle-right umar-l04 ulev12 sc-text-hint"></div>
+                            </div>
+                        </li>
+
+                        <li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list">
+                            <div class="ub ub-f1 ub-ac ut-s">
+                                <div class="cms-icon-bg-mini" style="background-color: #268BD2">
+                                    <div class="fa fa-comment ulev15 bc-text-head"></div>
+                                </div>
+                                <div class="ub-f1 ut-s umar-l12">
+                                    未读邮件
+                                </div>
+                            </div>
+                            <div class="ub">
+                                <div class="cms-badge-big">
+                                    67
+                                </div>
+                                <div class="fa fa-angle-right umar-l04 ulev12 sc-text-hint"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;ul class="uf"&gt;
+    &lt;li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list"&gt;
+        &lt;div class="ub ub-f1 ub-ac ut-s"&gt;
+            &lt;div class="cms-icon-bg-mini" style="background-color: #2AA198"&gt;
+                &lt;div class="fa fa-envelope ulev15 bc-text-head"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="ub-f1 ut-s umar-l12"&gt;
+                收件箱
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ub"&gt;
+            &lt;div class="cms-badge-big ulev06"&gt;167&lt;/div&gt;
+            &lt;div class="fa fa-angle-right umar-l04 ulev12 sc-text-hint"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+
+    &lt;li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list"&gt;
+        &lt;div class="ub ub-f1 ub-ac ut-s"&gt;
+            &lt;div class="cms-icon-bg-mini" style="background-color: #268BD2"&gt;
+                &lt;div class="fa fa-comment ulev15 bc-text-head"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="ub-f1 ut-s umar-l12"&gt;
+                未读邮件
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ub"&gt;
+            &lt;div class="cms-badge-big ulev06"&gt;67&lt;/div&gt;
+            &lt;div class="fa fa-angle-right umar-l04 ulev12 sc-text-hint"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;                   
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver'>
+                    <p>
+                        3.1、图标上带通知提示，列表文字带描述的列表样式一
+                    </p>
+                    <ul class="uf">
+                        <li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list">
+                            <div class="ub ub-f1 ub-ac">
+                                <div class="cms-icon-bg-mini" style="background-color: #2AA198">
+                                    <div class="cms-badge-mini cms-badge-abs">
+                                        167
+                                    </div>
+                                    <div class="fa fa-envelope ulev15 bc-text-head"></div>
+                                </div>
+                                <div class="ub ub-ver ub-f1 umar-l12">
+                                    <div class="ub-f1 ut-s ">
+                                        收件箱
+                                    </div>
+                                    <div class="ub-f1 ut-s ulev08 sc-text umar-t04">
+                                        申请异常处理
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="umar-l04 ulev08 sc-text">
+                                15:33
+                            </div>
+                        </li>
+
+                        <li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list">
+                            <div class="ub ub-f1 ub-ac">
+                                <div class="cms-icon-bg-mini" style="background-color: #268BD2">
+                                    <div class="cms-badge-mini cms-badge-abs">
+                                        16
+                                    </div>
+                                    <div class="fa fa-comment ulev15 bc-text-head"></div>
+                                </div>
+                                <div class="ub ub-ver ub-f1 umar-l12">
+                                    <div class="ub-f1 ut-s ">
+                                        未读邮件
+                                    </div>
+                                    <div class="ub-f1 ut-s ulev08 sc-text umar-t04">
+                                        流程异常
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="umar-l04 ulev08 sc-text">
+                                15:33
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;ul class="uf"&gt;
+    &lt;li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list"&gt;
+        &lt;div class="ub ub-f1 ub-ac"&gt;
+            &lt;div class="cms-icon-bg-mini" style="background-color: #2AA198"&gt;
+                &lt;div class="cms-badge-mini cms-badge-abs"&gt;
+                    167
+                &lt;/div&gt;
+                &lt;div class="fa fa-envelope ulev15 bc-text-head"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="ub ub-ver ub-f1 umar-l12"&gt;
+                &lt;div class="ub-f1 ut-s "&gt;
+                    收件箱
+                &lt;/div&gt;
+                &lt;div class="ub-f1 ut-s ulev08 sc-text umar-t04"&gt;
+                    申请异常处理
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="umar-l04 ulev08 sc-text"&gt;
+            15:33
+        &lt;/div&gt;
+    &lt;/li&gt;
+
+    &lt;li class="ub ub-ac cms-change-bg ubb sc-border-tab bc-text uinn-list"&gt;
+        &lt;div class="ub ub-f1 ub-ac"&gt;
+            &lt;div class="cms-icon-bg-mini" style="background-color: #268BD2"&gt;
+                &lt;div class="cms-badge-mini cms-badge-abs"&gt;
+                    16
+                &lt;/div&gt;
+                &lt;div class="fa fa-comment ulev15 bc-text-head"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="ub ub-ver ub-f1 umar-l12"&gt;
+                &lt;div class="ub-f1 ut-s "&gt;
+                    未读邮件
+                &lt;/div&gt;
+                &lt;div class="ub-f1 ut-s ulev08 sc-text umar-t04"&gt;
+                    流程异常
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="umar-l04 ulev08 sc-text"&gt;
+            15:33
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;                 
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver'> 
+                    <p>
+                        3.2、图标上带通知提示，列表文字带描述的列表样式二
+                    </p>
+                    <ul class="uf">
+                        <li class="ub ub-ac cms-act uinn-a04 bc-text">
+                            <div class="cms-icon-bg-mini" style="background-color: #2AA198">
+                                <div class="cms-badge-mini cms-badge-abs">
+                                    167
+                                </div>
+                                <div class="fa fa-envelope ulev15 bc-text-head"></div>
+                            </div>
+                            <div class="ub ub-f1 ub-ac ubb sc-border-tab uinn-a04 umar-l12">
+                                <div class="ub ub-f1 ub-ac">
+                                    <div class="ub ub-ver ub-f1">
+                                        <div class="ub-f1 ut-s ">
+                                            收件箱
+                                        </div>
+                                        <div class="ub-f1 ut-s ulev08 sc-text umar-t04">
+                                            申请异常处理
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="umar-l04 ulev08 sc-text">
+                                    15:33
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="ub ub-ac cms-act uinn-a04 bc-text">
+                            <div class="cms-icon-bg-mini" style="background-color: #268BD2">
+                                <div class="cms-badge-mini cms-badge-abs">
+                                    67
+                                </div>
+                                <div class="fa fa-comment ulev15 bc-text-head"></div>
+                            </div>
+                            <div class="ub ub-f1 ub-ac ubb sc-border-tab uinn-a04 umar-l12">
+                                <div class="ub ub-f1 ub-ac">
+                                    <div class="ub ub-ver ub-f1">
+                                        <div class="ub-f1 ut-s ">
+                                            未读邮件
+                                        </div>
+                                        <div class="ub-f1 ut-s ulev08 sc-text umar-t04">
+                                            流程异常
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="umar-l04 ulev08 sc-text">
+                                    15:33
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;ul class="uf"&gt;
+    &lt;li class="ub ub-ac cms-act uinn-a04 bc-text"&gt;
+        &lt;div class="cms-icon-bg-mini" style="background-color: #2AA198"&gt;
+            &lt;div class="cms-badge-mini cms-badge-abs"&gt;
+                167
+            &lt;/div&gt;
+            &lt;div class="fa fa-envelope ulev15 bc-text-head"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ub ub-f1 ub-ac ubb sc-border-tab uinn-a04 umar-l12"&gt;
+            &lt;div class="ub ub-f1 ub-ac"&gt;
+                &lt;div class="ub ub-ver ub-f1"&gt;
+                    &lt;div class="ub-f1 ut-s "&gt;
+                        收件箱
+                    &lt;/div&gt;
+                    &lt;div class="ub-f1 ut-s ulev08 sc-text umar-t04"&gt;
+                        申请异常处理
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="umar-l04 ulev08 sc-text"&gt;
+                15:33
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+
+    &lt;li class="ub ub-ac cms-act uinn-a04 bc-text"&gt;
+        &lt;div class="cms-icon-bg-mini" style="background-color: #268BD2"&gt;
+            &lt;div class="cms-badge-mini cms-badge-abs"&gt;
+                67
+            &lt;/div&gt;
+            &lt;div class="fa fa-comment ulev15 bc-text-head"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ub ub-f1 ub-ac ubb sc-border-tab uinn-a04 umar-l12"&gt;
+            &lt;div class="ub ub-f1 ub-ac"&gt;
+                &lt;div class="ub ub-ver ub-f1"&gt;
+                    &lt;div class="ub-f1 ut-s "&gt;
+                        未读邮件
+                    &lt;/div&gt;
+                    &lt;div class="ub-f1 ut-s ulev08 sc-text umar-t04"&gt;
+                                                                        流程异常
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="umar-l04 ulev08 sc-text"&gt;
+                15:33
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;                
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        </div>
+        <!--列表开始-->
+        
+        <!--折叠面板开始-->
+        <div id="accordion" class="ub ub-ver uinn-a04">
+            <h3>折叠面板</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    该折叠面板用css3与js编写，所以使用时需引入cms-ui-base.css，cms.js两个文件。在页面初始化时调用
+        cms.accordion(firstIsOpen);
+                </p>
+                <p>firstIsOpen表示第一项默认是否展开。1：展示开，为空或则其实值不展开</p>
+                <p>
+                    注意：dom结构不能改变。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div id="accordion" class="cms-accordion">
+                    <dl>
+                        <dd>
+                            <div class="ub">
+                                <div class="ub-f1 ut-s">
+                                    选项一 选项一 选项一 选项一 选项一 选项一 选项一 选项一
+                                </div>
+                                <div class="fmoa fmoa-angle-down ulev1"></div>
+                            </div>
+        
+                            <div>
+                                <p>内容一</p>
+                                <p>内容一</p>
+                                <p>内容一</p>
+                                <p>内容一</p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dd>
+                            <div class="ub">
+                                <div class="ub-f1 ut-s">
+                                    选项二
+                                </div>
+                                <div class="fmoa fmoa-angle-down ulev1"></div>
+                            </div>
+                            <div>
+                                <p>内容二</p>
+                                <p>内容二</p>
+                                <p>内容二</p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dd>
+                            <div class="ub">
+                                <div class="ub-f1 ut-s">
+                                    选项三
+                                </div>
+                                <div class="fmoa fmoa-angle-down ulev1"></div>
+                            </div>
+                            <div>
+                               <p>内容三</p>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div id="accordion" class="cms-accordion"&gt;
+    &lt;dl&gt;
+        &lt;dd&gt;
+            &lt;div class="ub"&gt;
+                &lt;div class="ub-f1 ut-s"&gt;
+                    选项一 选项一 选项一 选项一 选项一 选项一 选项一 选项一
+                &lt;/div&gt;
+                &lt;div class="fmoa fmoa-angle-down ulev1"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div&gt;
+                &lt;p&gt;内容一&lt;/p&gt;
+                &lt;p&gt;内容一&lt;/p&gt;
+                &lt;p&gt;内容一&lt;/p&gt;
+                &lt;p&gt;内容一&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;dl&gt;
+        &lt;dd&gt;
+            &lt;div class="ub"&gt;
+                &lt;div class="ub-f1 ut-s"&gt;
+                    选项二
+                &lt;/div&gt;
+                &lt;div class="fmoa fmoa-angle-down ulev1"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;p&gt;内容二&lt;/p&gt;
+                &lt;p&gt;内容二&lt;/p&gt;
+                &lt;p&gt;内容二&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;dl&gt;
+        &lt;dd&gt;
+            &lt;div class="ub"&gt;
+                &lt;div class="ub-f1 ut-s"&gt;
+                    选项三
+                &lt;/div&gt;
+                &lt;div class="fmoa fmoa-angle-down ulev1"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+               &lt;p&gt;内容三&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;
+
+//在页面加载完时执行
+cms.accordion();
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--折叠面板结束-->
+        
+       <!--底部弹出框开始-->
+        <div id="popup" class="ub ub-ver uinn-a04">
+            <h3>底部弹出窗</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                点击弹出pop窗的click事件为cms.popup();
+                点击关闭pop窗的click事件为cms.popup()();
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+               <div class="ub">点击<span class="cms-btn-mini" onclick="cms.popup()">试试</span></div>
+               <div class="ub ub-ver cms-popup uhide">
+                    <div class="ub ub-f1 shade"></div>
+                    <div class="ub ub-ver sc-bg">
+                        <p>内容自定义</p>
+                        <p>内容自定义</p>
+                        <p>内容自定义</p>
+                        <span class="cms-btn-mini" onclick="cms.popup()()">close</span>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-ver cms-popup uhide"&gt;
+    &lt;div class="ub ub-f1 shade"&gt;&lt;/div&gt;
+    &lt;div class="ub ub-ver sc-bg"&gt;
+        &lt;p&gt;内容自定义&lt;/p&gt;
+        &lt;p&gt;内容自定义&lt;/p&gt;
+        &lt;p&gt;内容自定义&lt;/p&gt;
+        &lt;span class="cms-btn-mini" onclick="cms.popup()()"&gt;close&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--底部弹窗结束-->
+
+        <!--选项卡开始-->
+        <div id="tabbar" class="ub ub-ver uinn-a04">
+            <h3 >选项卡</h3>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class='ub ub-ver'>
+                    <p>
+                        1、两端为圆角的选项卡。
+                    </p>
+                    <p>注意：需配合相应的JS使用。</p>
+                    <br>
+                    <div class="ub cms-circle-tab">
+                        <div class="ub ub-f1 ub-ac ub-pc cms-circle-tab-active">选项一</div>
+                        <div class="ub ub-f1 ub-ac ub-pc">选项二</div>
+                        <div class="ub ub-f1 ub-ac ub-pc">选项三</div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub cms-circle-tab"&gt;
+    &lt;div class="ub ub-f1 ub-ac ub-pc cms-circle-tab-active"&gt;选项一&lt;/div&gt;
+    &lt;div class="ub ub-f1 ub-ac ub-pc"&gt;选项二&lt;/div&gt;
+    &lt;div class="ub ub-f1 ub-ac ub-pc"&gt;选项三&lt;/div&gt;
+&lt;/div&gt;
+
+//相应的JS
+        
+//两端为圆角的选项卡
+$(".cms-circle-tab").children().click(function(){
+    $(".cms-circle-tab").children().removeClass("cms-circle-tab-active");
+    $(this).addClass("cms-circle-tab-active");
+    //业务逻辑
+});
+
+                        </code>
+                    </pre>
+                </div>
+                
+                <div class='ub ub-ver'>
+                    <p>
+                        2、标签左右滚动的选项卡
+                    </p>
+                    <p>
+                        需要配合JS使用，在页面初始化时引入cms.slideTab()方法。
+                    </p>
+                    <div id="slide_tab" class="ub bc-bg ub-ver">
+                        <div class="ub ub-ac ub-pc">
+                            <div class="ub ub-f1 ub-ac ub-pc cms-act uinn-a04">
+                                选项一
+                            </div>
+                            <div class="ub ub-f1 ub-ac ub-pc cms-act uinn-a04">
+                                选项二
+                            </div>
+                            <div class="ub ub-f1 ub-ac ub-pc cms-act uinn-a04">
+                                选项三
+                            </div>
+                        </div>
+                        <div class="ubb sc-border-red"></div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                            <code>
+&lt;div id="slide_tab" class="ub bc-bg ub-ver"&gt;
+    &lt;div class="ub ub-ac ub-pc"&gt;
+        &lt;div class="ub ub-f1 ub-ac ub-pc cms-act uinn-a04"&gt;
+            table1
+        &lt;/div&gt;
+        &lt;div class="ub ub-f1 ub-ac ub-pc cms-act uinn-a04"&gt;
+            table2
+        &lt;/div&gt;
+        &lt;div class="ub ub-f1 ub-ac ub-pc cms-act uinn-a04"&gt;
+            table3
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="ubb sc-border-red"&gt;&lt;/div&gt;
+&lt;/div&gt;
+//页面初始化时引入
+cms.slideTab("#slide_tab");
+                            </code>
+                        </pre>
+                </div>
+
+                <div class='ub ub-ver'>
+                    <p>
+                        3、可向左右滑动的tab
+                    </p>
+                    <p>
+                        加入cms-slide-tab样式。
+                    </p>
+                    <p>
+                        点击后的样式需自行写js控件，单纯的css做不到这一点。JS如圆角选项卡。
+                    </p>
+                    <div class="ub ub-f1 ub-ac ub-pc cms-slide-tab bc-bg uinn-a04">
+                        <div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab">
+                            选项一
+                        </div>
+                        <div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab">
+                            选项二
+                        </div>
+                        <div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab">
+                            选项三
+                        </div>
+                        <div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab">
+                            选项四
+                        </div>
+                        <div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab">
+                            选项五
+                        </div>
+                        <div class="ub ub-ac ub-pc cms-act uinn-a04">
+                            选项六
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-f1 ub-ac ub-pc  cms-slide-tab bc-bg uinn-a04"&gt;
+    &lt;div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab"&gt;
+        选项一
+    &lt;/div&gt;
+    &lt;div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab"&gt;
+        选项二
+    &lt;/div&gt;
+    &lt;div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab"&gt;
+        选项三
+    &lt;/div&gt;
+    &lt;div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab"&gt;
+        选项四
+    &lt;/div&gt;
+    &lt;div class="ub ub-ac ub-pc cms-act uinn-a04 ubr sc-border-tab"&gt;
+        选项五
+    &lt;/div&gt;
+    &lt;div class="ub ub-ac ub-pc cms-act uinn-a04"&gt;
+        选项六
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class='ub ub-ver'>
+                    <p>
+                        4、一部分固定一部分可向左右滑动的tab
+                    </p>
+                    <p>
+                        滑动部分加入cms-slide-tab样式，需分配空间（ub-f1）,固定部分不要分配空间。
+                    </p>
+                    <p>
+                        点击后的样式需自行写js控件，单纯的css做不到这一点。JS如圆角选项卡。
+                    </p>
+                    <div class="ub">
+                        <div class="ub ub-f1 ub-ac ub-pc cms-slide-tab bc-bg uinn-a04">
+                            <div class="ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab">
+                                选项一
+                            </div>
+                            <div class="ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab">
+                                选项二
+                            </div>
+                            <div class="ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab">
+                                选项三
+                            </div>
+                            <div class="ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab">
+                                选项四
+                            </div>
+                            <div class="ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab">
+                                选项五
+                            </div>
+                            <div class="ub-ac ub-pc cms-change-bg uinn-a04">
+                                选项六
+                            </div>
+                        </div>
+                        <div class="ub ub-ac ub-pc uinn-a04 umw4 bc-btn bc-text-head">
+                            固定部分
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub"&gt;
+    &lt;div class="ub ub-f1 ub-ac ub-pc cms-slide-tab bc-bg uinn-a04"&gt;
+        &lt;div class="ub ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab"&gt;
+            选项一
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab"&gt;
+            选项二
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab"&gt;
+            选项三
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab"&gt;
+            选项四
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc cms-change-bg uinn-a04 ubr sc-border-tab"&gt;
+            选项五
+        &lt;/div&gt;
+        &lt;div class="ub ub-ac ub-pc cms-change-bg uinn-a04"&gt;
+            选项六
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="ub ub-ac ub-pc uinn-a04 umw4 bc-btn bc-text-head"&gt;
+        固定部分
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--选项卡开始-->
+
+        <!--导航栏开始-->
+        <div id="nav" class="ub ub-ver uinn-a04">
+            <h3>导航栏</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    导航栏位于主窗口的头部，会经常用到，为了达到统一请选择使用以下两种。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <p>
+                    1、默认导航栏
+                </p>
+                <div class="ub-f1 umar-t04">
+                <!--header开始-->
+                    <div id="header" class="ub uh bc-text-head bc-head">
+                        <div id="nav-left" class="ub ub-ac uinn-rl06 umw3">
+                            <span class="fa fa-angle-left fa-2x"></span>
+                        </div>
+                        <h1 class="ut ub-f1 ulev-nav ut-s tx-c" tabindex="0">默认导航</h1>
+                        <div id="nav-right" class="ub ub-ac uinn-rl06 umw3"></div>
+                    </div>
+                <!--header结束-->
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div id="header" class="ub uh bc-text-head bc-head"&gt;
+    &lt;div id="nav-left" class="ub ub-ac uinn-rl06 umw3"&gt;
+         &lt;span class="fa fa-angle-left fa-2x"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;h1 class="ut ub-f1 ulev-nav ut-s tx-c" tabindex="0"&gt;默认导航栏&lt;/h1&gt;
+    &lt;div id="nav-right" class="ub ub-ac uinn-rl06 umw3"&gt;&lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <p>
+                    2、右侧带图标或文字的导航栏
+                </p>
+                <div class="ub-f1 umar-t04">
+                    <div id="header" class="ub uh bc-text-head bc-head">
+                        <div id="nav-left" class="ub ub-ac uinn-rl06 umw3">
+                             <span class="fa fa-angle-left fa-2x"></span>
+                        </div>
+                        <h1 class="ut ub-f1 ulev-nav ut-s tx-c" tabindex="0">右侧带图标或文字的导航栏</h1>
+                        <div id="nav-right" class="ub ub-ac ub-pe uinn-rl06 umw3">
+                            <span class="fa fa-qq ulev12"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div id="header" class="ub uh bc-text-head bc-head"&gt;
+    &lt;div id="nav-left" class="ub ub-ac uinn-rl06 umw3"&gt;
+        &lt;span class="fa fa-angle-left fa-2x"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;h1 class="ub-f1 ulev-nav ut ut-s tx-c" tabindex="0"&gt;右侧带图标或文字的导航栏&lt;/h1&gt;
+    &lt;div id="nav-right" class="ub ub-ac ub-pe uinn-rl06 umw3"&gt;
+        &lt;span class="fa fa-qq ulev12"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--导航栏结束-->
+
+        <!--轮播图片开始-->
+        <div id="scroll_img" class="ub ub-ver uinn-a04">
+            <h3>轮播图片</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    轮播图片使用的是appcan提供的插件，图片展示的比例，是否有文字描述label，自定义属性都可自行定义。更详细的参数请查询appcan官方文档。
+                </p>
+                <p>
+                    注意：使用此控件须引入appcan.slider.js文件。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03 sc-bg">
+                <div class="ub-f1 umar-t04">
+                    <div id="slider" class="slider"></div>
+                </div>
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div id="slider" class="slider"&gt;&lt;/div&gt;
+//轮播图片相应的js
+var slider = appcan.slider({
+    selector : '#slider', //轮播图片显示区域
+    hasLabel : true, //是否有标签文字栏*
+    aspectRatio : 6/16, ///是否控制纵横比，0为使用控件高度，>0使用纵横比
+    auto : 3000, //轮播时间，单位毫秒，不设不自动滚动
+    index : 0 //默认选择项
+});
+slider.set([{
+    img : "../images/test1.jpg",
+    label : "第1张图片",
+    mydata:"可以自定义属性"
+}, {
+    img : "../images/test2.jpg",
+    label : "第2张图片"
+}])
+slider.on("clickItem", function(index, data) {
+    //点击图片返回的索引及数据
+    appcan.window.openToast("你点击了第"+index+"张图片，data为json数据："+ JSON.stringify(data),5000,5,0);
+})
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--轮播图片结束-->
+        <!--对话气泡开始-->
+        <div id="bubble" class="ub ub-ver uinn-a04">
+            <h3>对话气泡</h3>
+            <div class="ub-f1 uinn-a04 ulev1 text-i">
+                <p>
+                    背景色须为灰色才有效果。
+                </p>
+            </div>
+            <div class="ub ub-ver uinn-a04 umar-t04 uba bc-border uc-a03">
+                <div class="ub ub-ver">
+                    <div class="ub ub-pe uinn-a04">
+                        <div class="ub ub-pc">
+                            <div class="ub ub-f1 ub-ac ub-pc cms-bubble cms-bubble-right">
+                                <div class="bc-text ulev1 uinn-a06 sc-bg">
+                                    你好吗？
+                                </div>
+                            </div>
+                            <div class="ub"  style="z-index: 1;"><img  src="../images/photo1.jpg" style="height:3em; width:3em; border-radius: 1.5em;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ub uinn-a04">
+                        <div class="ub" style="z-index: 1;"><img src="../images/photo2.jpg" style="height:3em; width:3em; border-radius: 1.5em;">
+                        </div>
+                        <div class="ub ub-f1 ub-pc">
+                            <div class="ub ub-f1 ub-ac cms-bubble cms-bubble-left">
+                                <div class="bc-text ulev1 uinn-a06 sc-bg">
+                                    我很好，你呢？
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="umar-t04 ulev08" >
+                    <pre>
+                        <code>
+&lt;div class="ub ub-pe uinn-a04"&gt;
+    &lt;div class="ub ub-pc"&gt;
+        &lt;div class="ub ub-f1 ub-ac ub-pc cms-bubble cms-bubble-right"&gt;
+            &lt;div class="bc-text ulev1 uinn-a06 sc-bg"&gt;
+                你好吗？
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ub"  style="z-index: 1;"&gt;&lt;img  src="../images/photo1.jpg" style="height:3em; width:3em; border-radius: 1.5em;"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ub uinn-a04"&gt;
+    &lt;div class="ub" style="z-index: 1;"&gt;&lt;img src="../images/photo2.jpg" style="height:3em; width:3em; border-radius: 1.5em;"&gt;
+    &lt;/div&gt;
+    &lt;div class="ub ub-f1 ub-pc"&gt;
+        &lt;div class="ub ub-f1 ub-ac cms-bubble cms-bubble-left"&gt;
+            &lt;div class="bc-text ulev1 uinn-a06 sc-bg"&gt;
+                我很好，你呢？
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--对话气泡结束-->
+
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/cms.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/appcan.slider.js"></script>
+        <script src="../js/fastclick.min.js"></script>
+
+    </body>
+    <script>
+        //解决radio、checkbox、switch 等控件iOS反应会延迟300毫秒问题。
+        FastClick.attach(document.body);
+        //标签滑动的选项卡
+        cms.slideTab("#slide_tab");
+        //折叠面板
+        cms.accordion("accordion");
+        appcan.ready(function() {
+            appcan.initBounce();
+            hljs.initHighlighting();
+            location.href = "#" + appcan.locStorage.getVal('itemName');
+        })
+  
+        //两端为圆角的选项卡
+        $(".cms-circle-tab").children().click(function(){
+            $(".cms-circle-tab").children().removeClass("cms-circle-tab-active");
+            $(this).addClass("cms-circle-tab-active");
+            console.log($(this)[0]._zid);
+            //业务逻辑
+        });
+
+        //开关按钮
+        appcan.switchBtn("#switch1", function(obj, value) {
+
+        })
+        //下拉选择框
+        function selectValue(obj) {
+            //当前选中项
+            var options = $(obj)[0].options;
+            //当前选中项索引
+            var selectedIndex = options.selectedIndex;
+            //当前选中项内容
+            var selected = $(options[selectedIndex]).html();
+            $('#show_text').html(selected);
+        }
+
+        //轮播图片相应的js
+        var slider = appcan.slider({
+            selector : '#slider', //轮播图片显示区域
+            hasLabel : true, //是否有标签文字栏*
+            aspectRatio : 6 / 16, ///是否控制纵横比，0为使用控件高度，>0使用纵横比
+            auto : 3000, //轮播时间，单位毫秒，不设不自动滚动
+            index : 0 //默认选择项
+        });
+        slider.set([{
+            img : "../images/test1.jpg",
+            label : "第1张图片",
+            mydata : "可以自定义属性"
+        }, {
+            img : "../images/test2.jpg",
+            label : "第2张图片"
+        }])
+        slider.on("clickItem", function(index, data) {
+            //点击图片返回的索引及数据
+            appcan.window.openToast("你点击了第" + index + "张图片，data为json数据：" + JSON.stringify(data), 5000, 5, 0);
+        })
+
+    </script>
+</html>

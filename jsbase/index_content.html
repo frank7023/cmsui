@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="listview"  class="ubt bc-border sc-bg"></div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/appcan.listview.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        });
+
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thinLine",
+            hasAngle : true
+        });
+
+        lv.set([{
+            title : "打开窗口",
+            itemName:'open_win',
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "关闭窗口",
+            itemName:'close_win',
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "ajax请求数据",
+            itemName:'ajax',
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "窗口之间的通讯",
+            itemName:"notice",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "toast弹出提示窗口",
+            itemName:"toast",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "alert提示框",
+            itemName:"alert",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "confirm提示框",
+            itemName:"confirm",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "可输入内容提示框",
+            itemName:"prompt",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "本地存储LocStorage",
+            itemName:"loc_storage",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "清除字符串首尾空格",
+            itemName:"trim",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "清除字符串所有空格",
+            itemName:"trimAll",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "下拉或上拉加载数据",
+            itemName:"set_bounce",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "分享",
+            itemName:"share",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "拨打电话底部弹出窗",
+            itemName:"call_phone",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "返回到顶部",
+            itemName:"top_bar",
+            name : "control",
+            url : "jsbase.html"
+        },{
+            title : "将时间转成友好的显示方式",
+            itemName:"parse_time",
+            name : "control",
+            url : "jsbase.html"
+        }, {
+            title : "日期格式转换，输出指定格式",
+            itemName : "str_to_date",
+            name : "control",
+            url : "jsbase.html"
+        }, {
+            title : "隐藏数字中的一部分",
+            itemName : "hidden_part",
+            name : "control",
+            url : "jsbase.html"
+        }])
+
+        lv.on("click", function(ele, data, curEle) {
+            appcan.locStorage.setVal("itemName", data.itemName);
+            appcan.window.open(data.name, data.url, 10);
+        })
+
+    </script>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/appcan.control.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="listview"  class="ubt bc-border sc-bg"></div>
+    </body>
+    <script src="../js/appcan.js"></script>
+    <script src="../js/appcan.control.js"></script>
+    <script src="../js/appcan.listview.js"></script>
+    </body>
+ <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        });
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thinLine",
+            hasAngle : true
+        });
+
+        lv.set([{
+            title : "zeptojs开发文档",
+            itemName : "zepto",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "false",
+            href : {
+                '查看' : 'http://www.css88.com/doc/zeptojs/'
+            }
+        }, {
+            title : "弹性盒子",
+            itemName : "box",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "false",
+            href : {
+                '查看' : 'http://www.ibm.com/developerworks/cn/web/1409_chengfu_css3flexbox/'
+            }
+        }, {
+            title : "HTML5 Web 存储",
+            itemName : "loc_storage",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "false",
+            href : {
+                '查看' : 'http://www.runoob.com/html/html5-webstorage.html'
+            }
+        }, {
+            title : "理解dom对象",
+            itemName : "dom",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "false",
+            href : {
+                '查看' : 'http://www.cnblogs.com/chaogex/p/3959723.html'
+            }
+        }, {
+            title : "mvvm框架vue",
+            itemName : "mvvm",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "false",
+            href : {
+                '文档' : 'https://cn.vuejs.org/v2/guide',
+            }
+        }, {
+            title : "解决移动端 click事件 300毫秒延迟",
+            itemName : "fast_click",
+            name : "doc",
+            isOpenUrl : "false",
+            url : "doc.html",
+            href : {
+                '查看' : 'http://amazeui.org/1.x/javascript/fastclick/'
+            }
+        }, {
+            title : "图标字体",
+            itemName : "fontawesome",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "false",
+            href : {
+                '查看' : 'http://fontawesome.dashgame.com/'
+            }
+        }, {
+            title : "用grunt搭建自动化的web前端开发环境",
+            itemName : "grunt",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "false",
+            href : {
+                '中文网站' : 'http://www.gruntjs.net/',
+                '帖子教程1' : 'http://www.w3cplus.com/tools/grunt-tutorial-start-grunt.html',
+                '帖子教程2' : 'http://blog.csdn.net/wangfupeng1988/article/details/46418203'
+            }
+        }, {
+            title : "CSS3/CSS2/CSS 教程/参考/帮助",
+            itemName : "css",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "true",
+            href : {
+                '查看' : 'http://www.w3chtml.com/css3/'
+            }
+        }, {
+            title : "手机/移动前端开发需要注意的20个要点",
+            itemName : "key_point",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "false",
+            href : {
+                '查看' : 'http://sentsin.com/web/54.html'
+            }
+        }, {
+            title : "ECharts 图表统计库",
+            itemName : "echarts",
+            name : "doc",
+            url : "doc.html",
+            isOpenUrl : "false",
+            href : {
+                '文档' : 'http://echarts.baidu.com/tutorial.html#ECharts%20%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D',
+                '实例' : 'http://echarts.baidu.com/examples.html'
+            }
+        }])
+
+        lv.on("click", function(ele, data, curEle) {
+            if (data.name && data.url) {
+                appcan.locStorage.setVal("isOpenUrl", data.isOpenUrl);
+                appcan.locStorage.setVal("itemName", data.itemName);
+                appcan.locStorage.setVal("href", data.href);
+                appcan.window.open(data.name, data.url, 10);
+            }
+        })
+    </script>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/cms-ui-base.css">
+        <link rel="stylesheet" href="../css/swiper-3.3.1.min.css"/>
+
+        <style>
+            html {
+                -ms-touch-action: manipulation;
+                touch-action: manipulation;
+            }
+            #swiper {
+                padding-bottom: 2em;
+            }
+            .wip span {
+                width: 2em;
+                height: 2.6em;
+                line-height: 2.6em;
+                border-radius: 0.2em;
+                text-align: center;
+                background-color: #fff;
+                color: #e03d3e;
+                margin: 0 0.2em;
+            }
+
+            .swiper-button-prev, .swiper-button-next {
+                margin-top: -1.2em;
+                padding: 0em;
+                height: 0.5em;
+            }
+            .swiper-pagination {
+                padding: 0;
+                z-index: -1;
+            }
+            .swiper-pagination > span {
+                width: 0.5em;
+                height: 0.5em;
+                border-radius: 0.5em;
+                background-color: #fff;
+                z-index: 200;
+            }
+
+            #type_angle {
+                transition: all 0.3s ease-in-out;
+            }
+
+            .container {
+                background: url(../images/product.jpg) no-repeat center center;
+                background-size: cover;
+            };
+        </style>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+
+        <header class="ub ub-ver cms-top-bar">
+            <div class="container uinn-tb04">
+                <div id="tit2" class="ub ub-ac ub-pc bc-text-head uinn-rl12 umar-b12">
+                    <div id="back" class="ub ub-f1 umw3">
+                        <div class="fa fa-angle-left cma-act ulev2"></div>
+                    </div>
+                    <div id="current_time" class="ub ub-f1 ub-con ub-ac ub-pc umar-r06 ulev08"></div>
+                    <div class="ub ub-pe fa fa-search ulev12 umw3" onclick="search()"></div>
+                </div>
+
+                <div class="ub swiper-container cms-top-bar" id="swiper">
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                    <div class="swiper-wrapper" id="calendar">
+                        <!--第一组-->
+                        <div class="swiper-slide swiper-pagination3 ub ub-ac ub-pc wip" id="pagination1">
+                            <span class="swiper-pagination-bullet">日</span>
+                            <span class="swiper-pagination-bullet">一</span>
+                            <span class="swiper-pagination-bullet">二</span>
+                            <span class="swiper-pagination-bullet">三</span>
+                            <span class="swiper-pagination-bullet">四</span>
+                            <span class="swiper-pagination-bullet">五</span>
+                            <span class="swiper-pagination-bullet">六</span>
+                        </div>
+
+                        <div class="swiper-slide swiper-pagination3 ub ub-ac ub-pc wip" id="pagination2">
+                            <span class="swiper-pagination-bullet">日</span>
+                            <span class="swiper-pagination-bullet">一</span>
+                            <span class="swiper-pagination-bullet">二</span>
+                            <span class="swiper-pagination-bullet">三</span>
+                            <span class="swiper-pagination-bullet">四</span>
+                            <span class="swiper-pagination-bullet">五</span>
+                            <span class="swiper-pagination-bullet">六</span>
+                        </div>
+
+                        <div class="swiper-slide swiper-pagination3 ub ub-ac ub-pc wip"  id="pagination3">
+                            <span class="swiper-pagination-bullet">日</span>
+                            <span class="swiper-pagination-bullet">一</span>
+                            <span class="swiper-pagination-bullet">二</span>
+                            <span class="swiper-pagination-bullet">三</span>
+                            <span class="swiper-pagination-bullet">四</span>
+                            <span class="swiper-pagination-bullet">五</span>
+                            <span class="swiper-pagination-bullet">六</span>
+                        </div>
+
+                        <div class="swiper-slide swiper-pagination3 ub ub-ac ub-pc wip" id="pagination4" >
+                            <span class="swiper-pagination-bullet">日</span>
+                            <span class="swiper-pagination-bullet">一</span>
+                            <span class="swiper-pagination-bullet">二</span>
+                            <span class="swiper-pagination-bullet">三</span>
+                            <span class="swiper-pagination-bullet">四</span>
+                            <span class="swiper-pagination-bullet">五</span>
+                            <span class="swiper-pagination-bullet">六</span>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="swiper-container swiper-container-horizontal" id="swiper-container">
+            <div id="content" class="swiper-wrapper" >
+                <div class="swiper-slide content0"></div>
+                <div class="swiper-slide content1"></div>
+                <div class="swiper-slide content2"></div>
+                <div class="swiper-slide content3"></div>
+                <div class="swiper-slide content4"></div>
+                <div class="swiper-slide content5"></div>
+                <div class="swiper-slide content6"></div>
+            </div>
+        </div>
+        <script src="../js/appcan.js"></script>
+        <script src="../js/appcan.control.js"></script>
+        <script src="../js/swiper-3.3.1.min.js"></script>
+        <script src="../js/cms.js"></script>
+        <script>
+            var titHeight = $("header").offset().height;
+            var scrollHeight = document.body.scrollHeight;
+            var mySwiper;
+            appcan.ready(function() {
+
+                //设置滚动条不显示
+                uexWindow.setWindowScrollbarVisible(false);
+                $("#swiper-container").css("margin-top", titHeight);
+                var init = new Swiper('#swiper-container', {});
+                mySwiper = new Swiper('#swiper', {
+                    pagination : '.swiper-pagination',
+                    paginationClickable : true,
+                    initialSlide : 1,
+                    loop : false,
+                    //autoplay : 200,
+                    nextButton : '.swiper-button-next',
+                    prevButton : '.swiper-button-prev',
+                    onSlideNextEnd : function(swiper) {
+                        var index = swiper.activeIndex;
+                        init.destroy();
+                        init = createSwiper("pagination" + (index + 1), index, "next");
+                    },
+                    onSlidePrevEnd : function(swiper) {
+                        var index = swiper.activeIndex;
+                        init.destroy();
+                        init = createSwiper("pagination" + (index + 1), index, "back");
+                    }
+                });
+            })
+            //当前日期
+            var currDT;
+            //当前周第一天至第七天
+            var firstDay,
+                secondDay,
+                thirdDay,
+                fourthDay,
+                fifthhDay,
+                sixthDay,
+                lastDay;
+            /**
+             * id分页器Id
+             * idx 当前分页器索引
+             * type 是左划还是右划
+             */
+            function createSwiper(id, idx, type) {
+                // console.log( mySwiper )
+                currDT = new Date();
+                //显示日期
+                $("#current_time").html(cms.strToDate(currDT.toLocaleDateString(), 'ymd', "-"));
+                //当前周几
+                var currentWeek = 0;
+
+                if (idx == 0 || type == "back") {
+                    settCurrDTBefore();
+                    lastDay = new Date(getPreviousWeekDatas(firstDay)[6]).toLocaleDateString();
+                    secondDay = new Date(getPreviousWeekDatas(firstDay)[1]).toLocaleDateString();
+                    thirdDay = new Date(getPreviousWeekDatas(firstDay)[2]).toLocaleDateString();
+                    fourthDay = new Date(getPreviousWeekDatas(firstDay)[3]).toLocaleDateString();
+                    fifthhDay = new Date(getPreviousWeekDatas(firstDay)[4]).toLocaleDateString();
+                    sixthDay = new Date(getPreviousWeekDatas(firstDay)[5]).toLocaleDateString();
+                    firstDay = new Date(getPreviousWeekDatas(firstDay)[0]).toLocaleDateString();
+                }
+                if (idx == 1) {
+                    //从Date对象返回一周中的某一天(0~6)
+                    currentWeek = currDT.getDay();
+                    firstDay = new Date(getDays()[0]).toLocaleDateString();
+                    secondDay = new Date(getDays()[1]).toLocaleDateString();
+                    thirdDay = new Date(getDays()[2]).toLocaleDateString();
+                    fourthDay = new Date(getDays()[3]).toLocaleDateString();
+                    fifthhDay = new Date(getDays()[4]).toLocaleDateString();
+                    sixthDay = new Date(getDays()[5]).toLocaleDateString();
+                    lastDay = new Date(getDays()[6]).toLocaleDateString();
+                }
+                if (idx >= 2 && type == "next") {
+                    setCurrDTAfter();
+                    firstDay = new Date(getNextWeekDatas(lastDay)[0]).toLocaleDateString();
+                    secondDay = new Date(getNextWeekDatas(lastDay)[1]).toLocaleDateString();
+                    thirdDay = new Date(getNextWeekDatas(lastDay)[2]).toLocaleDateString();
+                    fourthDay = new Date(getNextWeekDatas(lastDay)[3]).toLocaleDateString();
+                    fifthhDay = new Date(getNextWeekDatas(lastDay)[4]).toLocaleDateString();
+                    sixthDay = new Date(getNextWeekDatas(lastDay)[5]).toLocaleDateString();
+                    lastDay = new Date(getNextWeekDatas(lastDay)[6]).toLocaleDateString();
+                }
+
+                var swiperTab = new Swiper('#swiper-container', {
+                    pagination : '#' + id,
+                    paginationClickable : true,
+                    initialSlide : currentWeek,
+                    loop : true,
+                    //controlBy:'container',
+                    paginationBulletRender : function(index, className) {
+                        var arr = ['日', '一', '二', '三', '四', '五', '六'];
+                        var time = '';
+                        if (index == 0) {
+                            time = firstDay;
+                        } else if (index == 1) {
+                            time = secondDay;
+                        } else if (index == 2) {
+                            time = thirdDay;
+                        } else if (index == 3) {
+                            time = fourthDay;
+                        } else if (index == 4) {
+                            time = fifthhDay;
+                        } else if (index == 5) {
+                            time = sixthDay;
+                        } else if (index == 6) {
+                            time = lastDay;
+                        }
+                        return '<span data-time="' + time + '" id="time_tab' + index + idx + '" onclick="getInfo(this,' + index + ')" class="' + className + ' cms-act">' + (arr[index]) + '</span>';
+                    },
+                    onSlidePrevEnd : function(swiper) {
+                        $("#content>div").html("");
+                        var index = swiper.activeIndex - 1;
+                        if (index == -1) {
+                            index = 6
+                            mySwiper.slidePrev();
+                        }
+                        getInfo($("#time_tab" + index + idx), index);
+                    },
+                    onSlideNextEnd : function(swiper) {
+                        $("#content>div").html("");
+                        var index = swiper.activeIndex - 1;
+                        if (index == 7) {
+                            index = 0
+                            mySwiper.slideNext();
+
+                        }
+                        getInfo($("#time_tab" + index + idx), index);
+                    }
+                });
+                return swiperTab;
+            };
+            //swiperTab.params.control = swiper;
+            /*==============日历控制==============*/
+
+            //取得当前日期一周内的某一天
+            function getWeek(i) {
+                var now = new Date();
+                var n = now.getDay();
+                // 星期
+                var start = new Date();
+                start.setDate(now.getDate() - n + i - 1);
+                //取得一周内的第一天、第二天、第三天...
+                return start;
+            }
+
+            //取得当前日期一周内的七天
+            function getDays() {
+                var days = new Array();
+                for (var i = 1; i <= 7; i++) {
+                    days[i - 1] = getWeek(i);
+                }
+                return days;
+            }
+
+            //取得下一周的日期数(共七天)
+            function getNextWeekDatas(ndt) {
+                var days = new Array();
+                for (var i = 1; i <= 7; i++) {
+                    var dt = new Date(ndt);
+                    days[i - 1] = getNextWeek(dt, i);
+                }
+                return days;
+            }
+
+            //指定日期的下一周(后七天)
+            function getNextWeek(dt, i) {
+                var today = dt;
+                today.setDate(today.getDate() + i);
+                return today;
+            }
+
+            //取得上一周的日期数(共七天)
+            function getPreviousWeekDatas(ndt) {
+                var days = new Array();
+                for (var i = -7; i <= -1; i++) {
+                    var dt = new Date(ndt);
+                    days[7 + i] = getPreviousWeek(dt, i);
+                }
+                return days;
+            }
+
+            //指定日期的上一周(前七天)
+            function getPreviousWeek(dt, i) {
+                var today = dt;
+                today.setDate(today.getDate() + i);
+                return today;
+            }
+
+            //当前日期后第七天
+            function setCurrDTAfter() {
+                currDT.setDate(currDT.getDate() + 7);
+            }
+
+            //当前日期前第七天
+            function settCurrDTBefore() {
+                currDT.setDate(currDT.getDate() - 7);
+            }
+
+            function getDateFromString(str) {
+                var reg = /^(\d+)年(\d+)月(\d+)日/;
+                var s = str.match(reg);
+                var result = "";
+                if (s) {
+                    result = new Date(s[1], s[2] - 1, s[3]);
+                }
+                return result;
+            }
+
+            /*=====================获取数据================*/
+            function getInfo(obj, index) {
+                var currentTime = $(obj).attr("data-time");
+                $("#current_time").html(cms.strToDate(currentTime, 'ymd', 'ch'));
+                var hasContent = cms.isDefine($(".content" + index).text());
+                var html = '';
+                if (!hasContent) {
+                    for (var i = 0; i < 5; i++) {
+                        html += '<div data-index="1" class="ub ub-f1 sc-bg ub-ver uinn-a06 umar-t06 cms-act">                     ';
+                        html += '   <div class="ub ub-f1 ub-ver bc-border ubb sc-border-tab uinn-tb08">                               ';
+                        html += '       <div class="ub ub-f1 ub-f1 ub-con">                                                           ';
+                        html += '           <div class="ub-f1 ulev12 bc-text ub-con">                                                 ';
+                        html += '               鹏华证券保险分级<span class="ulev08 sc-text">('+ cms.strToDate(currentTime,"ymd","") +')</span>            ';
+                        html += '           </div>                                                                                    ';
+                        html += '           <div class="ub-f3 sc-text-active ub-con tx-c">                                            ';
+                        html += '               1万<span class="ulev08">起</span>                                                     ';
+                        html += '           </div>                                                                                    ';
+                        html += '           <div class="ub-f1 fa fa-angle-right ulev1 sc-text-hint"></div>                        ';
+                        html += '       </div>                                                                                        ';
+                        html += '       <div class="ub ub-f1 ub-con umar-t06">                                                        ';
+                        html += '           <div class="ub-f1 ulev08 sc-text">                                                        ';
+                        html += '               160625  权益型                                                                        ';
+                        html += '           </div>                                                                                    ';
+                        html += '           <div class="ub-f1 ulev06 sc-text tx-r umar-t04 umar-r06">' + cms.strToDate(currentTime, "ymd", "ch") + '</div>';
+                        html += '       </div>                                                                                        ';
+                        html += '   </div>                                                                                            ';
+                        html += '   <div class="ub ub-f1 uinn-tb04 umar-t04">                                                         ';
+                        html += '       <div class="ub-f1 sc-text-active">                                                            ';
+                        html += '           较高风险                                                                                  ';
+                        html += '       </div>                                                                                        ';
+                        html += '       <div class="ub-f1 sc-text tx-c">                                                              ';
+                        html += '           <span class="ulev08">系数</span>1.2                                                       ';
+                        html += '       </div>                                                                                        ';
+                        html += '       <div class="ub-f1 sc-text tx-r umar-r04">                                                     ';
+                        html += '           定投                                                                                      ';
+                        html += '       </div>                                                                                        ';
+                        html += '   </div>                                                                                            ';
+                        html += '</div>                                                                                               ';
+                    }
+                    titHeight = $("header").offset().height;
+                    $("#content>div").height(scrollHeight - titHeight);
+                    $(".content" + index).html(html);
+                    $(".content" + index).css("height", $(".content" + index)[0].scrollHeight);
+                }
+            };
+
+            //通知主窗口关闭页面
+            $("#back").tap(function() {
+                appcan.window.publish("closeWin", "");
+            });
+        </script>
+
+    </body>
+</html>

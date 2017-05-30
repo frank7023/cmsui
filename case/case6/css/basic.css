@@ -1,0 +1,95 @@
+/* Basic sample */
+
+body {
+    overflow: hidden;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.ub {
+    display: -webkit-box;
+    display: box;
+    position: relative;
+}
+.ub-ac {
+    -webkit-box-align: center;
+    box-align: center;
+}
+
+.ub-pc {
+    -webkit-box-pack: center;
+    box-pack: center;
+}
+
+.ub-img {
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.uabs {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 1.25s;
+}
+
+.hj-act:active {
+    transform: scale(0.95, 0.97);
+    -webkit-transform: scale(0.95, 0.97);
+    -webkit-transition-duration: 100ms;
+    opacity: .5;
+}
+
+.hj-mask {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.flipbook-viewport {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.flipbook-viewport .page {
+    width: 461px;
+    height: 600px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.flipbook .page {
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.flipbook-viewport .shadow {
+    -webkit-transition: -webkit-box-shadow 0.5s;
+    -moz-transition: -moz-box-shadow 0.5s;
+    -o-transition: -webkit-box-shadow 0.5s;
+    -ms-transition: -ms-box-shadow 0.5s;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -o-box-shadow: 0 0 20px #ccc;
+    -ms-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
+}
