@@ -3,9 +3,9 @@
  */
 var share = {
      //微信开放平台的appid
-    wxAppId : "wxd46f5ea2f6db81ea",
+    wxAppId : "wxd46f5ea2f6db****",
     //腾讯开放平台的appid
-    tencentAPPId : "1105507671",
+    tencentAPPId : "110550***",
     //分享类型
     type : 0,
     //分享的头部图片地址

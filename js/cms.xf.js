@@ -1,4 +1,4 @@
-var appid = '591ffb8a';
+var appid = '591ffb**';
 function openBannerAd(id) {
     //获取当前屏幕的宽度，用来设置banner广告控件的宽度
     var h = document.body.clientHeight;

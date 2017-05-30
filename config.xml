@@ -17,15 +17,15 @@
 <partobfuscation/>
 <webapp/>
     <config desc="uexWeiXin" type="URLSCHEME">
-        <urlScheme name="uexWeiXin" schemes="['wxd46f5ea2f6db81ea']"/>
+        <urlScheme name="uexWeiXin" schemes="['wxd46f5ea2f6db8**']"/>
     </config>
     
     <config desc="uexQQ" type="URLSCHEME">
-        <urlScheme name="uexQQ" schemes="['QQ41E4B557','tencent1105507671']"/>
+        <urlScheme name="uexQQ" schemes="['QQ41E4B**7','tencent1105507***']"/>
     </config>
     
     <config desc="uexQQ" type="KEY">
-        <param name="$UEXQQ_APPID$" platform="Android" value="tencent1105507671"/>
+        <param name="$UEXQQ_APPID$" platform="Android" value="tencent110550****"/>
     </config>
 
     <config desc="whiteList" type="AUTHORITY">
